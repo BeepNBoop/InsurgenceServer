@@ -732,6 +732,11 @@ export const Conditions: {[k: string]: ConditionData} = {
 		onImmunity(type, pokemon) {
 			if (pokemon.hasItem('utilityumbrella')) return;
 		},
+		onModifySpe(spe, pokemon) {
+			if (pokemon.hasAbility('shadowdance')) {
+				this.chainModify(2);
+			}
+		},
 		onResidualOrder: 1,
 		onResidual() {
 			this.add('-weather', 'NewMoon', '[upkeep]');
