@@ -733,7 +733,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if (pokemon.hasItem('utilityumbrella')) return;
 		},
 		onModifySpe(spe, pokemon) {
-			if (pokemon.hasAbility('shadowdance')) {
+			if (pokemon.hasAbility('shadowdance') && !pokemon.hasItem('utilityumbrella')) {
 				this.chainModify(2);
 			}
 		},
