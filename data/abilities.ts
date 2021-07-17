@@ -4361,11 +4361,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 272,
 	},
 	shadowdance: {
-		onModifySpe(spe, pokemon) {
-			if (this.field.isWeather('newmoon')) {
-				return this.chainModify(2);
-			}
-		},
+		//coded into New Moon directly in condition.ts
 		name: "Shadow Dance",
 		rating: 2,
 		num: 272,
