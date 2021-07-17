@@ -444,7 +444,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (target !== source && move.type === 'Water') {
 				if (!this.boost({spd: 1})) {
 					this.add('-immune', target, '[from] ability: Castle Moat');
-					this.add(`c|${getName('PartMan')}|Om nom nom`);
+					this.add(`c|${('Palossand')}|Om nom nom`);
 				}
 				return null;
 			}
