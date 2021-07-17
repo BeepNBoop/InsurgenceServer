@@ -854,99 +854,106 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return [type];
 		},
 	},
-	amoongussdelta: {
-		name: 'Amoonguss',
-		onSwitchOut() {
-			this.add(`c|${getName('Amogus')}|purple sus`);
-		},
-	},
-
+	//amoongussdelta: {
+	//	name: 'Amoonguss',
+	//	onSwitchOut() {
+	//		this.add(`c|${getName('Amogus')}|purple sus`);
+	//	},
+	//},
+	//
 	//Beeps S4 Insurgence Draft team
-	gyaradosmega: {
-
-	},
-	spiritombmega: {
-
-	},
-	dragonitedelta: {
-		onStart(source) {
-			const roll = this.random(100);
-			let message: string;
-			if (roll < 70) {
-				message = 'pog';
-			} else if (roll < 80) {
-				message = 'very pog';
-			} else if (roll < 90) {
-				message = 'poggaroo';
-			} else if (roll < 95) {
-				message = 'PogU';
-			} else {
-				message = 'poog';
-			}
-			this.add(`c|${getName('Barakiel')}|${message}`);
-		},
-		onSwitchOut() {
-			this.add(`c|${getName('Barakiel')}|cya frend :)`);
-		},
-		onFaint() {
-			this.add(`c|${getName('Barakiel')}|Hey, I was enjoying the weather! Awww...`);
-		},
-	},
-	serperiordelta: {
-		noCopy: true,
-		onStart() {
-			this.add(`c|${getName('Dagiel')}|Ah, the sweet smell of rain... Oh! Hi there!`);
-		},
-	},
-	electiviredelta: {
-		onFaint() {
-			this.add(`c|${getName('Atid')}|'Tis only a flesh wound!`);
-		},
-	},
-	nihilego: {
-		onStart(source) {
-			let activeMon = source.side.foe.active[0].species.name;
-			if (!activeMon) activeMon = "Pokemon";
-			this.add(`c|${getName('Raquib')}|Your ${activeMon} looks hacked.`);
-		},
-		onFaint() {
-			this.add(`c|${getName('Raquib')}|Yep, definitely hacked.`);
-		},
-	},
-	palossand: {
-
-	},
-	cobalion: {
-		onSwitchOut(source) {
-			this.add(`c|${getName('Shoftiel')}|brb dying a little`);
-		},
-	},
-	plusledelta: {
-		noCopy: true,
-		onStart(source) {
-			this.add(`c|${getName('Maalik')}|I never give up until I get something right, which means destroying you ☜(ﾟヮﾟ☜)`);
-		},
-		onSwitchOut() {
-			this.add(`c|${getName('Maalik')}|This wasn't as fun as I thought it would be, I'm out ¯_( ͡~ ͜ʖ ͡°)_/¯`); // eslint-disable-line no-irregular-whitespace
-		},
-		onFaint() {
-			this.add(`c|${getName('Maalik')}|I like to keep a positive attitude even though it is hard sometimes <('o'<)~*/`);
-		},
-	},
-	flapple: {
-
-	},
-	swoobat: {
-		onSwitchOut() {
-			this.add(`c|${getName('Miniel')}|/html <img src="https://i.imgur.com/0ZRGwvv.png" />`);
-		},
-		onFaint() {
-			this.add(`c|${getName('Miniel')}|Never loved ya.`);
-		},
-	},
-	bouffalant: {
-		onFaint() {
-			this.add(`c|${getName('Amriel')}|You didnt do shit. I coded myself to faint.`);
-		},
-	},
+	//export function getName(name: string): string {
+	//const userid = toID(name);
+	//if (!userid) throw new Error('No/Invalid name passed to getSymbol');
+	//
+	//const group = usergroups[userid] || ' ';
+	//return group + name;
+	//
+	//gyaradosmega: {
+	//
+	//},
+	//spiritombmega: {
+	//
+	//},
+	//dragonitedelta: {
+	//	onStart(source) {
+	//		const roll = this.random(100);
+	//		let message: string;
+	//		if (roll < 70) {
+	//			message = 'pog';
+	//		} else if (roll < 80) {
+	//			message = 'very pog';
+	//		} else if (roll < 90) {
+	//			message = 'poggaroo';
+	//		} else if (roll < 95) {
+	//			message = 'PogU';
+	//		} else {
+	//			message = 'poog';
+	//		}
+	//		this.add(`c|${getName('Barakiel')}|${message}`);
+	//	},
+	//	onSwitchOut() {
+	//		this.add(`c|${getName('Barakiel')}|cya frend :)`);
+	//	},
+	//	onFaint() {
+	//		this.add(`c|${getName('Barakiel')}|Hey, I was enjoying the weather! Awww...`);
+	//	},
+	//},
+	//serperiordelta: {
+	//	noCopy: true,
+	//	onStart() {
+	//		this.add(`c|${getName('Dagiel')}|Ah, the sweet smell of rain... Oh! Hi there!`);
+	//	},
+	//},
+	//electiviredelta: {
+	//	onFaint() {
+	//		this.add(`c|${getName('Atid')}|'Tis only a flesh wound!`);
+	//	},
+	//},
+	//nihilego: {
+	//	onStart(source) {
+	//		let activeMon = source.side.foe.active[0].species.name;
+	//		if (!activeMon) activeMon = "Pokemon";
+	//		this.add(`c|${getName('Raquib')}|Your ${activeMon} looks hacked.`);
+	//	},
+	//	onFaint() {
+	//		this.add(`c|${getName('Raquib')}|Yep, definitely hacked.`);
+	//	},
+	//},
+	//palossand: {
+	//
+	//},
+	//cobalion: {
+	//	onSwitchOut(source) {
+	//		this.add(`c|${getName('Shoftiel')}|brb dying a little`);
+	//	},
+	//},
+	//plusledelta: {
+	//	noCopy: true,
+	//	onStart(source) {
+	//		this.add(`c|${getName('Maalik')}|I never give up until I get something right, which means destroying you ☜(ﾟヮﾟ☜)`);
+	//	},
+	//	onSwitchOut() {
+	//		this.add(`c|${getName('Maalik')}|This wasn't as fun as I thought it would be, I'm out ¯_( ͡~ ͜ʖ ͡°)_/¯`); // eslint-disable-line no-irregular-whitespace
+	//	},
+	//	onFaint() {
+	//		this.add(`c|${getName('Maalik')}|I like to keep a positive attitude even though it is hard sometimes <('o'<)~*/`);
+	//	},
+	//},
+	//flapple: {
+	//
+	//},
+	//swoobat: {
+	//	onSwitchOut() {
+	//		this.add(`c|${getName('Miniel')}|/html <img src="https://i.imgur.com/0ZRGwvv.png" />`);
+	//	},
+	//	onFaint() {
+	//		this.add(`c|${getName('Miniel')}|Never loved ya.`);
+	//	},
+	//},
+	//bouffalant: {
+	//	onFaint() {
+	//		this.add(`c|${getName('Amriel')}|You didnt do shit. I coded myself to faint.`);
+	//	},
+	//},
 };
