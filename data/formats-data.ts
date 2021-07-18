@@ -6729,12 +6729,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	ufi: {
 		randomDoubleBattleMoves:["NanoRepair", "CalmMind", "MagnetRise", "CosmicPower", "AllySwitch", "Protect", "StoredPower", "RisingVoltage", "DazzlingGleam", "IceBeam"],
-		randomDoubleBattleLevel: 3,
+		randomDoubleBattleLevel: 80,
 		doublesTier: "DOU",
 	},
 	hoopadeltaunleashed: {
 		randomDoubleBattleMoves:["HelpingHand", "Protect", "Tailwind", "DazzlingGleam", "AeroBlast", "Hypervoice", "HeatWave", "IcyWind", "IceBeam", "ShadowBall"],
-		randomDoubleBattleLevel: 79,
+		randomDoubleBattleLevel: 80,
 		doublesTier: "DOU",
 	},
 	scytherdelta: {
