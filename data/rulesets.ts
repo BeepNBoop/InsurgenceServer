@@ -401,6 +401,24 @@ export const Formats: {[k: string]: FormatData} = {
 			}
 		},
 	},
+	excludetorrenpokedex: {
+		effectType: 'ValidatorRule',
+		name: 'Exclude Torren Pokedex',
+		desc: "Only allows Pok&eacute;mon and abilities outside of the Torren region",	
+		banlist: ['Absolution', 'Ancient Presence', 'Athenian', 'Blaze Boost', 'Castle Moat', 'Chlorofury', 'Ethereal Shroud', 'Event Horizon', 'Foundry', 'Glitch', 'Heliophobia', 'Hubris', 'Intoxicate', 'Irrelephant', 'Learnean', 'Noctem', 'Omnitype', 'Pendulum', 'Periodic Orbit', 'Phototroph', 'Prisim Guard', 'Protean Maxima', 'Psycho Call', 'Regurgitation', 'Shadow Call', 'Shadow Dance', 'Shadow Synergy', 'Sleet', 'Spectral Jaws', 'Spirit Call', 'Synthetic Alloy', 'Supercell', 'Unleafed', 'Vampiric', 'Venomous', 'Wind Force', 'Winter Joy'],
+		onValidateSet(set, format) {
+			const nontorrenDex = ["MISSINGNO", "Bulbasaur-Delta",  "Ivysaur-Delta",  "Venusaur-Delta",  "Charmander-Delta",  "Charmeleon-Delta",  "Charizard-Delta",  "Squirtle-Delta",  "Wartortle-Delta",  "Blastoise-Delta",  "Pawniard-Delta",  "Bisharp-Delta",  "Ralts-Delta",  "Kirlia-Delta",  "Gardevoir-Delta",  "Gallade-Delta",  "Sunkern-Delta",  "Sunflora-Delta",  "Bergmite-Delta",  "Avalugg-Delta",  "Scyther-Delta",  "Scizor-Delta",  "Scraggy-Delta",  "Scrafty-Delta",  
+			"Combee-Delta",  "Vespiquen-Delta",  "Koffing-Delta",  "Weezing-Delta",  "Purrloin-Delta",  "Liepard-Delta",  "Phantump-Delta",  "Trevenant-Delta",  "Snorunt-Delta",  "Glalie-Delta",  "Froslass-Delta",  "Shinx-Delta",  "Luxio-Delta",  "Luxray-Delta",  "Noibat-Delta",  "Noivern-Delta",  "Budew-Delta",  "Roselia-Delta",  "Roserade-Delta",  "Drifloon-Delta",  "Drifblim-Delta",  "Grimer-Delta",  "Muk-Delta",  "Wooper-Delta",  "Quagsire-Delta",  "Munchlax-Delta",  "Snorlax-Delta",  "Misdreavus-Delta",  "Mismagius-Delta",  "Cyndaquil-Delta",  "Quilava-Delta",  "Typhlosion-Delta",  "Treecko-Delta",  "Grovyle-Delta",  "Sceptile-Delta",  "Torchic-Delta",  "Combusken-Delta",  "Blaziken-Delta",  "Turtwig-Delta",  "Grotle-Delta",  "Torterra-Delta",  "Snivy-Delta",  "Servine-Delta",  "Serperior-Delta",  "Froakie-Delta",  "Frogadier-Delta",  "Greninja-Delta",  "Pidgey-Delta",  "Pidgeotto-Delta",  "Pidgeot-Delta",  "Diglett-Delta",  "Dugtrio-Delta",  "Growlithe-Delta",  "Arcanine-Delta",  
+			"Geodude-Delta",  "Graveler-Delta",  "Golem-Delta",  "Tentacool-Delta",  "Tentacruel-Delta",  "Doduo-Delta",  "Dodrio-Delta",  "Tangela-Delta",  "Tangrowth-Delta",  "Ditto-Delta",  "Kabuto-Delta",  "Kabutops-Delta",  "Dratini-Delta",  "Dragonair-Delta",  "Dragonite-Delta",  "Hoothoot-Delta",  "Noctowl-Delta",  "Chinchou-Delta",  "Lanturn-Delta",  "Pichu-Delta",  "Pikachu-Delta",  "Raichu-Delta",  
+			"Aipom-Delta",  "Ambipom-Delta",  "Yanma-Delta",  "Yanmega-Delta",  "Girafarig-Delta",  "Dunsparce-Delta",  "Shuckle-Delta",  "Remoraid-Delta",  "Octillery-Delta",  "Elekid-Delta",  "Electabuzz-Delta",  "Electivire-Delta",  "Magby-Delta",  "Magmar-Delta",  "Magmortar-Delta",  "Lotad-Delta",  "Lombre-Delta",  "Ludicolo-Delta",  "Seedot-Delta",  "Nuzleaf-Delta",  "Shiftry-Delta",  "Sableye-Delta",  "Mawile-Delta",  "Aron-Delta",  "Lairon-Delta",  "Aggron-Delta",  "Meditite-Delta",  "Medicham-Delta",  "Numel-Delta",  "Camerupt-Delta",  "Plusle-Delta",  "Minun-Delta",  "Wailmer-Delta",  "Wailord-Delta",  "Feebas-Delta",  "Milotic-Delta",  "Clamperl-Delta",  "Huntail-Delta",  "Gorebyss-Delta",  "Beldum-Delta-Spider",  "Metang-Delta-Spider",  "Metagross-Delta-Spider",  "Beldum-Delta-Ruin",  "Metang-Delta-Ruin",  "Metagross-Delta-Ruin",  "Buneary-Delta",  "Lopunny-Delta",  "Riolu-Delta",  "Lucario-Delta",  
+			"Croagunk-Delta",  "Toxicroak-Delta",  "Venipede-Delta",  "Whirlipede-Delta", "Scolipede-Delta",  "Petilil-Delta-Water",  "Lilligant-Delta-Water",  "Petilil-Delta-Fairy",  "Lilligant-Delta-Fairy",  "Solosis-Delta",  "Duosion-Delta",  "Reuniclus-Delta",  "Darumaka-Delta",  "Darmanitan-Delta",  "Maractus-Delta",  "Dwebble-Delta-Berry",  "Crustle-Delta-Berry",  "Dwebble-Delta-Cake",  "Crustle-Delta-Cake",  "Yamask-Delta",  "Cofagrigus-Delta",  "Emolga-Delta",  "Karrablast-Delta",  "Escavalier-Delta",  "Foongus-Delta",  "Amoonguss-Delta",  "Litwick-Delta",  "Lampent-Delta",  "Chandelure-Delta",  "Axew-Delta",  "Fraxure-Delta",  "Haxorus-Delta",  "Golett-Delta",  "Golurk-Delta",  "Heatmor-Delta",  "Deino-Delta",  "Zweilous-Delta",  "Hydreigon-Delta",  "Larvesta-Delta",  "Volcarona-Delta",  "Amaura-Delta",  "Aurorus-Delta",  "Goomy-Delta",  "Sliggoo-Delta",  "Goodra-Delta",  "Regirock-Delta",  "Regice-Delta",  "Registeel-Delta",  "Meloetta-Delta",  "Hoopa-Delta",  "UFI", 
+			];
+			const species = this.dex.getSpecies(set.species || set.name);
+			if (nontorrenDex.includes(species.baseSpecies) && !this.ruleTable.has('+' + species.id)) {
+				return [species.baseSpecies + " is in the Torren Pokédex."];
+			}
+		},
+	},
 	potd: {
 		effectType: 'Rule',
 		name: 'PotD',

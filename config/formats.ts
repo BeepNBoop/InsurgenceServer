@@ -78,6 +78,14 @@ export const Formats: FormatList = [
 		section: "Sw/Sh Singles",
 	},
 	{
+		name: "[Gen 8] Vanilla Draft",
+		desc: `Format for the Neo Vanilla Draft league which excludes Pok&eacute;mon Insurgence additions.`,
+
+		mod: 'gen8',
+		ruleset: ['Standard NatDex', 'Dynamax Clause', 'Achilles Clause', 'Z Move Clause', 'Exclude Torren Pokedex'],
+		banlist: ['Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'Baton Pass'],
+	},
+	{
 		name: "[Gen 8] Random Battle",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with sets that are generated to be competitively viable.`,
 		threads: [
