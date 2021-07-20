@@ -9277,7 +9277,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	metagrossdeltaspidermega: {
 		num: 376,
 		name: "Metagross-Delta-Spider-Mega",
-		baseSpecies: "Metagross-Delta-Spider",
+		baseSpecies: "Metagross",
 		forme: "Delta-Spider-Mega",
 		types: ["Ground", "Bug"],
 		gender: "N",
@@ -9312,7 +9312,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	metagrossdeltaruinmega: {
 		num: 376,
 		name: "Metagross-Delta-Ruin-Mega",
-		baseSpecies: "Metagross-Delta-Ruin",
+		baseSpecies: "Metagross",
 		forme: "Delta-Ruin-Mega",
 		types: ["Grass", "Rock"],
 		gender: "N",
@@ -9328,7 +9328,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	metagrossdeltaruincrystal: {
 		num: 376,
 		name: "Metagross-Delta-Ruin-Crystal",
-		baseSpecies: "Metagross-Delta-Ruin",
+		baseSpecies: "Metagross",
 		forme: "Delta-Ruin-Crystal",
 		types: ["Crystal"],
 		gender: "N",
