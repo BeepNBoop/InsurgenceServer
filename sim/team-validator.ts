@@ -661,16 +661,16 @@ export class TeamValidator {
 			// FIXME: Event pokemon given at a level under what it normally can be attained at gives a false positive
 			problems.push(`${name} must be at least level ${species.evoLevel} to be evolved.`);
 		}
-		if (ruleTable.has('draft3rules') && species.id === 'magearna' && 
+		if ((ruleTable.has('draft3rules') || ruleTable.has('draft4rules')) && species.id === 'magearna' && 
 		((set.moves.includes('irondefense') && set.moves.includes('storedpower')) || (set.moves.includes('drainingkiss') && set.moves.includes('storedpower')) || 
 		(set.moves.includes('drainingkiss') && set.moves.includes('irondefense')) || (set.moves.includes('calmmind') && set.moves.includes('storedpower')) || 
 		(set.moves.includes('calmmind') && set.moves.includes('irondefense')) || (set.moves.includes('calmmind') && set.moves.includes('drainingkiss')))) {
 			problems.push(`${name} has more than 1 restricted move, you may only have 1 move out of Stored Power, Draining Kiss, Calm Mind and Iron Defense.`);
 		}
-		if (ruleTable.has('draft3rules') && species.id === 'magearna' && !item.isPokeball) {
+		if ((ruleTable.has('draft3rules') || ruleTable.has('draft4rules'))  && species.id === 'magearna' && !item.isPokeball) {
 			problems.push(`${name} must hold some form of pokeball as an item.`);
 		}
-		if (ruleTable.has('draft3rules') && 
+		if ((ruleTable.has('draft3rules') || ruleTable.has('draft4rules'))  && 
 		((set.moves.includes('custommovebug') && set.moves.includes('custommovedark')) || 
 		(set.moves.includes('custommovebug') && set.moves.includes('custommovedragon')) || 
 		(set.moves.includes('custommovebug') && set.moves.includes('custommoveelectric')) || 
@@ -813,8 +813,8 @@ export class TeamValidator {
 			this.minSourceGen > 5 && dex.gen <= 7) {
 			problems.push(`${name} has Secret Sword, which is only compatible with Keldeo-Ordinary obtained from Gen 5.`);
 		}
-		if (ruleTable.has('draft3rules') && species.id === 'kommoo' && set.moves.includes('clangoroussoul')) {
-			problems.push(`${name} has Clangorous Soul, which is banned in Neo's third draft season.`);
+		if ((ruleTable.has('draft3rules') || ruleTable.has('draft4rules'))  && species.id === 'kommoo' && set.moves.includes('clangoroussoul')) {
+			problems.push(`${name} has Clangorous Soul, which is banned in Neo's draft.`);
 		}
 		const requiresGen3Source = setSources.maxSourceGen() <= 3;
 		if (requiresGen3Source && dex.getAbility(set.ability).gen === 4 && !species.prevo && dex.gen <= 5) {

@@ -1273,4 +1273,9 @@ export const Formats: {[k: string]: FormatData} = {
 		name: 'Draft 3 Rules',
 		desc: "Season 3 Ruleset as voted on and decided prior to the season's first battles",
 	},
+	draft4rules: {
+		effectType: 'ValidatorRule',
+		name: 'Draft 4 Rules',
+		desc: "Season 4 Ruleset as voted on and decided prior to the season's first battles",
+	},
 };
