@@ -452,7 +452,7 @@ export class RandomTeams {
 		];
 		// Moves which boost Speed:
 		const SpeedSetup = [
-			'agility', 'autotomize', 'flamecharge', 'rockpolish', 'shiftgear',
+			'agility', 'autotomize', 'flamecharge', 'rockpolish', 'shiftgear', 'tailwind'
 		];
 		// Moves that shouldn't be the only STAB moves:
 		const NoStab = [
@@ -729,7 +729,7 @@ export class RandomTeams {
 				case 'counter': case 'reversal':
 					if (counter.setupType) rejected = true;
 					break;
-				case 'firstimpression': case 'glare': case 'icywind': case 'tailwind': case 'waterspout':
+				case 'firstimpression': case 'glare': case 'icywind': case 'waterspout':
 					if ((counter.setupType && !isDoubles) || !!counter['speedsetup'] || hasMove['rest']) rejected = true;
 					break;
 				case 'bulletpunch': case 'extremespeed': case 'rockblast':
@@ -1395,7 +1395,123 @@ export class RandomTeams {
 			!hasMove['fakeout'] && !hasMove['feint'] && !hasMove['icywind'] && !hasMove['incinerate'] && !hasMove['naturesmadness'] && !hasMove['rapidspin'] && !hasMove['snarl'] && !hasMove['uturn']
 		) {
 			item = (ability === 'Defeatist' || species.baseStats.hp + species.baseStats.def + species.baseStats.spd >= 275) ? 'Sitrus Berry' : 'Life Orb';
-
+		} else if (isDoubles && (hasMove['MeteorBeam']) { 
+			item = 'Power Herb';
+		} else if (isDoubles && (hasMove['LightScreen'] && hasMove['Reflect'] || hasMove['auroraveil']) {
+		   item = 'Ligth Clay';
+	   } else if (isDoubles && (('aggrondelta').includes(species.id) || ('cofagrigusdelta').includes(species.id))) {
+			item = (this.randomChance(1, 2)) ? 'leftovers' : 'shuca berry';
+	   } else if (isDoubles && ('amoongussdelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'roseli berry' : 'leftovers';
+		} else if (isDoubles && ('aurorusdelta').includes(species.id)) {
+			item = 'coba berry';
+		} else if (isDoubles && ('avaluggdelta').includes(species.id)) {
+			item = (ability == 'Solid Rock') ? 'Weakness Policy' : 'Life Orb';
+		} else if (isDoubles && ('arcaninedelta', 'bisharpdelta').includes(species.id)) {  
+			item = (counter.damagingMoves.length >= 4) ? 'Assault Vest' : 'Life Orb';                                                                    //AVLO
+		} else if (isDoubles && ('mawiledelta', 'dunsparcedelta', 'blastoisedelta', 'sunfloradelta', 'hoopadeltaunleashed').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'leftovers' : 'life orb';                                                                                 //LftLO
+		} else if (isDoubles && ('chandeluredelta').includes(species.id)) {
+			item = (counter.Special >= 4) ? 'choice specs' : 'pixie plate'
+		} else if (isDoubles && ('scytherdelta', 'scolipededelta', 'heatmordelta', 'galladedelta', 'darmanitandelta', 'blazikendelta', ).includes(species.id)) {
+			item = (counter.speedSetup >= 1 || hasAbility['Weak Armor'] || hasAbility['Slush Rush'] && teamDetails['hail']) ? 'Focus Sash' : 'Life Orb'; //FSLO
+		} else if (isDoubles && ('drifblimdelta').includes(species.id)) {
+			item = (this.randomChance(1, 2) ? 'Charti berry' : 'leftovers' ;
+		} else if (isDoubles && ('dugtriodelta').includes(species.id)) {
+			item = (hasMove['swordsdance']) ? 'focus sash' : 'life orb';
+		} else if (isDoubles && ('electiviredelta').includes(species.id)) {
+			item = (hasMove['NewMoon']) ? 'Dark Rock' : 'Power Herb';
+		} else if (isDoubles && ('emolgadelta', 'froslassdelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'charcoal' : 'focus sash';
+		} else if (isDoubles && ('escavalierdelta').includes(species.id)) {
+			item = (hasAbility['Misty Surge']) ? 'Misty Seed' : 'Leftovers';
+		} else if (isDoubles && ('glaliedelta').includes(species.id)) {
+			item = (counter.damagingMoves.length >=4) ? 'Choice Band' : 'Life Orb';
+		} else if (isDoubles && ('golemdelta').includes(species.id)) {
+			item = (hasMove['TrickRoom']) ? 'Trick Rock' : ((counter.damagingMoves.length >=2) ? 'Weakness Policy' : 'Leftovers') ;
+		} else if (isDoubles && ('golurkdelta', 'pidgeotdelta', 'sceptiledelta').includes(species.id)) {
+			item = (hasAbility['Guts'] || hasAbility['Marvel Scale']) ? 'Flame Orb' : 'Life Orb';                                                                                        //FOLO
+		} else if (isDoubles && ('goodradelta').includes(species.id)) {
+			item = (counter.damagingMoves.length >=4) ? 'Assault Vest' : 'Rindo Berry';
+		} else if (isDoubles && ('gorebyssdelta').includes(species.id)) {
+			item = (hasMove['shellsmash']) ? 'White Herb' : 'Flame Orb';
+		} else if (isDoubles && ('greninjadelta', 'lieparddelta', 'sableyedelta', 'minundelta').includes(species.id)) {
+			item = 'Focus Sash';                                                                                                                          //FocusSash
+		} else if (isDoubles && ('haxorusdelta').includes(species.id)) {
+			item = (counter.Physical >=4) ? 'Choice Band' : 'Life Orb';
+		} else if (isDoubles && ('hydreigondelta').includes(species.id)) {
+			item = (counter.Special >=4) ? 'Choice Specs' : 'Life Orb';
+		} else if (isDoubles && ('kabutopsdelta').includes(species.id)) {
+			item = (hasMove['swordsdance']) ? 'focus sash' : 'life orb';
+		} else if (isDoubles && ('lopunnydelta').includes(species.id)) {
+			item = (hasAbility['unburden'] && (hasMove['machpunch'] || hasMove['CloseCombat'] || hasMove['BrickBreak']) ? 'fighting gem' : 'aguav berry';
+		} else if (isDoubles && ('huntaildelta').includes(species.id)) {
+			item = (hasMove['shellsmash']) ? 'White Herb' : 'Life Orb';
+		} else if (isDoubles && ('lucariodelta').includes(species.id)) {
+			item = (counter.physicalsetup >=1 || counter.specialsetup >=1 || counter.damagingMoves.length <=2) ? 'sitrus berry' : 'life orb';
+		} else if (isDoubles && ('luxraydelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'shuca berry' : 'life orb';
+		} else if (isDoubles && ('magmortardelta').includes(species.id)) {
+			item = (hasAbility['Filter'] || hasMove['autotomize']) ? 'weakness policy' : 'blunder policy';
+		} else if (isDoubles && ('maractusdelta').includes(species.id)) {
+			item = (hasAbility['Motor Drive']) ? 'Cell Battery' : (hasAbility['Clear Body'] && (hasMove['autotomize'] || hasMove['IronDefense'])) ? 'Weakness Policy' : 'Life Orb';
+		} else if (isDoubles && ('medichamdelta').includes(species.id)) {
+			item = (counter.damagingMoves.length >=4) ? 'Choice Scarf' : 'Life Orb';
+		} else if (isDoubles && ('miloticdelta').includes(species.id)) {
+			item = (hasMove['trickroom']) ? 'Trick Rock' : 'leftovers';
+		} else if (isDoubles && ('mismagiusdelta').includes(species.id)) {
+			item = (hasMove['Thunder'] || hasMove['blizzard'] || hasMove['sing']) ? 'Wide Lens' : 'Life Orb';
+		} else if (isDoubles && ('mukdelta', 'tangrowthdelta', 'regicedelta', 'lanturndelta', 'snorlaxdelta', 'tentacrueldelta').includes(species.id)) {
+			item = (counter.damagingMoves.length >=4) ? 'Assault Vest' : 'Leftovers';                                                                   //AVlftv
+		} else if (isDoubles && ('noctowldelta').includes(species.id)) {
+			item = (counter.damagingMoves.length <=2) ? 'Charti Berry' : 'Life Orb';
+		} else if (isDoubles && ('noiverndelta').includes(species.id)) {
+			item = (counter.Special >=4) ? 'Choice Specs' : 'Occa Berry';
+		} else if (isDoubles && ('quagsiredelta').includes(species.id)) {
+			item = (hasAbility['harvest'] && teamDetails['sun']) ? 'starf berry' : 'sitrus berry';
+		} else if (isDoubles && ('registeeldelta').includes(species.id)) {
+			item = (hasMove['Recover']) ? 'Weakness Policy' : 'Leftovers';
+		} else if (isDoubles && ('reuniclusdelta').includes(species.id)) {
+			item = (hasMove['meteorbeam']) ? 'Power herb' : 'Focus Sash';
+		} else if (isDoubles && ('scraftydelta').includes(species.id)) {
+			item = 'grassy seed';
+		} else if (isDoubles && ('serperiordelta', 'UFI').includes(species.id)) {
+			item = 'leftovers';                                                                                                                         //lftv
+		} else if (isDoubles && ('shiftrydelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'life orb' : 'sitrus berry';
+		} else if (isDoubles && ('shuckledelta').includes(species.id)) {
+			item = (counter.damagingMoves.length >=3) ? 'Weakness Policy' : 'leftovers';
+		} else if (isDoubles && ('torterradelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'rindo berry' : 'life orb';
+		} else if (isDoubles && ('typhlosiondelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'magnet' : 'shuca berry';
+		} else if (isDoubles && ('vespiqueendelta').includes(species.id)) {
+			item = (hasMove['shiftgear'] && hasAbility['Levitate'] || hasAbility['Speed Boost']) ? 'Weakness Policy' : 'leftovers';
+		} else if (isDoubles && ('volcaronadelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'Assault Vest' : 'Choice Specs';
+		} else if (isDoubles && ('weezingdelta').includes(species.id)) {
+			item = (hasMove['overdrive'] || hasMove['boomburst']) ? 'throat spray' : 'leftovers';
+		} else if (isDoubles && ('yanmegadelta').includes(species.id)) {
+			item = (counter.Special >=4) ? 'Choice Specs' : 'Life Orb';
+		} else if (isDoubles && ('crustledeltaberry').includes(species.id)) {
+			item = (hasAbility['harvest'] && teamDetails['sun']) ? 'liechi berry' : 'sitrus berry';
+		} else if (isDoubles && ('deltalilligantfairy').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'focus sash' : 'sitrus berry';
+		} else if (isDoubles && ('metagrossdeltaruin').includes(species.id)) {
+			item = (hasMove['RockPolish']) ? 'Weakness Policy' : 'Life Orb';
+		} else if (isDoubles && ('metagrossdeltaspider').includes(species.id)) {
+			item = (counter.damagingMoves.length >=4) ? 'Assault vest' : 'Toxic Orb';
+		} else if (isDoubles && ('meloettadelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'Weakness Policy' : 'Life Orb';
+		} else if (isDoubles && ('meloettadeltamagician').includes(species.id)) {
+			item = (counter.Special >= 4) ? 'Choice Specs' : 'Sitrus berry';
+		} else if (isDoubles && ('toxicroakdelta').includes(species.id)) {
+			item = (this.randomChance(1, 2)) ? 'Blunder Policy' : 'Life Orb';
+		} else if (isDoubles && ('plusledelta').includes(species.id)) {
+			item = (hasMove['rest']) ? 'chesto berry' : 'focus sash';
+		} else if (isDoubles && ('hoopadelta').includes(species.id)) {
+			item = (hasMove['acrobatics'] || hasMove['aeroblast']) ? 'flying gem' : (counter.damagingMoves.length >=4) ? 'Choice Scarf' : 'leftovers';
+		
 		// Medium priority
 		} else if (counter.Physical >= 4 && ability !== 'Serene Grace' && !hasMove['fakeout'] && !hasMove['flamecharge'] && !hasMove['rapidspin'] && (!hasMove['tailslap'] || hasMove['uturn']) && !isDoubles) {
 			const scarfReqs = (
