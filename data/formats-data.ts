@@ -1674,7 +1674,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	quagsiredelta: {
 		randomBattleMoves: ["gigadrain", "flamethrower", "earthpower", "synthesis", "leechseed", "spikes", "knockoff", "willowisp"],
 		randomBattleLevel: 84,
-		randomDoubleBattleMoves:["SunnyDay", "LeechSeed", "Synthesis", "WillOWisp", "LeafBlade", "FirePunch", "Protect", "HeatWave", "Hex", "GigaDrain"],
+		randomDoubleBattleMoves:["SunnyDay", "LeechSeed", "Synthesis", "WillOWisp", "LeafBlade", "FirePunch", "Protect", "HeatWave", "Hex", "GigaDrain", "Recycle"],
 		randomDoubleBattleLevel: 84,
 		doublesTier: "(DUU)",
 		tier: "PU",
@@ -6708,7 +6708,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	crusltedeltaberry: {
-		randomDoubleBattleMoves:["SunnyDay", "LeechSeed", "ThunderWave", "Growth", "FirstImpression", "LeafBlade", "PoisonJab", "GyroBall", "KnockOff", "Facade"],
+		randomDoubleBattleMoves:["SunnyDay", "LeechSeed", "ThunderWave", "Recycle", "Growth", "FirstImpression", "LeafBlade", "PoisonJab", "GyroBall", "KnockOff", "Facade"],
 		randomDoubleBattleLevel: 84,
 		doublesTier: "(DUU)",
 	},
