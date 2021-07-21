@@ -6708,7 +6708,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "(DUU)",
 	},
 	crusltedeltaberry: {
-		randomDoubleBattleMoves:["SunnyDay", "LeechSeed", "ThunderWave", "Growth", "FirstImpression", "LeafBlade", "PoisonJab", "GyroBall", "KnockOff", "Facade"],
+		randomDoubleBattleMoves:["SunnyDay", "LeechSeed", "ThunderWave", "Recycle", "Growth", "FirstImpression", "LeafBlade", "PoisonJab", "GyroBall", "KnockOff", "Facade"],
 		randomDoubleBattleLevel: 84,
 		doublesTier: "(DUU)",
 	},
