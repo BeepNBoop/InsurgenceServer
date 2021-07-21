@@ -10897,6 +10897,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {spd: 1}},
 		contestType: "Clever",
 	},
+	magmarush: {
+		num: 463,
+		accuracy: 95,
+		basePower: 90,
+		category: "Physical",
+		name: "Magma Rush",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1},
+		secondary: {
+			chance: 50,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Fire",
+		contestType: "Tough",
+	},
 	magmastorm: {
 		num: 463,
 		accuracy: 75,
@@ -12669,6 +12690,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "normal",
 		type: "Normal",
+		contestType: "Beautiful",
+	},
+	naturesfury: {
+		num: 267,
+		accuracy: 90,
+		basePower: 100,
+		category: "Physical",
+		name: "Nature's Fury",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1},
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Grass",
 		contestType: "Beautiful",
 	},
 	naturesmadness: {
