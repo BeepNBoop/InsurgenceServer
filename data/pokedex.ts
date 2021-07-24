@@ -8182,7 +8182,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	flygonmega: {
 		num: 330,
 		name: "Flygon-Mega",
-		baseForme: "Flygon",
+		baseSpecies: "Flygon",
 		forme: "Mega",
 		types: ["Bug", "Dragon"],
 		baseStats: {hp: 80, atk: 110, def: 90, spa: 140, spd: 80, spe: 120},
