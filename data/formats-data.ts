@@ -2375,7 +2375,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	aggrondelta: {
-		randomBattleMoves: ["stealthrocks", "flareblitz", "heatcrash", "gyroball", "heavyslam", "earthquake", "knockoff"],
+		randomBattleMoves: ["stealthrock", "flareblitz", "heatcrash", "gyroball", "heavyslam", "earthquake", "knockoff"],
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves:["BrickBreak", "FireLash", "HeatCrash",  "IronHead", "RockSlide", "knockoff", "irondefense", "protect", "HeavySlam"],
 		randomDoubleBattleLevel: 82,
