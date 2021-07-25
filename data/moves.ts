@@ -20981,10 +20981,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onResidual(target) {
 				if (target && !target.fainted) {
 					const damage = this.heal(this.effectData.hp, target, target);
-					if (this.effectData.stage < 4) {
-						this.effectData.stage++;
-					} else if ((damage) && this.effectData.stage == 2) { 
+					if ((damage) && this.effectData.stage === 2) { 
 						this.add('-heal', target, target.getHealth, '[from] move: Wish', '[wisher] ' + this.effectData.source.name);
+					} else if (this.effectData.stage < 4) {
+						this.effectData.stage++;
 					}
 				}
 			},
