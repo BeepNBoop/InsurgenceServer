@@ -1395,9 +1395,9 @@ export class RandomTeams {
 			!hasMove['fakeout'] && !hasMove['feint'] && !hasMove['icywind'] && !hasMove['incinerate'] && !hasMove['naturesmadness'] && !hasMove['rapidspin'] && !hasMove['snarl'] && !hasMove['uturn']
 		) {
 			item = (ability === 'Defeatist' || species.baseStats.hp + species.baseStats.def + species.baseStats.spd >= 275) ? 'Sitrus Berry' : 'Life Orb';
-		} else if (isDoubles && (hasMove['MeteorBeam']) { 
+		} else if (isDoubles && (hasMove['MeteorBeam'])) { 
 			item = 'Power Herb';
-		} else if (isDoubles && (hasMove['LightScreen'] && hasMove['Reflect'] || hasMove['auroraveil']) {
+		} else if (isDoubles && (hasMove['LightScreen'] && hasMove['Reflect'] || hasMove['auroraveil'])) {
 		   item = 'Ligth Clay';
 	   } else if (isDoubles && (('aggrondelta').includes(species.id) || ('cofagrigusdelta').includes(species.id))) {
 			item = (this.randomChance(1, 2)) ? 'leftovers' : 'shuca berry';
@@ -1407,21 +1407,21 @@ export class RandomTeams {
 			item = 'coba berry';
 		} else if (isDoubles && ('avaluggdelta').includes(species.id)) {
 			item = (ability == 'Solid Rock') ? 'Weakness Policy' : 'Life Orb';
-		} else if (isDoubles && ('arcaninedelta', 'bisharpdelta').includes(species.id)) {  
+		} else if (isDoubles && ('arcaninedelta' || 'bisharpdelta').includes(species.id)) {  
 			item = (counter.damagingMoves.length >= 4) ? 'Assault Vest' : 'Life Orb';                                                                    //AVLO
-		} else if (isDoubles && ('mawiledelta', 'dunsparcedelta', 'blastoisedelta', 'sunfloradelta', 'hoopadeltaunleashed').includes(species.id)) {
+		} else if (isDoubles && ('mawiledelta' || 'dunsparcedelta' || 'blastoisedelta' || 'sunfloradelta' || 'hoopadeltaunleashed').includes(species.id)) {
 			item = (this.randomChance(1, 2)) ? 'leftovers' : 'life orb';                                                                                 //LftLO
 		} else if (isDoubles && ('chandeluredelta').includes(species.id)) {
 			item = (counter.Special >= 4) ? 'choice specs' : 'pixie plate'
-		} else if (isDoubles && ('scytherdelta', 'scolipededelta', 'heatmordelta', 'galladedelta', 'darmanitandelta', 'blazikendelta', ).includes(species.id)) {
+		} else if (isDoubles && ('scytherdelta' || 'scolipededelta' || 'heatmordelta' || 'galladedelta' || 'darmanitandelta' || 'blazikendelta').includes(species.id)) {
 			item = (counter.speedSetup >= 1 || hasAbility['Weak Armor'] || hasAbility['Slush Rush'] && teamDetails['hail']) ? 'Focus Sash' : 'Life Orb'; //FSLO
 		} else if (isDoubles && ('drifblimdelta').includes(species.id)) {
-			item = (this.randomChance(1, 2) ? 'Charti berry' : 'leftovers' ;
+			item = (this.randomChance(1, 2) ? 'Charti berry' : 'leftovers') ;
 		} else if (isDoubles && ('dugtriodelta').includes(species.id)) {
 			item = (hasMove['swordsdance']) ? 'focus sash' : 'life orb';
 		} else if (isDoubles && ('electiviredelta').includes(species.id)) {
 			item = (hasMove['NewMoon']) ? 'Dark Rock' : 'Power Herb';
-		} else if (isDoubles && ('emolgadelta', 'froslassdelta').includes(species.id)) {
+		} else if (isDoubles && ('emolgadelta' || 'froslassdelta').includes(species.id)) {
 			item = (this.randomChance(1, 2)) ? 'charcoal' : 'focus sash';
 		} else if (isDoubles && ('escavalierdelta').includes(species.id)) {
 			item = (hasAbility['Misty Surge']) ? 'Misty Seed' : 'Leftovers';
@@ -1429,13 +1429,13 @@ export class RandomTeams {
 			item = (counter.damagingMoves.length >=4) ? 'Choice Band' : 'Life Orb';
 		} else if (isDoubles && ('golemdelta').includes(species.id)) {
 			item = (hasMove['TrickRoom']) ? 'Trick Rock' : ((counter.damagingMoves.length >=2) ? 'Weakness Policy' : 'Leftovers') ;
-		} else if (isDoubles && ('golurkdelta', 'pidgeotdelta', 'sceptiledelta').includes(species.id)) {
+		} else if (isDoubles && ('golurkdelta' || 'pidgeotdelta' || 'sceptiledelta').includes(species.id)) {
 			item = (hasAbility['Guts'] || hasAbility['Marvel Scale']) ? 'Flame Orb' : 'Life Orb';                                                                                        //FOLO
 		} else if (isDoubles && ('goodradelta').includes(species.id)) {
 			item = (counter.damagingMoves.length >=4) ? 'Assault Vest' : 'Rindo Berry';
 		} else if (isDoubles && ('gorebyssdelta').includes(species.id)) {
 			item = (hasMove['shellsmash']) ? 'White Herb' : 'Flame Orb';
-		} else if (isDoubles && ('greninjadelta', 'lieparddelta', 'sableyedelta', 'minundelta').includes(species.id)) {
+		} else if (isDoubles && ('greninjadelta' || 'lieparddelta' || 'sableyedelta' || 'minundelta').includes(species.id)) {
 			item = 'Focus Sash';                                                                                                                          //FocusSash
 		} else if (isDoubles && ('haxorusdelta').includes(species.id)) {
 			item = (counter.Physical >=4) ? 'Choice Band' : 'Life Orb';
@@ -1444,7 +1444,7 @@ export class RandomTeams {
 		} else if (isDoubles && ('kabutopsdelta').includes(species.id)) {
 			item = (hasMove['swordsdance']) ? 'focus sash' : 'life orb';
 		} else if (isDoubles && ('lopunnydelta').includes(species.id)) {
-			item = (hasAbility['unburden'] && (hasMove['machpunch'] || hasMove['CloseCombat'] || hasMove['BrickBreak']) ? 'fighting gem' : 'aguav berry';
+			item = (hasAbility['unburden'] && (hasMove['machpunch'] || hasMove['CloseCombat'] || hasMove['BrickBreak']) ? 'fighting gem' : 'aguav berry');
 		} else if (isDoubles && ('huntaildelta').includes(species.id)) {
 			item = (hasMove['shellsmash']) ? 'White Herb' : 'Life Orb';
 		} else if (isDoubles && ('lucariodelta').includes(species.id)) {
@@ -1461,7 +1461,7 @@ export class RandomTeams {
 			item = (hasMove['trickroom']) ? 'Trick Rock' : 'leftovers';
 		} else if (isDoubles && ('mismagiusdelta').includes(species.id)) {
 			item = (hasMove['Thunder'] || hasMove['blizzard'] || hasMove['sing']) ? 'Wide Lens' : 'Life Orb';
-		} else if (isDoubles && ('mukdelta', 'tangrowthdelta', 'regicedelta', 'lanturndelta', 'snorlaxdelta', 'tentacrueldelta').includes(species.id)) {
+		} else if (isDoubles && ('mukdelta' || 'tangrowthdelta' || 'regicedelta' || 'lanturndelta' || 'snorlaxdelta' || 'tentacrueldelta').includes(species.id)) {
 			item = (counter.damagingMoves.length >=4) ? 'Assault Vest' : 'Leftovers';                                                                   //AVlftv
 		} else if (isDoubles && ('noctowldelta').includes(species.id)) {
 			item = (counter.damagingMoves.length <=2) ? 'Charti Berry' : 'Life Orb';
@@ -1475,7 +1475,7 @@ export class RandomTeams {
 			item = (hasMove['meteorbeam']) ? 'Power herb' : 'Focus Sash';
 		} else if (isDoubles && ('scraftydelta').includes(species.id)) {
 			item = 'grassy seed';
-		} else if (isDoubles && ('serperiordelta', 'UFI').includes(species.id)) {
+		} else if (isDoubles && ('serperiordelta' || 'UFI').includes(species.id)) {
 			item = 'leftovers';                                                                                                                         //lftv
 		} else if (isDoubles && ('shiftrydelta').includes(species.id)) {
 			item = (this.randomChance(1, 2)) ? 'life orb' : 'sitrus berry';
