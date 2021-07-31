@@ -9330,7 +9330,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		name: "Metagross-Delta-Ruin-Crystal",
 		baseSpecies: "Metagross",
 		forme: "Delta-Ruin-Crystal",
-		types: ["Crystal"],
+		types: ["Crystal", "Grass"],
 		gender: "N",
 		baseStats: {hp: 80, atk: 180, def: 100, spa: 120, spd: 100, spe: 100},
 		abilities: {0: "Weak Armor"},
