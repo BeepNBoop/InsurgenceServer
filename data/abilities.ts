@@ -145,8 +145,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	ancientpresence: {
 		onModifyMove(move) {
-			if (move.category === ('Physical' || 'Special'))
-				move.stab = 1.5;
+			if (move.category !== 'Status') {
+					move.stab = 1.5;
+				}
 			},
 		onSourceEffectiveness() {
 			return 0;
@@ -1059,16 +1060,16 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-start', pokemon, 'typeadd', 'Ghost', '[from] ability: Ethereal Shroud');
 		},
 		onTryHit(target, source, move) {
-			if (move.category === 'Status' || source.hasAbility('scrappy') || target.hasItem('ringtarget') || target === source) return;
-			if (target.volatiles['miracleeye'] || target.volatiles['foresight']) return;
+			if (move.category === 'Status' || source.hasAbility('scrappy') || target === source) return;
+			if (target.volatiles['miracleeye'] || target.volatiles['foresight'] || target.hasItem('ringtarget') ) return;
 			if (move.type === 'Normal' || move.type === 'Fighting') {
 				this.add('-immune', target);
 				return null;
 			}
 		},
 		onAllyTryHitSide(target, source, move) {
-			if (move.category === 'Status' || source.hasAbility('scrappy') || target.hasItem('ringtarget') || target === source) return;
-			if (target.volatiles['miracleeye'] || target.volatiles['foresight']) return;
+			if (move.category === 'Status' || source.hasAbility('scrappy') || target === source) return;
+			if (target.volatiles['miracleeye'] || target.volatiles['foresight'] || target.hasItem('ringtarget')) return;
 			if (move.type === 'Normal' || move.type === 'Fighting') {
 				this.add('-immune', this.effectData.target);
 			}
@@ -1443,11 +1444,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	glitch: {
 		onDamagingHit(damage, target, source, move) {
 			if (move.flags['contact']) {
-			this.damage(target.baseMaxhp / 1, target, target);
+				source.faint();
 			}
 		},
 		name: "Glitch",
-		rating: 4,
+		rating: 5,
 		num: 206,
 	},
 	gluttony: {
@@ -2125,7 +2126,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onModifyDamage(damage, source, target, move) {
-			if (source.species.name === 'Hydreigon-Mega') {
+			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
 				return this.chainModify(0.23);
 			}
 		},
@@ -2155,7 +2158,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onModifyDamage(damage, source, target, move) {
-			if (source.species.name === 'Hydreigon-Mega') {
+			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
 				return this.chainModify(0.20416667);
 			}
 		},
@@ -2182,7 +2187,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onModifyDamage(damage, source, target, move) {
-			if (source.species.name === 'Hydreigon-Mega') {
+			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
 				return this.chainModify(0.18571429);
 			}
 		},
@@ -2206,7 +2213,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onModifyDamage(damage, source, target, move) {
-			if (source.species.name === 'Hydreigon-Mega') {
+			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
 				return this.chainModify(0.171875);
 			}
 		},
@@ -2223,7 +2232,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onModifyDamage(damage, source, target, move) {
-			if (source.species.name === 'Hydreigon-Mega') {
+			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
+			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
 				return this.chainModify(0.16111111);
 			}
 		},
@@ -3084,7 +3095,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.heal(target.baseMaxhp / 8, target, target);
 				return;
 			} else if (effect.id === 'newmoon' || effect.id === 'raindance' || effect.id === 'primordialsea') {
-				this.heal(target.baseMaxhp / 0, target, target);
 				return;
 			} else this.heal(target.baseMaxhp / 16, target, target);
 		},
