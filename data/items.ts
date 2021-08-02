@@ -1467,6 +1467,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 1233,
 		gen: 6,
+	},	
+	deltareuniclite: {
+		name: "Delta Reuniclite",
+		spritenum: 576,
+		megaStone: "Reuniclus-Delta-Mega",
+		megaEvolves: "Reuniclus",
+		itemUser: ["Reuniclus-Delta"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 1233,
+		gen: 6,
 	},
 	deltasablenite: {
 		name: "Delta Sablenite",

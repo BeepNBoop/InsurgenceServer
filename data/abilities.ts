@@ -5217,6 +5217,23 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2,
 		num: 67,
 	},
+	tombstone: {
+		onDamagingHit(damage, target, source, move) {
+			if (target.getMoveHitData(move).typeMod > 0) {
+				this.debug('Tombstone Boost');
+				this.boost({def: 1, spd: 1}, target, target);	
+				if (source.volatiles['disable']) return;
+				if (!move.isMax && !move.isFutureMove) {
+					if (this.randomChance(3, 10)) {
+						source.addVolatile('disable', this.effectData.target);
+					}
+				}
+			}
+		},
+		name: "Tombstone",
+		rating: 2,
+		num: 67,
+	},
 	toughclaws: {
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
