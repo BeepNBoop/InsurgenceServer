@@ -145,12 +145,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	ancientpresence: {
 		onModifyMove(move) {
-			if (move.type === 'Bug' || move.type === 'Dark' || move.type === 'Dragon' || 
-			move.type === 'Electric' || move.type === 'Fairy' || move.type === 'Fighting' || 
-			move.type === 'Fire' || move.type === 'Flying' || move.type === 'Ghost' || 
-			move.type === 'Grass' || move.type === 'Ground' || move.type === 'Ice' || 
-			move.type === 'Normal' || move.type === 'Poison' || move.type === 'Psychic' || 
-			move.type === 'Rock' || move.type === 'Steel' || move.type === 'Water' || move.type === 'Crystal')
+			if (move.category === ('Physical' || 'Special'))
 				move.stab = 1.5;
 			},
 		onSourceEffectiveness() {
