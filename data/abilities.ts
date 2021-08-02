@@ -1064,7 +1064,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.add('-start', pokemon, 'typeadd', 'Ghost', '[from] ability: Ethereal Shroud');
 		},
 		onTryHit(target, source, move) {
-			if (move.category === 'Status' || source.hasAbility('scrappy') || target === source) return;
+			if (move.category === 'Status' || source.hasAbility('scrappy') || target.hasItem('ringtarget') || target === source) return;
 			if (target.volatiles['miracleeye'] || target.volatiles['foresight']) return;
 			if (move.type === 'Normal' || move.type === 'Fighting') {
 				this.add('-immune', target);
@@ -1072,7 +1072,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			}
 		},
 		onAllyTryHitSide(target, source, move) {
-			if (move.category === 'Status' || source.hasAbility('scrappy') || target === source) return;
+			if (move.category === 'Status' || source.hasAbility('scrappy') || target.hasItem('ringtarget') || target === source) return;
 			if (target.volatiles['miracleeye'] || target.volatiles['foresight']) return;
 			if (move.type === 'Normal' || move.type === 'Fighting') {
 				this.add('-immune', this.effectData.target);
@@ -2870,6 +2870,37 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onModifyMove(move) {
 			if (move.type === 'Dragon' || move.type === 'Ghost')
 				move.stab = 1.5;
+		},
+		onTryHit(target, source, move) {
+			if (move.category === 'Status' || source.hasAbility('scrappy') || target === source) return;
+			if (target.volatiles['miracleeye'] || target.volatiles['foresight'] || target.hasItem('ringtarget')) return;
+			if (move.type === 'Normal' || move.type === 'Fighting' || move.type === 'Poison' || move.type === 'Ground'
+			|| move.type === 'Ghost' || move.type === 'Electric' || move.type === 'Psychic' || move.type === 'Dragon') {
+				this.add('-immune', target);
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (move.category === 'Status' || source.hasAbility('scrappy') || target === source) return;
+			if (target.volatiles['miracleeye'] || target.volatiles['foresight'] || target.hasItem('ringtarget')) return;
+			if (move.type === 'Normal' || move.type === 'Fighting' || move.type === 'Poison' || move.type === 'Ground'
+			|| move.type === 'Ghost' || move.type === 'Electric' || move.type === 'Psychic' || move.type === 'Dragon') {
+				this.add('-immune', this.effectData.target);
+			}
+		},
+		onSourceBasePowerPriority: 18,
+		onSourceBasePower(basePower, attacker, defender, move) {
+			if (move.type === 'Bug' || move.type === 'Grass') {
+				return this.chainModify(0.0625);
+			} else if (move.type === 'Steel' || move.type === 'Dark' || move.type === 'Electric') {
+				return this.chainModify(0.5);
+			} else if (move.type === 'Rock' || move.type === 'Ghost') {
+				return this.chainModify(2);
+			} if (move.type === 'Normal' || move.type === 'Poison') {
+				return this.chainModify(0.25);
+			} if (move.type === 'Ground') {
+				return this.chainModify(8);
+			}
 		},
 		name: "Omnitype",
 		rating: 5,
