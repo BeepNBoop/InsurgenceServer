@@ -8539,7 +8539,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		baseSpecies: "Milotic",
 		forme: "Mega",
 		types: ["Water", "Fairy"],
-		baseStats: {hp: 95, atk: 70, def: 109, spa: 145, spd: 155, spe: 81},
+		baseStats: {hp: 95, atk: 70, def: 109, spa: 130, spd: 155, spe: 81},
 		abilities: {0: "Prism Guard"},
 		heightm: 6.2,
 		weightkg: 162,
