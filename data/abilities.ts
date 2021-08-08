@@ -3089,31 +3089,28 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 253,
 	},
 	phototroph: {
-		onWeather(target, source, effect) {
-			if (target.hasItem('utilityumbrella')) return;
-			if (effect.id === 'sunnyday' || effect.id === 'desolateland') {
-				this.heal(target.baseMaxhp / 8, target, target);
-				return;
-			} else if (effect.id === 'newmoon' || effect.id === 'raindance' || effect.id === 'primordialsea') {
-				return;
-			} else this.heal(target.baseMaxhp / 16, target, target);
-		},
 		onResidualOrder: 5,
 		onResidualSubOrder: 5,
 		onResidual(pokemon) {
+			if (pokemon.hasItem('utilityumbrella')) return;
 			switch (pokemon.effectiveWeather()) {
 				case 'raindance':
 				case 'primordialsea':
 				case 'newmoon':
+			return;
 				case 'sunnyday':
 				case 'desolateland':
+			this.heal(pokemon.baseMaxhp / 8, pokemon, pokemon);
+			return;
 				case 'hail':
 				case 'sleet':
 				case 'sandstorm':
 				case 'deltastream':
+			this.heal(pokemon.baseMaxhp / 16);
 			return;
 				default:
 			this.heal(pokemon.baseMaxhp / 16);
+			return;
 			}
 		},
 		name: "Phototroph",
