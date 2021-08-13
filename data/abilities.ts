@@ -2104,141 +2104,47 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	lernean: {
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon' || pokemon.transformed) return;
-				if (pokemon.hp <= pokemon.maxhp / 5) {
+				if (pokemon.hp <= pokemon.maxhp / 5 && pokemon.species.id !== 'hydreigonmegad') {
 					pokemon.formeChange('hydreigonmegad');
-					pokemon.setAbility('Lernean D');
-				} else if (pokemon.hp <= pokemon.maxhp / 2.5) {
+				} else if (pokemon.hp <= pokemon.maxhp / 2.5 && (pokemon.species.id !== 'hydreigonmegac' && pokemon.species.id !== 'hydreigonmegad')) {
 					pokemon.formeChange('hydreigonmegac');
-					pokemon.setAbility('Lernean C');
-				} else if (pokemon.hp <= pokemon.maxhp / 1.667) {
+				} else if (pokemon.hp <= pokemon.maxhp / 1.667 && (pokemon.species.id === 'hydreigonmegaa' || pokemon.species.id === 'hydregionmega')) {
 					pokemon.formeChange('hydreigonmegab');
-					pokemon.setAbility('Lernean B');
-				} else if (pokemon.hp <= pokemon.maxhp / 1.25) {
+				} else if (pokemon.hp <= pokemon.maxhp / 1.25 && pokemon.species.id === 'hydreigonmega') {
 					pokemon.formeChange('hydreigonmegaa');
-					pokemon.setAbility('Lernean A');
 				}
 		},
 		onModifyMove(move, attacker) {
 			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
 			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.name === 'Hydreigon-Mega') {
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.id === 'hydreigonmega') {
 				move.multihit = 5;
-			}
-		},
-		onModifyDamage(damage, source, target, move) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
-				return this.chainModify(0.23);
-			}
-		},
-		name: "Lernean",
-		rating: 4,
-		num: 102,
-	},
-	lerneana: {
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon' || pokemon.transformed) return;
-				if (pokemon.hp <= pokemon.maxhp / 5) {
-					pokemon.formeChange('hydreigonmegad');
-					pokemon.setAbility('Lernean D');
-				} else if (pokemon.hp <= pokemon.maxhp / 2.5) {
-					pokemon.formeChange('hydreigonmegac');
-					pokemon.setAbility('Lernean C');
-				} else if (pokemon.hp <= pokemon.maxhp / 1.667) {
-					pokemon.formeChange('hydreigonmegab');
-					pokemon.setAbility('Lernean B');
-				}
-		},
-		onModifyMove(move, attacker) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.name === 'Hydreigon-Mega') {
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.id === 'hydreigonmegaa') {
 				move.multihit = 6;
-			}
-		},
-		onModifyDamage(damage, source, target, move) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
-				return this.chainModify(0.20416667);
-			}
-		},
-		name: "Lernean A",
-		rating: 4,
-		num: 102,
-	},
-	lerneanb: {
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon' || pokemon.transformed) return;
-				if (pokemon.hp <= pokemon.maxhp / 5) {
-					pokemon.formeChange('hydreigonmegad');
-					pokemon.setAbility('Lernean D');
-				} else if (pokemon.hp <= pokemon.maxhp / 2.5) {
-					pokemon.formeChange('hydreigonmegac');
-					pokemon.setAbility('Lernean C');
-				}
-		},
-		onModifyMove(move, attacker) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.name === 'Hydreigon-Mega') {
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.id === 'hydreigonmegab') {
 				move.multihit = 7;
-			}
-		},
-		onModifyDamage(damage, source, target, move) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
-				return this.chainModify(0.18571429);
-			}
-		},
-		name: "Lernean B",
-		rating: 4,
-		num: 102,
-	},
-	lerneanc: {
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Hydreigon' || pokemon.transformed) return;
-				if (pokemon.hp <= pokemon.maxhp / 5) {
-					pokemon.formeChange('hydreigonmegad');
-					pokemon.setAbility('Lernean D');
-				}
-		},
-		onModifyMove(move, attacker) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.name === 'Hydreigon-Mega') {
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.id === 'hydreigonmegac') {
 				move.multihit = 8;
-			}
-		},
-		onModifyDamage(damage, source, target, move) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
-				return this.chainModify(0.171875);
-			}
-		},
-		name: "Lernean C",
-		rating: 4,
-		num: 102,
-	},
-	lerneand: {
-		onModifyMove(move, attacker) {
-			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
-			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.name === 'Hydreigon-Mega') {
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && attacker.species.id === 'hydreigonmegad') {
 				move.multihit = 9;
 			}
 		},
 		onModifyDamage(damage, source, target, move) {
 			if (move.category === 'Status' || move.selfdestruct || move.multihit) return;
 			if (['endeavor', 'fling', 'iceball', 'rollout'].includes(move.id)) return;
-			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.name === 'Hydreigon-Mega') {
+			if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.id === 'hydreigonmega') {
+				return this.chainModify(0.23);
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.id === 'hydreigonmegaa') {
+				return this.chainModify(0.20416667);
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.id === 'hydreigonmegab') {
+				return this.chainModify(0.18571429);
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.id === 'hydreigonmegac') {
+				return this.chainModify(0.171875);
+			} else if (!move.flags['charge'] && !move.spreadHit && !move.isZ && !move.isMax && source.species.id === 'hydreigonmegad') {
 				return this.chainModify(0.16111111);
 			}
 		},
-		name: "Lernean D",
+		name: "Lernean",
 		rating: 4,
 		num: 102,
 	},
