@@ -2,7 +2,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	bulbasaur: {
 		tier: "LC",
 	},
+	bulbasaurdelta: {
+		tier: "LC",
+	},
 	ivysaur: {
+		tier: "NFE",
+	},
+	ivysaurdelta: {
 		tier: "NFE",
 	},
 	venusaur: {
@@ -22,10 +28,22 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "AG",
 		doublesTier: "(DUber)",
 	},
+	venusaurdelta: {
+		randomDoubleBattleMoves:["LeechSeed", "Electroweb", "MysticalFire", "Protect", "AllySwitch", "HelpingHand", "DazzlingGleam", "ExpandingForce", "IcyWind", "Thunderbolt"],
+		randomDoubleBattleLevel: 82,
+		tier: "UU",
+		doublesTier: "DUU",
+	},
 	charmander: {
 		tier: "LC",
 	},
+	charmanderdelta: {
+		tier: "LC",
+	},
 	charmeleon: {
+		tier: "NFE",
+	},
+	charmeleondelta: {
 		tier: "NFE",
 	},
 	charizard: {
@@ -51,10 +69,22 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "AG",
 		doublesTier: "(DUber)",
 	},
+	charizarddelta: {
+		randomDoubleBattleMoves:["NewMoon", "Tailwind", "DragonPulse", "HeatWave", "Hex", "Icebeam", "ShadowBall", "BurningJealousy", "LunarCannon"],
+		randomDoubleBattleLevel: 82,
+		tier: "UU",
+		doublesTier: "DUU",
+	},
 	squirtle: {
 		tier: "LC",
 	},
+	squirtledelta: {
+		tier: "LC",
+	},
 	wartortle: {
+		tier: "NFE",
+	},
+	wartortledelta: {
 		tier: "NFE",
 	},
 	blastoise: {
@@ -77,6 +107,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Gigantamax",
 		tier: "AG",
 		doublesTier: "(DUber)",
+	},
+	blastoisedelta: {
+		randomDoubleBattleMoves:["NastyPlot", "Protect", "NewMoon", "AuraSphere", "DarkPulse", "FlashCannon", "LunarCannon", "ShellTrap"],
+		randomDoubleBattleLevel: 82,
+		tier: "RU",
+		doublesTier: "DUU",
 	},
 	caterpie: {
 		tier: "LC",
@@ -2186,7 +2222,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	ralts: {
 		tier: "LC",
 	},
+	raltsdelta: {
+		tier: "LC",
+	},
 	kirlia: {
+		tier: "NFE",
+	},
+	kirliadelta: {
 		tier: "NFE",
 	},
 	gardevoir: {
@@ -4304,6 +4346,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	pawniard: {
 		tier: "LC",
 	},
+	pawniarddelta: {
+		tier: "LC",
+	},
 	bisharp: {
 		randomBattleMoves: ["ironhead", "knockoff", "stealthrock", "suckerpunch", "swordsdance"],
 		randomBattleLevel: 80,
@@ -4311,6 +4356,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 84,
 		tier: "UU",
 		doublesTier: "(DUU)",
+	},
+	bisharpdelta: {
+		randomDoubleBattleMoves:["BlazeKick", "DrainPunch", "DualWingbeat", "MachPunch", "IronHead", "U-Turn", "TripleAxel", "CloseCombat"],
+		randomDoubleBattleLevel: 80,
+		tier: "UUBL",
+		doublesTier: "DUU",
 	},
 	bouffalant: {
 		randomBattleMoves: ["closecombat", "earthquake", "headcharge", "megahorn", "swordsdance"],
@@ -6497,16 +6548,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 84,
 		doublesTier: "DOU",
 	},
-	bisharpdelta: {
-		randomDoubleBattleMoves:["BlazeKick", "DrainPunch", "DualWingbeat", "MachPunch", "IronHead", "U-Turn", "TripleAxel", "CloseCombat"],
-		randomDoubleBattleLevel: 80,
-		doublesTier: "DUU",
-	},
-	blastoisedelta: {
-		randomDoubleBattleMoves:["NastyPlot", "Protect", "NewMoon", "AuraSphere", "DarkPulse", "FlashCannon", "LunarCannon", "ShellTrap"],
-		randomDoubleBattleLevel: 82,
-		doublesTier: "DUU",
-	},
 	cameruptdelta: {
 		randomDoubleBattleMoves:["BanefulBunker", "AcidArmor", "CorrosiveGas", "PoisonGas", "VenomDrench", "Flamethrower", "Hex", "Corrode", "Venoshock", "Snarl"],
 		randomDoubleBattleLevel: 83,
@@ -6515,11 +6556,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	chandeluredelta: {
 		randomDoubleBattleMoves:["Protect", "DazzlingGleam", "EarthPower", "EnergyBall", "HeatWave", "FlashCannon", "Psychic", "Moonblast", "MysticalFire"],
 		randomDoubleBattleLevel: 83,
-		doublesTier: "DUU",
-	},
-	charizarddelta: {
-		randomDoubleBattleMoves:["NewMoon", "Tailwind", "DragonPulse", "HeatWave", "Hex", "Icebeam", "ShadowBall", "BurningJealousy", "LunarCannon"],
-		randomDoubleBattleLevel: 82,
 		doublesTier: "DUU",
 	},
 	cofragigusdelta: {
@@ -6686,11 +6722,6 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleMoves:["Protect", "IronDefense", "DazzlingGleam", "DarkPulse", "VoltSwitch", "FlashCannon", "EnergyBall", "Electroweb", "ChargeBeam", "RisingVoltage"],
 		randomDoubleBattleLevel: 83,
 		doublesTier: "(DUU)",
-	},
-	venusaurdelta: {
-		randomDoubleBattleMoves:["LeechSeed", "Electroweb", "MysticalFire", "Protect", "AllySwitch", "HelpingHand", "DazzlingGleam", "ExpandingForce", "IcyWind", "Thunderbolt"],
-		randomDoubleBattleLevel: 82,
-		doublesTier: "DUU",
 	},
 	vespiqueendelta: {
 		randomDoubleBattleMoves:["IronDefense", "ShiftGear", "TarShot", "FireLash", "BodyPress", "FirstImpression", "FlameCharge", "IronHead", "RockSlide", "WildCharge"],
