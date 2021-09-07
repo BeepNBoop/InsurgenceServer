@@ -44,6 +44,21 @@ export const Formats: FormatList = [
 		banlist: ['Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag'],
 	},
 	{
+		name: "[Gen 8] Insurgence Draft Doubles",
+		threads: [
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3672010/">Doubles OU Metagame Discussion</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3658826/">Doubles OU Sample Teams</a>`,
+			`&bullet; <a href="https://www.smogon.com/forums/threads/3673519/">Doubles OU Viability Rankings</a>`,
+		],
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		maxLevel: 120,
+		defaultLevel: 120,
+		ruleset: ['Standard Doubles', 'Dynamax Clause', 'Swagger Clause',  'Achilles Clause', 'Z Move Clause', 'Draft 4 Rules', 'Overflow Stat Mod'],
+		banlist: ['DUber', 'Power Construct', 'Shadow Tag'],
+	},
+	{
 		name: "[Gen 8] Insurgence OU",
 
 		mod: 'gen8',
