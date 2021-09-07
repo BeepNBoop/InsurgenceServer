@@ -337,6 +337,7 @@ export class ModdedDex {
 			const formeNames: {[k: string]: string[]} = {
 				alola: ['a', 'alola', 'alolan'],
 				galar: ['g', 'galar', 'galarian'],
+				delta: ['d', 'delta'],
 				mega: ['m', 'mega'],
 				primal: ['p', 'primal'],
 			};
