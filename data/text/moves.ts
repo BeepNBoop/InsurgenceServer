@@ -3463,6 +3463,12 @@ export const MovesText: {[k: string]: MoveText} = {
 
 		fail: "#darkvoid",
 	},
+	magmarush: {
+		name: "Magma Rush",
+		shortDesc: "50% chance to raise the user's Speed by 1.",
+
+		fail: "#darkvoid",
+	},
 	magmastorm: {
 		name: "Magma Storm",
 		desc: "Prevents the target from switching for four or five turns (seven turns if the user is holding Grip Claw). Causes damage to the target equal to 1/8 of its maximum HP (1/6 if the user is holding Binding Band), rounded down, at the end of each turn during effect. The target can still switch out if it is holding Shed Shell or uses Baton Pass, Flip Turn, Parting Shot, Teleport, U-turn, or Volt Switch. The effect ends if either the user or the target leaves the field, or if the target uses Rapid Spin or Substitute successfully. This effect is not stackable or reset by using this or another binding move.",
@@ -4058,6 +4064,10 @@ export const MovesText: {[k: string]: MoveText} = {
 		},
 
 		move: "Nature Power turned into [MOVE]!",
+	},
+	naturesfury: {
+		name: "Nature's Fury",
+		shortDesc: "20% chance to raise SpD by 1 (not acc/eva).",
 	},
 	naturesmadness: {
 		name: "Nature's Madness",
