@@ -405,7 +405,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	blazeboost: {
 		onBeforeMove(pokemon, source, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Emolga' || pokemon.transformed) return;
 			let forme = null;
 			switch (move.type) {
 			case 'Fire':
@@ -413,11 +412,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				this.boost({spa: 1}, pokemon);
 				this.boost({spe: 1}, pokemon);
 				if (pokemon.species.name !== 'emolgadeltablaze') forme = 'Emolga-Delta-Blaze';
-				pokemon.setAbility('Flame Body');
 				break;
 			}
 			if (pokemon.isActive && forme) {
 				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			}
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.flags['contact'] && source.species.name == 'emolgadeltablaze') {
+				if (this.randomChance(3, 10)) {
+					source.trySetStatus('brn', target);
+				}
 			}
 		},
 		name: "Blaze Boost",
@@ -1195,7 +1200,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			delete this.effectData.forme;
 		},
 		onUpdate(pokemon) {
-			if (!pokemon.isActive || pokemon.baseSpecies.baseSpecies !== 'Cherrim' || pokemon.transformed) return;
+			if (!pokemon.isActive || (pokemon.baseSpecies.baseSpecies !== 'Cherrim' && pokemon.baseSpecies.baseSpecies !== 'Mawile') || pokemon.transformed) return;
 			if (!pokemon.hp) return;
 			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				if (pokemon.species.id !== 'cherrimsunshine') {
@@ -1209,14 +1214,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onAllyModifyAtkPriority: 3,
 		onAllyModifyAtk(atk, pokemon) {
-			if (this.effectData.target.baseSpecies.baseSpecies !== 'Cherrim') return;
+			if (this.effectData.target.baseSpecies.baseSpecies !== 'Cherrim' && this.effectData.target.baseSpecies.baseSpecies !== 'Mawile') return;
 			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
 		onAllyModifySpDPriority: 4,
 		onAllyModifySpD(spd, pokemon) {
-			if (this.effectData.target.baseSpecies.baseSpecies !== 'Cherrim') return;
+			if (this.effectData.target.baseSpecies.baseSpecies !== 'Cherrim' && this.effectData.target.baseSpecies.baseSpecies !== 'Mawile') return;
 			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
