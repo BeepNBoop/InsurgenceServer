@@ -56,7 +56,7 @@ export const Formats: FormatList = [
 		maxLevel: 120,
 		defaultLevel: 120,
 		ruleset: ['Standard Doubles', 'Dynamax Clause', 'Swagger Clause',  'Achilles Clause', 'Z Move Clause', 'Draft 4 Rules', 'Overflow Stat Mod'],
-		banlist: ['DUber', 'Power Construct', 'Shadow Tag'],
+		banlist: ['Power Construct', 'Shadow Tag'],
 	},
 	{
 		name: "[Gen 8] Insurgence OU",
