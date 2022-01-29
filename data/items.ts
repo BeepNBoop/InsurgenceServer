@@ -943,9 +943,13 @@ export const Items: {[itemid: string]: ItemData} = {
 			basePower: 60,
 			type: "Poison",
 		},
-		onUpdate(pokemon) {
+		onResidualOrder: 26,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			pokemon.eatItem();
+		},
+		onEat(pokemon) {
 			pokemon.trySetStatus('slp', pokemon);
-			},
 		},
 		num: 2150,
 		gen: 3,
@@ -962,7 +966,7 @@ export const Items: {[itemid: string]: ItemData} = {
 			if (
 				move.type === 'Normal' &&
 				(!target.volatiles['substitute'] || move.flags['authentic'] || (move.infiltrates && this.gen >= 6))
-			); {
+			) {
 				if (target.eatItem()) {
 					this.debug('-50% reduction');
 					this.add('-enditem', target, this.effect, '[weaken]');
@@ -970,7 +974,7 @@ export const Items: {[itemid: string]: ItemData} = {
 				}
 			}
 		},
-		onEat(); { },
+		onEat() { },
 		num: 200,
 		gen: 4,
 	},
@@ -3159,7 +3163,7 @@ export const Items: {[itemid: string]: ItemData} = {
 				if (target.eatItem()) {
 					this.debug('0% augmentation');
 					this.add('-enditem', target, this.effect, '[strengthen]');
-					return this.chainModify(2.0));
+					return this.chainModify(2.0);
 				}
 			}
 		},
@@ -3931,15 +3935,17 @@ export const Items: {[itemid: string]: ItemData} = {
 			basePower: 60,
 			type: "Poison",
 		},
-		onSourceTryPrimaryHit(target, source, move) {
-			if (move.pp > 0) {
-				pokemon.eatItem();
-			}
+		onPrepareHit(target, source, move) {
+				source.eatItem();	
 		},
 		onEat(pokemon) {
-			moveSlot.pp -=10;
-			if (moveSlot.pp < 0) moveSlot.pp = 0;
-			this.add('-activate', pokemon, 'item: Rotten Leppa Berry', moveSlot.move, '[consumed]');
+			let move: Move | ActiveMove | null = pokemon.lastMove;
+			if (!move || move.isZ) return false;
+			if (move.isMax && move.baseMove) move = this.dex.getMove(move.baseMove);
+
+			const ppDeducted = pokemon.deductPP(move.id, 4);
+			if (!ppDeducted) return false;
+			this.add("-activate", pokemon, 'item: Rotten Leppa Berry', ppDeducted);
 		},
 		num: 2154,
 		gen: 3,
@@ -4130,11 +4136,11 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Poison",
 		},
 		onUpdate(pokemon) {
-			pokemon.earItem();
+			pokemon.eatItem();
 		},
-		onEat(pokemon) {
-			pokemon.status();
-		},
+		//onEat(pokemon) {
+		//	pokemon.status();
+		//},
 		num: 2157,
 		gen: 3,
 	},
@@ -4363,8 +4369,8 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 688,
 		gen: 6,
 	},
-	marangaberry: {
-		name: "Maranga Berry",
+	rottenmarangaberry: {
+		name: "Rotten Maranga Berry",
 		spritenum: 597,
 		isBerry: true,
 		naturalGift: {
@@ -5195,7 +5201,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onUpdate(pokemon) {
 			pokemon.eatItem();
 		},
-		onEat(){
+		onEat(pokemon) {
 			pokemon.trySetStatus('psn', pokemon);
 		 },
 		num: 2151,
