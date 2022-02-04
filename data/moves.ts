@@ -58,7 +58,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		sideCondition: 'stealthrock',
 		condition: {
 			// this is a side condition
-			onSideStart(side) {
+			onStart(side, source) {
+				source.side.foe.addSideCondition('stealthrock');
 				this.add('-sidestart', side, 'move: Stealth Rock');
 			},
 			onSwitchIn(pokemon) {
@@ -83,14 +84,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {protect: 1, mirror: 1, heal: 1},
 		self: {
 			onHit(source) {
-				for (const side of source.side.foeSidesWithConditions()) {
-					side.addSideCondition('Shell Splinters');
-				}
+				source.side.foe.addSideCondition('Shell Splinters');
 			},
 		},
 		condition: {
 			duration: 3,
-			onSideStart(targetSide) {
+			onStart(targetSide) {
 				this.add('-sidestart', targetSide, 'Shell Splinters');
 			},
 			onResidualOrder: 5,
@@ -98,16 +97,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onResidual(target) {
 				this.damage(target.baseMaxhp / 8, target);
 			},
-			onSideResidualOrder: 26,
-			onSideResidualSubOrder: 11,
-			onSideEnd(targetSide) {
+			onEnd(targetSide) {
 				this.add('-sideend', targetSide, 'Shell Splinters');
 			},
 		},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
-		type: "Grass",
+		type: "Dark",
 		contestType: "Clever",
 	},
 	windboltstorm: {
@@ -338,6 +335,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1, heal: 1},
+		volatileStatus: 'powershift',
 		condition: {
 			onStart(pokemon) {
 				this.add('-start', pokemon, 'Power Shift');
@@ -376,7 +374,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		secondary: null,
-		target: "normal",
+		target: "self",
 		type: "Normal",
 		contestType: "Clever",
 	},
