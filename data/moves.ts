@@ -46,6 +46,544 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Cool",
 	},
+	stoneaxe: {
+		num: 827,
+		accuracy: 90,
+		basePower: 60,
+		category: "Physical",
+		name: "Stone Axe",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		sideCondition: 'stealthrock',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Stealth Rock');
+			},
+			onSwitchIn(pokemon) {
+				if (pokemon.hasItem('heavydutyboots')) return;
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')), -6, 6);
+				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Rock",
+		contestType: "Clever",
+	},
+	ceaselessedge: {
+		num: 828,
+		accuracy: 90,
+		basePower: 65,
+		category: "Physical",
+		name: "Ceaseless Edge",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		self: {
+			onHit(source) {
+				for (const side of source.side.foeSidesWithConditions()) {
+					side.addSideCondition('Shell Splinters');
+				}
+			},
+		},
+		condition: {
+			duration: 3,
+			onSideStart(targetSide) {
+				this.add('-sidestart', targetSide, 'Shell Splinters');
+			},
+			onResidualOrder: 5,
+			onResidualSubOrder: 1,
+			onResidual(target) {
+				this.damage(target.baseMaxhp / 8, target);
+			},
+			onSideResidualOrder: 26,
+			onSideResidualSubOrder: 11,
+			onSideEnd(targetSide) {
+				this.add('-sideend', targetSide, 'Shell Splinters');
+			},
+		},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Clever",
+	},
+	windboltstorm: {
+		num: 829,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Windbolt Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
+		target: "normal",
+		type: "electric",
+		contestType: "Clever",
+	},
+	springtidestorm: {
+		num: 830,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Springtide Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		onTryMove(attacker, defender, move) {
+			if (attacker.species.name === 'Enamorus-Incarnate') {
+			const result = this.random(10);
+				if (result <= 2) {
+					this.boost ({atk: 2, spa: 2, def: 2, spd:2, spe: 2}, attacker, attacker, move);
+				} else {
+					return;
+				}
+			} else {
+			const result = this.random(10);
+				if (result <= 2) {
+					this.boost ({def: -2, spd: -2}, defender, defender, move);
+				} else {
+					return;
+				}
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Clever",
+	},
+	bleakwindstorm: {
+		num: 831,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Bleakwind Storm",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: {
+			chance: 30,
+			status: 'frz',
+		},
+		target: "normal",
+		type: "Special",
+		contestType: "Clever",
+	},
+	sandsearstorm: {
+		num: 832,
+		accuracy: 80,
+		basePower: 95,
+		category: "Special",
+		name: "Sandsear Storm",
+		pp: 25,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Ground",
+		contestType: "Clever",
+	},
+	triplearrows: {
+		num: 833,
+		accuracy: 100,
+		basePower: 50,
+		category: "Physical",
+		name: "Triple Arrows",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},	
+		volatileStatus: 'focusenergy',
+		condition: {
+			onStart(target, source, effect) {
+				if (effect?.id === 'zpower') {
+					this.add('-start', target, 'move: Triple Arrows', '[zeffect]');
+				} else if (effect && (['imposter', 'psychup', 'transform'].includes(effect.id))) {
+					this.add('-start', target, 'move: Triple Arrows', '[silent]');
+				} else {
+					this.add('-start', target, 'move: Triple Arrows');
+				}
+			},
+			onModifyCritRatio(critRatio) {
+				return critRatio + 2;
+			},
+		},
+		secondary: {
+			chance: 100,
+			boosts: {
+				def: -1,
+			},
+		},
+		target: "normal",
+		type: "Fighting",
+		contestType: "Clever",
+	},
+	ragingfury: {
+		num: 834,
+		accuracy: 85,
+		basePower: 90,
+		category: "Physical",
+		name: "Raging Fury",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		self: {
+			volatileStatus: 'lockedmove',
+		},
+		onAfterMove(pokemon) {
+			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
+				pokemon.removeVolatile('lockedmove');
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fire",
+		contestType: "Clever",
+	},
+	bittermalice: {
+		num: 835,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Bitter Malice",
+		pp: 25,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (target.status) {
+				return this.chainModify(2);
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'frz',
+		},
+		target: "normal",
+		type: "Ghost",
+		contestType: "Clever",
+	},
+	infernalparade: {
+		num: 836,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Infernal Parade",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (target.status) {
+				return this.chainModify(2);
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'brn',
+		},
+		target: "normal",
+		type: "Ghost",
+		contestType: "Clever",
+	},
+	chloroblast: {
+		num: 837,
+		accuracy: 95,
+		basePower: 120,
+		category: "Special",
+		name: "Chloroblast",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		recoil: [1, 2],
+		self: {
+			boosts: {
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		contestType: "Clever",
+	},
+	mountaingale: {
+		num: 838,
+		accuracy: 95,
+		basePower: 100,
+		category: "Physical",
+		name: "Mountain Gale",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Ice",
+		contestType: "Clever",
+	},
+	powershift: {
+		num: 839,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Power Shift",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Power Shift');
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onCopy(pokemon) {
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onEnd(pokemon) {
+				this.add('-end', pokemon, 'Power Shift');
+				const newatk = pokemon.storedStats.def;
+				const newdef = pokemon.storedStats.atk;
+				const newspa = pokemon.storedStats.spd;
+				const newspd = pokemon.storedStats.spa;
+				pokemon.storedStats.atk = newatk;
+				pokemon.storedStats.def = newdef;
+				pokemon.storedStats.spa = newspa;
+				pokemon.storedStats.spd = newspd;
+			},
+			onRestart(pokemon) {
+				pokemon.removeVolatile('Power Shift');
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Clever",
+	},
+	barbbarage: {
+		num: 840,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Barb Barage",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (target.status) {
+				return this.chainModify(2);
+			}
+		},
+		secondary: {
+			chance: 30,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Clever",
+	},
+	psyshieldbash: {
+		num: 841,
+		accuracy: 90,
+		basePower: 70,
+		category: "Physical",
+		name: "Psyshield Bash",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: {
+			chance: 30,
+			self: {
+				boosts: {
+					def: 1,
+					spd: 1,
+				},
+			},
+		},
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	shelter: {
+		num: 842,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Shelter",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		self: {
+			boosts: {
+				def: 1,
+				spd: 1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Steel",
+		contestType: "Clever",
+	},
+	wavecrash: {
+		num: 843,
+		accuracy: 100,
+		basePower: 75,
+		category: "Physical",
+		name: "Wave Crash",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		recoil: [1, 3],
+		self: {
+			boosts: {
+				spe: 1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Water",
+		contestType: "Clever",
+	},
+	direclaw: {
+		num: 844,
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Dire Claw",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: {
+			chance: 50,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus('brn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else {
+					target.trySetStatus('slp', source);
+				}
+			},
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Clever",
+	},
+	esperwing: {
+		num: 845,
+		accuracy: 90,
+		basePower: 75,
+		category: "Special",
+		name: "Esper Wing",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		critRatio: 2,
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	headlongrush: {
+		num: 846,
+		accuracy: 100,
+		basePower: 100,
+		category: "Physical",
+		name: "Headlong Rush",
+		pp: 5,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Clever",
+	},
+	musticalpower: {
+		num: 847,
+		accuracy: 90,
+		basePower: 70,
+		category: "Special",
+		name: "Mystical Power",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	takeheart: {
+		num: 848,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Take Heart",
+		pp: 25,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
+	victorydance: {
+		num: 849,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Victory Dance",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, heal: 1},
+		volatileStatus: 'victorydance',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Victory Dance');
+			},
+			onBasePower(basePower, pokemon, target) {
+				return this.chainModify(2);
+			},
+		},
+		self: {
+			boosts: {
+				atk: 1,
+				def: 1,
+				spa: 1,
+				spd: 1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Psychic",
+		contestType: "Clever",
+	},
 	absorb: {
 		num: 71,
 		accuracy: 100,
