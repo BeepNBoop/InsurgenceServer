@@ -16308,7 +16308,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const targetItem = target.takeItem(source);
 			const item = target.getItem();
 			const newItem = ('Rotten-' + targetItem);
-			if (source.hp && item.isBerry && target.takeItem(source)) {
+			if (target.hp && item.isBerry) {
 				target.setItem('Rotten-' + targetItem);
 				this.add('-item', target, newItem, '[from] move: Rot');
 			}
