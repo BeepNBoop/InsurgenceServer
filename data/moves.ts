@@ -54,7 +54,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Stone Axe",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		sideCondition: 'stealthrock',
 		condition: {
 			// this is a side condition
@@ -81,7 +81,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Ceaseless Edge",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		self: {
 			onHit(source) {
 				source.side.foe.addSideCondition('Shell Splinters');
@@ -115,7 +115,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Windbolt Storm",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: 'par',
@@ -132,7 +132,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Springtide Storm",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.species.name === 'Enamorus-Incarnate') {
 			const result = this.random(10);
@@ -163,7 +163,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Bleakwind Storm",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: 'frz',
@@ -180,7 +180,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Sandsear Storm",
 		pp: 25,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			status: 'brn',
@@ -197,7 +197,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Triple Arrows",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},	
+		flags: {protect: 1, mirror: 1},	
 		volatileStatus: 'focusenergy',
 		condition: {
 			onStart(target, source, effect) {
@@ -231,7 +231,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Raging Fury",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		self: {
 			volatileStatus: 'lockedmove',
 		},
@@ -253,7 +253,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Bitter Malice",
 		pp: 25,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon, target) {
 			if (target.status) {
 				return this.chainModify(2);
@@ -275,7 +275,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Infernal Parade",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon, target) {
 			if (target.status) {
 				return this.chainModify(2);
@@ -297,7 +297,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Chloroblast",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		recoil: [1, 2],
 		self: {
 			boosts: {
@@ -317,7 +317,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Mountain Gale",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			volatileStatus: 'flinch',
@@ -334,7 +334,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Power Shift",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: 'powershift',
 		condition: {
 			onStart(pokemon) {
@@ -386,7 +386,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Barb Barage",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		onBasePower(basePower, pokemon, target) {
 			if (target.status) {
 				return this.chainModify(2);
@@ -408,7 +408,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Psyshield Bash",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 30,
 			self: {
@@ -430,7 +430,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Shelter",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				def: 1,
@@ -450,7 +450,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Wave Crash",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		recoil: [1, 3],
 		self: {
 			boosts: {
@@ -470,7 +470,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Dire Claw",
 		pp: 15,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: {
 			chance: 50,
 			onHit(target, source) {
@@ -496,7 +496,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Esper Wing",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -511,7 +511,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Headlong Rush",
 		pp: 5,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		self: {
 			boosts: {
 				def: -1,
@@ -531,7 +531,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Mystical Power",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -545,7 +545,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Take Heart",
 		pp: 25,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -559,7 +559,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Victory Dance",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, heal: 1},
+		flags: {protect: 1, mirror: 1},
 		volatileStatus: 'victorydance',
 		condition: {
 			onStart(pokemon) {
@@ -16294,6 +16294,30 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Flying",
 		zMove: {effect: 'clearnegativeboost'},
 		contestType: "Clever",
+	},
+	rot: {
+		num: 850,
+		accuracy: 90,
+		basePower: 80,
+		category: "Physical",
+		name: "Rot",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onHit(target, source) {
+			const targetItem = target.takeItem(source);
+			const item = target.getItem();
+			const newItem = ('Rotten-' + targetItem);
+			if (source.hp && item.isBerry && target.takeItem(source)) {
+				target.setItem('Rotten-' + targetItem);
+				this.add('-item', target, newItem, '[from] move: Rot');
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Poison",
+		zMove: {boost: {atk: 1}},
+		contestType: "Tough",
 	},
 	rototiller: {
 		num: 563,
