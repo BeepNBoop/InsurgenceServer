@@ -16310,7 +16310,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (target.hp && item.isBerry) {
 				target.setItem('Rotten ' + item);
 				this.add('-item', target, newItem, '[from] move: Rot');
-			}
+			} else if (target.hasItem('leftovers' || 'berryjuice'))
+				target.setItem('blacksludge');
+				this.add('-item', target, 'Black Sludge', '[from] move: Rot');
 		},
 		secondary: null,
 		target: "normal",
