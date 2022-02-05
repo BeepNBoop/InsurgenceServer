@@ -16305,11 +16305,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onHit(target, source) {
-			const targetItem = target.takeItem(source);
 			const item = target.getItem();
-			const newItem = ('Rotten-' + targetItem);
+			const newItem = ('Rotten ' + item);
 			if (target.hp && item.isBerry) {
-				target.setItem('Rotten-' + targetItem);
+				target.setItem('Rotten ' + item);
 				this.add('-item', target, newItem, '[from] move: Rot');
 			}
 		},
