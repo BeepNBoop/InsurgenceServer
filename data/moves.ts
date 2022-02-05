@@ -10393,23 +10393,23 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 15,
 		priority: 0,
 		flags: {},
+		sideCondition: 'jetstream',
 		condition: {
 			duration: 1,
-			onStart(target, source, effect) {
-				if ((effect === null || effect === void 0 ? void 0 : effect.id) === 'zpower') {
-					this.add('-start', target, 'move: Jet Stream', '[zeffect]');
-				} else if (effect && (['imposter', 'psychup', 'transform'].includes(effect.id))) {
-					this.add('-start', target, 'move: Jet Stream', '[silent]');
-				} else {
-					this.add('-start', target, 'move: Jet Stream');
-				}
+			onStart(side) {
+				this.add('-sidestart', side, 'move: Jet Steam');
+			},
+			onResidualOrder: 21,
+			onResidualSubOrder: 1,
+			onEnd(side) {
+				this.add('-sideend', side, 'move: Jet Stream');
 			},
 			onModifyPriority(priority, pokemon) {
-				return this.chainModify(1);
+				return priority + 1;
 			}
 		},
 		secondary: null,
-		target: "normal",
+		target: "allySide",
 		type: "Dragon"
 	},
 	judgment: {
@@ -14071,6 +14071,23 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
+		contestType: "Cool",
+	},
+	piercingslash: {
+		num: 851,
+		accuracy: 100,
+		basePower: 85,
+		category: "Physical",
+		defensiveCategory: "Special",
+		name: "Piercing Slash",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Rock",
+		zMove: {basePower: 140},
+		maxMove: {basePower: 130},
 		contestType: "Cool",
 	},
 	pikapapow: {
