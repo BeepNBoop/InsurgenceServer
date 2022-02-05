@@ -10395,7 +10395,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {},
 		sideCondition: 'jetstream',
 		condition: {
-			duration: 1,
+			duration: 2,
 			onStart(side) {
 				this.add('-sidestart', side, 'move: Jet Steam');
 			},
