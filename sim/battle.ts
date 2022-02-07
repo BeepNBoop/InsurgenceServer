@@ -2254,6 +2254,12 @@ export class Battle {
 			}
 		}
 
+		if (pokemon.status === 'fro' && move.category === 'Special' && !pokemon.hasAbility('guts')) {
+			if (this.gen < 6 || move.id !== 'facade') {
+				baseDamage = this.modify(baseDamage, 0.5);
+			}
+		}
+
 		// Generation 5, but nothing later, sets damage to 1 before the final damage modifiers
 		if (this.gen === 5 && !baseDamage) baseDamage = 1;
 

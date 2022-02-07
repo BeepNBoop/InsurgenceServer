@@ -173,6 +173,7 @@ export interface MoveData extends EffectData, MoveEventMethods, HitEffect {
 	// -----------
 	ohko?: boolean | string;
 	thawsTarget?: boolean;
+	wakesTarget?: boolean;
 	heal?: number[] | null;
 	forceSwitch?: boolean;
 	selfSwitch?: string | boolean;
