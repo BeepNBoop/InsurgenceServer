@@ -107,12 +107,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dark",
 		contestType: "Clever",
 	},
-	windboltstorm: {
+	wildboltstorm: {
 		num: 829,
 		accuracy: 80,
 		basePower: 95,
 		category: "Special",
-		name: "Windbolt Storm",
+		name: "Wildbolt Storm",
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
@@ -298,7 +298,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 5,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		recoil: [1, 2],
+		mindBlownRecoil: true,
+		onAfterMove(pokemon, target, move) {
+			if (move.mindBlownRecoil && !move.multihit) {
+				this.damage(Math.round(pokemon.maxhp / 2), pokemon, pokemon, this.dex.getEffect('Chloroblast'), true);
+			}
+		},
 		self: {
 			boosts: {
 				spd: -1,
@@ -438,7 +443,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		secondary: null,
-		target: "normal",
+		target: "self",
 		type: "Steel",
 		contestType: "Clever",
 	},
@@ -451,6 +456,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onBasePower(basePower, pokemon, target) {
+			if (['newmoon'].includes(pokemon.effectiveWeather())) {
+				this.debug('strengthened by weather');
+				return this.chainModify(1.5);
+			}
+		},
 		recoil: [1, 3],
 		self: {
 			boosts: {
@@ -476,9 +487,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onHit(target, source) {
 				const result = this.random(3);
 				if (result === 0) {
-					target.trySetStatus('brn', source);
-				} else if (result === 1) {
 					target.trySetStatus('par', source);
+				} else if (result === 1) {
+					target.trySetStatus('psn', source);
 				} else {
 					target.trySetStatus('slp', source);
 				}
@@ -523,7 +534,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ground",
 		contestType: "Clever",
 	},
-	musticalpower: {
+	mysticalpower: {
 		num: 847,
 		accuracy: 90,
 		basePower: 70,
@@ -532,6 +543,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onHit(pokemon) {
+			const atk = pokemon.getStat('atk', false, true);
+			const spa = pokemon.getStat('spa', false, true);
+			const def = pokemon.getStat('def', false, true);
+			const spd = pokemon.getStat('spd', false, true);
+			const avgatk = Math.floor(Math.floor(atk + spa) / 2);
+			const avgdef = Math.floor(Math.floor(def + spd) / 2);
+			if (avgatk > avgdef || (avgatk === avgdef && this.random(2) === 0)) {
+				this.boost({atk: 2, spa: 2});
+			} else this.boost({def: 2, spd: 2});
+		},
 		secondary: null,
 		target: "normal",
 		type: "Psychic",
@@ -543,11 +565,24 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Status",
 		name: "Take Heart",
-		pp: 25,
+		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1},
+		flags: {mirror: 1},
+		volatileStatus: 'takeheart',
+		condition: {
+			duration: 4,
+			onStart(pokemon) {
+				this.boost({def: 2, spd: 2}, pokemon);
+			},
+			onEnd(pokemon) {
+				this.boost({def: -2, spd: -2});
+			},
+		},
+		onHit(pokemon) {
+			return pokemon.cureStatus();
+		},
 		secondary: null,
-		target: "normal",
+		target: "self",
 		type: "Psychic",
 		contestType: "Clever",
 	},
@@ -559,7 +594,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Victory Dance",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1},
+		flags: {mirror: 1},
 		volatileStatus: 'victorydance',
 		condition: {
 			onStart(pokemon) {
@@ -578,8 +613,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 		secondary: null,
-		target: "normal",
-		type: "Psychic",
+		target: "self",
+		type: "Fighting",
 		contestType: "Clever",
 	},
 	absorb: {
