@@ -72,4 +72,16 @@ export const Items: {[k: string]: ModdedItemData} = {
 			pokemon.trySetStatus('drz', pokemon);
 		},
 	},
+	snowball: {
+		inherit: true,
+		fling: {
+			basePower: 30,
+			status: 'fro',
+		},
+		onResidualOrder: 26,
+		onResidualSubOrder: 2,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('fro', pokemon);
+		},
+	}
 };
