@@ -3871,6 +3871,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "(PU)",
 		doublesTier: "(DUU)",
 	},
+	basculinwhitestriped: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
 	sandile: {
 		tier: "LC",
 	},
@@ -6802,6 +6806,102 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleMoves:["protect", "JetStream", "SwordsDance", "Acrobatics", "Accelerock", "Explosion", "StoneEdge", "Ironhead", "FirePunch", "BreakingSwipe"],
 		randomDoubleBattleLevel: 87,
 		doublesTier: "NFE",
+	},
+	growlithehisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	arcaninehisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	voltorbhisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	electrodehisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	typhlosionhisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	sneaslehisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	samorotthisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	lilliganthisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	zoruahisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	zoroarkhisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	braviaryhisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	sliggoohisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	goodrahisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	avalugghisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	decidueyehisui: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	wyrdeer: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	kleavor: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	ursaluna: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	basculegion: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	basculegionf: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	sneasler: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	overqwill: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	enamorus: {
+		isNonstandard: "Future",
+		tier: "Illegal",
+	},
+	enamorustherian: {
+		isNonstandard: "Future",
+		tier: "Illegal",
 	},
 	missingno: {
 		isNonstandard: "Custom",
