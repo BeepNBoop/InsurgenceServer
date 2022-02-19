@@ -4,11 +4,11 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.id === 'frostorb') {
-				this.add('-status', target, 'frz', '[from] item: Frost Orb');
+				this.add('-status', target, 'fro', '[from] item: Frost Orb');
 			} else if (sourceEffect && sourceEffect.effectType === 'Ability') {
-				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
+				this.add('-status', target, 'fro', '[from] ability: ' + sourceEffect.name, '[of] ' + source);
 			} else {
-				this.add('-status', target, 'frz');
+				this.add('-status', target, 'fro');
 			}
 			if (target.species.name === 'Shaymin-Sky' && target.baseSpecies.baseSpecies === 'Shaymin') {
 				target.formeChange('Shaymin', this.effect, true);
@@ -21,7 +21,7 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 		},
 		onModifyMove(move, pokemon) {
 			if (move.flags['defrost']) {
-				this.add('-curestatus', pokemon, 'frz', '[from] move: ' + move);
+				this.add('-curestatus', pokemon, 'fro', '[from] move: ' + move);
 				pokemon.setStatus('');
 			}
 		},

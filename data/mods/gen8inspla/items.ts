@@ -38,6 +38,23 @@ export const Items: {[k: string]: ModdedItemData} = {
 			}
 		},
 	},
+	rottenlumberry: {
+		inherit: true,
+		onEat(pokemon) {
+			const result = this.random(5);
+				if (result === 0) {
+					pokemon.trySetStatus('brn', pokemon);
+				} else if (result === 1) {
+					pokemon.trySetStatus('par', pokemon);
+				} else if (result === 2) {
+					pokemon.trySetStatus('psn', pokemon);
+				} else if (result === 3) {
+					pokemon.trySetStatus('fro', pokemon);
+				} else if (result === 4) {
+					pokemon.trySetStatus('drz', pokemon);
+				}
+		},
+	},
 	mintberry: {
 		inherit: true,
 		name: "Mint Berry",
