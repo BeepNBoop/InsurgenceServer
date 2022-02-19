@@ -23,10 +23,10 @@ export const Formats: FormatList = [
 	///////////////////////////////////////////////////////////////////
 
 	{
-		section: "Insurgence Singles",
+		section: "Insurgence Legends",
 	},
 	{
-		name: "[Gen 8] Insurgence Legends Random Battle",
+		name: "Insurgence Legends Random Battle",
 		desc: `Randomized teams of level-balanced Pok&eacute;mon with sets that are generated to be competitively viable.`,
 
 		mod: 'gen8inspla',
@@ -35,7 +35,7 @@ export const Formats: FormatList = [
 		ruleset: ['Dynamax Clause', 'PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod', 'Overflow Stat Mod'],
 	},
 	{
-		name: "[Gen 8] Insurgence Legends Draft",
+		name: "Insurgence Legends Draft",
 
 		mod: 'gen8inspla',
 		maxLevel: 120,
@@ -44,7 +44,7 @@ export const Formats: FormatList = [
 		banlist: ['Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag'],
 	},
 	{
-		name: "[Gen 8] Insurgence Legends Draft Doubles",
+		name: "Insurgence Legends Draft Doubles",
 		threads: [
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3672010/">Doubles OU Metagame Discussion</a>`,
 			`&bullet; <a href="https://www.smogon.com/forums/threads/3658826/">Doubles OU Sample Teams</a>`,
@@ -59,7 +59,7 @@ export const Formats: FormatList = [
 		banlist: ['Power Construct', 'Shadow Tag'],
 	},
 	{
-		name: "[Gen 8] Insurgence Legends OU",
+		name: "Insurgence Legends OU",
 
 		mod: 'gen8inspla',
 		maxLevel: 120,
@@ -68,7 +68,7 @@ export const Formats: FormatList = [
 		banlist: ['Uber', 'Arena Trap', 'Moody', 'Power Construct', 'Shadow Tag', 'Baton Pass'],
 	},
 	{
-		name: "[Gen 8] Insurgence Legends UU",
+		name: "Insurgence Legends UU",
 
 		mod: 'gen8inspla',
 		maxLevel: 120,
@@ -81,7 +81,7 @@ export const Formats: FormatList = [
 	///////////////////////////////////////////////////////////////////
 
 	{
-		section: "Insurgence Singles",
+		section: "Insurgence",
 	},
 	{
 		name: "[Gen 8] Insurgence Random Battle",

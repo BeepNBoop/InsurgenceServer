@@ -152,6 +152,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2162,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	airballoon: {
 		name: "Air Balloon",
@@ -270,6 +271,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2205,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	armorfossil: {
 		name: "Armor Fossil",
@@ -311,9 +313,14 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Poison",
 		},
 		onUpdate(pokemon) {
-			pokemon.trySetStatus('frz', pokemon)},
+				pokemon.eatItem();
+		},
+		onEat(pokemon) {
+			pokemon.trySetStatus('frz', pokemon);
+		},
 		num: 2153,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	assaultvest: {
 		name: "Assault Vest",
@@ -395,6 +402,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2199,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	banettite: {
 		name: "Banettite",
@@ -858,6 +866,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2195,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	chatotite: {
 		name: "Chatotite",
@@ -902,10 +911,14 @@ export const Items: {[itemid: string]: ItemData} = {
 			type: "Fire",
 		},
 		onUpdate(pokemon) {
+				pokemon.eatItem();
+		},
+		onEat(pokemon) {
 			pokemon.trySetStatus('par', pokemon);
-			},
+		},
 		num: 2149,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	cherishball: {
 		name: "Cherish Ball",
@@ -943,16 +956,15 @@ export const Items: {[itemid: string]: ItemData} = {
 			basePower: 60,
 			type: "Poison",
 		},
-		onResidualOrder: 26,
-		onResidualSubOrder: 2,
-		onResidual(pokemon) {
-			pokemon.eatItem();
+		onUpdate(pokemon) {
+				pokemon.eatItem();
 		},
 		onEat(pokemon) {
 			pokemon.trySetStatus('slp', pokemon);
 		},
 		num: 2150,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	chilanberry: {
 		name: "Chilan Berry",
@@ -1001,6 +1013,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2200,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	chilldrive: {
 		name: "Chill Drive",
@@ -1144,6 +1157,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2189,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	clawfossil: {
 		name: "Claw Fossil",
@@ -1211,6 +1225,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2192,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	colburberry: {
 		name: "Colbur Berry",
@@ -1259,6 +1274,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2198,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	cornnberry: {
 		name: "Cornn Berry",
@@ -1411,6 +1427,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2210,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	damprock: {
 		name: "Damp Rock",
@@ -2277,6 +2294,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2208,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	etigirafarigite: {
 		name: "Etigirafarigite",
@@ -2477,6 +2495,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 159,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	firegem: {
 		name: "Fire Gem",
@@ -2836,6 +2855,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2202,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	garchompite: {
 		name: "Garchompite",
@@ -3170,6 +3190,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2197,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	hardstone: {
 		name: "Hard Stone",
@@ -3342,6 +3363,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2163,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	icegem: {
 		name: "Ice Gem",
@@ -3531,6 +3553,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2211,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	jawfossil: {
 		name: "Jaw Fossil",
@@ -3602,6 +3625,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2196,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	kebiaberry: {
 		name: "Kebia Berry",
@@ -3650,6 +3674,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2190,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	keeberry: {
 		name: "Kee Berry",
@@ -3690,6 +3715,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2687,
 		gen: 6,
+		isNonstandard: "Unobtainable",
 	},
 	kelpsyberry: {
 		name: "Kelpsy Berry",
@@ -3809,6 +3835,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2206,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	latiasite: {
 		name: "Latiasite",
@@ -3949,6 +3976,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2154,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	levelball: {
 		name: "Level Ball",
@@ -3994,6 +4022,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2201,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	lifeorb: {
 		name: "Life Orb",
@@ -4138,11 +4167,23 @@ export const Items: {[itemid: string]: ItemData} = {
 		onUpdate(pokemon) {
 			pokemon.eatItem();
 		},
-		//onEat(pokemon) {
-		//	pokemon.status();
-		//},
+		onEat(pokemon) {
+			const result = this.random(5);
+				if (result === 0) {
+					pokemon.trySetStatus('brn', pokemon);
+				} else if (result === 1) {
+					pokemon.trySetStatus('par', pokemon);
+				} else if (result === 2) {
+					pokemon.trySetStatus('psn', pokemon);
+				} else if (result === 3) {
+					pokemon.trySetStatus('frz', pokemon);
+				} else if (result === 4) {
+					pokemon.trySetStatus('slp', pokemon);
+				}
+		},
 		num: 2157,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	luminousmoss: {
 		name: "Luminous Moss",
@@ -4312,6 +4353,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2161,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	magostberry: {
 		name: "Magost Berry",
@@ -4387,6 +4429,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2688,
 		gen: 6,
+		isNonstandard: "Unobtainable",
 	},
 	marowite: {
 		name: "Marowite",
@@ -4705,6 +4748,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2209,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	milotite: {
 		name: "Milotite",
@@ -4974,6 +5018,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2184,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	oddincense: {
 		name: "Odd Incense",
@@ -5043,6 +5088,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2155,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	ovalstone: {
 		name: "Oval Stone",
@@ -5120,6 +5166,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2185,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	payapaberry: {
 		name: "Payapa Berry",
@@ -5168,6 +5215,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2193,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	pechaberry: {
 		name: "Pecha Berry",
@@ -5206,6 +5254,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		 },
 		num: 2151,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	persimberry: {
 		name: "Persim Berry",
@@ -5242,6 +5291,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2156,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	petayaberry: {
 		name: "Petaya Berry",
@@ -5280,6 +5330,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2204,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	pidgeotite: {
 		name: "Pidgeotite",
@@ -5438,9 +5489,9 @@ export const Items: {[itemid: string]: ItemData} = {
 	politoedite: {
 		name: "Politoedite",
 		spritenum: 576,
-		megaStone: "Politoad-Mega",
-		megaEvolves: "Politoad",
-		itemUser: ["Politoad"],
+		megaStone: "Politoed-Mega",
+		megaEvolves: "Politoed",
+		itemUser: ["Politoed"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
@@ -5828,6 +5879,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2152,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	razorclaw: {
 		name: "Razor Claw",
@@ -6005,6 +6057,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2187,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	ringtarget: {
 		name: "Ring Target",
@@ -6176,6 +6229,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2686,
 		gen: 6,
+		isNonstandard: "Unobtainable",
 	},
 	rowapberry: {
 		name: "Rowap Berry",
@@ -6214,6 +6268,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2212,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	rustedshield: {
 		name: "Rusted Shield",
@@ -6337,6 +6392,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2203,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	salamencite: {
 		name: "Salamencite",
@@ -6557,6 +6613,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2191,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	silkscarf: {
 		name: "Silk Scarf",
@@ -6631,6 +6688,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 158,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	skullfossil: {
 		name: "Skull Fossil",
@@ -6909,6 +6967,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2207,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	starsweet: {
 		name: "Star Sweet",
@@ -8340,6 +8399,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2186,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	watergem: {
 		name: "Water Gem",
@@ -8563,6 +8623,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 2160,
 		gen: 3,
+		isNonstandard: "Unobtainable",
 	},
 	wiseglasses: {
 		name: "Wise Glasses",
@@ -8626,6 +8687,7 @@ export const Items: {[itemid: string]: ItemData} = {
 		onEat() { },
 		num: 2188,
 		gen: 4,
+		isNonstandard: "Unobtainable",
 	},
 	zapplate: {
 		name: "Zap Plate",
