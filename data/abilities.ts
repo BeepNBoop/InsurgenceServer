@@ -3294,7 +3294,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaxima: {
 		onBeforeMovePriority: 106,
-		onAnyBeforeMove(source, target, move) {
+		onBeforeMove(source, target, move) {
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
