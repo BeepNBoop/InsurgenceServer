@@ -3335,6 +3335,47 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
+		onTryHit(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
+			let forme = null;
+			switch (move.type) {
+			case 'Water':
+				if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+				source.setAbility('Protean Maxima V');
+				break;
+			case 'Fire':
+				if (source.species.name !== 'flareon') forme = 'Flareon';
+				source.setAbility('Protean Maxima F');
+				break;
+			case 'Electric':
+				if (source.species.name !== 'jolteon') forme = 'Jolteon';
+				source.setAbility('Protean Maxima J');
+				break;
+			case 'Psychic':
+				if (source.species.name !== 'espeon') forme = 'Espeon';
+				source.setAbility('Protean Maxima E');
+				break;
+			case 'Dark':
+				if (source.species.name !== 'umbreon') forme = 'Umbreon';
+				source.setAbility('Protean Maxima U');
+				break;
+			case 'Grass':
+				if (source.species.name !== 'leafeon') forme = 'Leafeon';
+				source.setAbility('Protean Maxima L');
+				break;
+			case 'Ice':
+				if (source.species.name !== 'glaceon') forme = 'Glaceon';
+				source.setAbility('Protean Maxima G');
+				break;
+			case 'Fairy':
+				if (source.species.name !== 'sylveon') forme = 'Sylveon';
+				source.setAbility('Protean Maxima S');
+				break;
+			}
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
+				}
+			},
 		name: "Protean Maxima",
 		rating: 5,
 		num: 168,
