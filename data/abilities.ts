@@ -3294,7 +3294,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaxima: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onAnyBeforeMove(source, target, move) {
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3341,45 +3341,45 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximae: {
 		onBeforeMovePriority:106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Water':
-					if (pokemon.species.name !== 'vaporeon') forme = 'Vaporeon';
-					pokemon.setAbility('Protean Maxima V');
+					if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+					source.setAbility('Protean Maxima V');
 					break;
 				case 'Fire':
-					if (pokemon.species.name !== 'flareon') forme = 'Flareon';
-					pokemon.setAbility('Protean Maxima F');
+					if (source.species.name !== 'flareon') forme = 'Flareon';
+					source.setAbility('Protean Maxima F');
 					break;
 				case 'Electric':
-					if (pokemon.species.name !== 'jolteon') forme = 'Jolteon';
-					pokemon.setAbility('Protean Maxima J');
+					if (source.species.name !== 'jolteon') forme = 'Jolteon';
+					source.setAbility('Protean Maxima J');
 					break;
 				case 'Dark':
-					if (pokemon.species.name !== 'umbreon') forme = 'Umbreon';
-					pokemon.setAbility('Protean Maxima U');
+					if (source.species.name !== 'umbreon') forme = 'Umbreon';
+					source.setAbility('Protean Maxima U');
 					break;
 				case 'Grass':
-					if (pokemon.species.name !== 'leafeon') forme = 'Leafeon';
-					pokemon.setAbility('Protean Maxima L');
+					if (source.species.name !== 'leafeon') forme = 'Leafeon';
+					source.setAbility('Protean Maxima L');
 					break;
 				case 'Ice':
-					if (pokemon.species.name !== 'glaceon') forme = 'Glaceon';
-					pokemon.setAbility('Protean Maxima G');
+					if (source.species.name !== 'glaceon') forme = 'Glaceon';
+					source.setAbility('Protean Maxima G');
 					break;
 				case 'Fairy':
-					if (pokemon.species.name !== 'sylveon') forme = 'Sylveon';
-					pokemon.setAbility('Protean Maxima S');
+					if (source.species.name !== 'sylveon') forme = 'Sylveon';
+					source.setAbility('Protean Maxima S');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
 		onTryHitPriority: 1,
@@ -3412,45 +3412,45 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximaf: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Water':
-					if (pokemon.species.name !== 'vaporeon') forme = 'Vaporeon';
-					pokemon.setAbility('Protean Maxima V');
+					if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+					source.setAbility('Protean Maxima V');
 					break;
 				case 'Electric':
-					if (pokemon.species.name !== 'jolteon') forme = 'Jolteon';
-					pokemon.setAbility('Protean Maxima J');
+					if (source.species.name !== 'jolteon') forme = 'Jolteon';
+					source.setAbility('Protean Maxima J');
 					break;
 				case 'Psychic':
-					if (pokemon.species.name !== 'espeon') forme = 'Espeon';
-					pokemon.setAbility('Protean Maxima E');
+					if (source.species.name !== 'espeon') forme = 'Espeon';
+					source.setAbility('Protean Maxima E');
 					break;
 				case 'Dark':
-					if (pokemon.species.name !== 'umbreon') forme = 'Umbreon';
-					pokemon.setAbility('Protean Maxima U');
+					if (source.species.name !== 'umbreon') forme = 'Umbreon';
+					source.setAbility('Protean Maxima U');
 					break;
 				case 'Grass':
-					if (pokemon.species.name !== 'leafeon') forme = 'Leafeon';
-					pokemon.setAbility('Protean Maxima L');
+					if (source.species.name !== 'leafeon') forme = 'Leafeon';
+					source.setAbility('Protean Maxima L');
 					break;
 				case 'Ice':
-					if (pokemon.species.name !== 'glaceon') forme = 'Glaceon';
-					pokemon.setAbility('Protean Maxima G');
+					if (source.species.name !== 'glaceon') forme = 'Glaceon';
+					source.setAbility('Protean Maxima G');
 					break;
 				case 'Fairy':
-					if (pokemon.species.name !== 'sylveon') forme = 'Sylveon';
-					pokemon.setAbility('Protean Maxima S');
+					if (source.species.name !== 'sylveon') forme = 'Sylveon';
+					source.setAbility('Protean Maxima S');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
 		onTryHit(target, source, move) {
@@ -3462,8 +3462,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return null;
 			}
 		},
-		onEnd(pokemon) {
-			pokemon.removeVolatile('flashfire');
+		onEnd(source) {
+			source.removeVolatile('flashfire');
 		},
 		condition: {
 			noCopy: true, // doesn't get copied by Baton Pass
@@ -3494,48 +3494,48 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximag: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Water':
-					if (pokemon.species.name !== 'vaporeon') forme = 'Vaporeon';
-					pokemon.setAbility('Protean Maxima V');
+					if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+					source.setAbility('Protean Maxima V');
 					break;
 				case 'Fire':
-					if (pokemon.species.name !== 'flareon') forme = 'Flareon';
-					pokemon.setAbility('Protean Maxima F');
+					if (source.species.name !== 'flareon') forme = 'Flareon';
+					source.setAbility('Protean Maxima F');
 					break;
 				case 'Electric':
-					if (pokemon.species.name !== 'jolteon') forme = 'Jolteon';
-					pokemon.setAbility('Protean Maxima J');
+					if (source.species.name !== 'jolteon') forme = 'Jolteon';
+					source.setAbility('Protean Maxima J');
 					break;
 				case 'Psychic':
-					if (pokemon.species.name !== 'espeon') forme = 'Espeon';
-					pokemon.setAbility('Protean Maxima E');
+					if (source.species.name !== 'espeon') forme = 'Espeon';
+					source.setAbility('Protean Maxima E');
 					break;
 				case 'Dark':
-					if (pokemon.species.name !== 'umbreon') forme = 'Umbreon';
-					pokemon.setAbility('Protean Maxima U');
+					if (source.species.name !== 'umbreon') forme = 'Umbreon';
+					source.setAbility('Protean Maxima U');
 					break;
 				case 'Grass':
-					if (pokemon.species.name !== 'leafeon') forme = 'Leafeon';
-					pokemon.setAbility('Protean Maxima L');
+					if (source.species.name !== 'leafeon') forme = 'Leafeon';
+					source.setAbility('Protean Maxima L');
 					break;
 				case 'Fairy':
-					if (pokemon.species.name !== 'sylveon') forme = 'Sylveon';
-					pokemon.setAbility('Protean Maxima S');
+					if (source.species.name !== 'sylveon') forme = 'Sylveon';
+					source.setAbility('Protean Maxima S');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
-		onImmunity(type, pokemon) {
+		onImmunity(type, source) {
 			if (type === 'hail' || type === 'sleet') return false;
 		},
 		onModifyAccuracyPriority: -1,
@@ -3552,45 +3552,45 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximaj: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Water':
-					if (pokemon.species.name !== 'vaporeon') forme = 'Vaporeon';
-					pokemon.setAbility('Protean Maxima V');
+					if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+					source.setAbility('Protean Maxima V');
 					break;
 				case 'Fire':
-					if (pokemon.species.name !== 'flareon') forme = 'Flareon';
-					pokemon.setAbility('Protean Maxima F');
+					if (source.species.name !== 'flareon') forme = 'Flareon';
+					source.setAbility('Protean Maxima F');
 					break;
 				case 'Psychic':
-					if (pokemon.species.name !== 'espeon') forme = 'Espeon';
-					pokemon.setAbility('Protean Maxima E');
+					if (source.species.name !== 'espeon') forme = 'Espeon';
+					source.setAbility('Protean Maxima E');
 					break;
 				case 'Dark':
-					if (pokemon.species.name !== 'umbreon') forme = 'Umbreon';
-					pokemon.setAbility('Protean Maxima U');
+					if (source.species.name !== 'umbreon') forme = 'Umbreon';
+					source.setAbility('Protean Maxima U');
 					break;
 				case 'Grass':
-					if (pokemon.species.name !== 'leafeon') forme = 'Leafeon';
-					pokemon.setAbility('Protean Maxima L');
+					if (source.species.name !== 'leafeon') forme = 'Leafeon';
+					source.setAbility('Protean Maxima L');
 					break;
 				case 'Ice':
-					if (pokemon.species.name !== 'glaceon') forme = 'Glaceon';
-					pokemon.setAbility('Protean Maxima G');
+					if (source.species.name !== 'glaceon') forme = 'Glaceon';
+					source.setAbility('Protean Maxima G');
 					break;
 				case 'Fairy':
-					if (pokemon.species.name !== 'sylveon') forme = 'Sylveon';
-					pokemon.setAbility('Protean Maxima S');
+					if (source.species.name !== 'sylveon') forme = 'Sylveon';
+					source.setAbility('Protean Maxima S');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
 		onTryHit(target, source, move) {
@@ -3607,49 +3607,49 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximal: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Water':
-					if (pokemon.species.name !== 'vaporeon') forme = 'Vaporeon';
-					pokemon.setAbility('Protean Maxima V');
+					if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+					source.setAbility('Protean Maxima V');
 					break;
 				case 'Fire':
-					if (pokemon.species.name !== 'flareon') forme = 'Flareon';
-					pokemon.setAbility('Protean Maxima F');
+					if (source.species.name !== 'flareon') forme = 'Flareon';
+					source.setAbility('Protean Maxima F');
 					break;
 				case 'Electric':
-					if (pokemon.species.name !== 'jolteon') forme = 'Jolteon';
-					pokemon.setAbility('Protean Maxima J');
+					if (source.species.name !== 'jolteon') forme = 'Jolteon';
+					source.setAbility('Protean Maxima J');
 					break;
 				case 'Psychic':
-					if (pokemon.species.name !== 'espeon') forme = 'Espeon';
-					pokemon.setAbility('Protean Maxima E');
+					if (source.species.name !== 'espeon') forme = 'Espeon';
+					source.setAbility('Protean Maxima E');
 					break;
 				case 'Dark':
-					if (pokemon.species.name !== 'umbreon') forme = 'Umbreon';
-					pokemon.setAbility('Protean Maxima U');
+					if (source.species.name !== 'umbreon') forme = 'Umbreon';
+					source.setAbility('Protean Maxima U');
 					break;
 				case 'Ice':
-					if (pokemon.species.name !== 'glaceon') forme = 'Glaceon';
-					pokemon.setAbility('Protean Maxima G');
+					if (source.species.name !== 'glaceon') forme = 'Glaceon';
+					source.setAbility('Protean Maxima G');
 					break;
 				case 'Fairy':
-					if (pokemon.species.name !== 'sylveon') forme = 'Sylveon';
-					pokemon.setAbility('Protean Maxima S');
+					if (source.species.name !== 'sylveon') forme = 'Sylveon';
+					source.setAbility('Protean Maxima S');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
-		onModifySpe(spe, pokemon) {
-			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
+		onModifySpe(spe, source) {
+			if (['sunnyday', 'desolateland'].includes(source.effectiveWeather())) {
 				return this.chainModify(2);
 			}
 		},
@@ -3659,45 +3659,45 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximas: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Water':
-					if (pokemon.species.name !== 'vaporeon') forme = 'Vaporeon';
-					pokemon.setAbility('Protean Maxima V');
+					if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+					source.setAbility('Protean Maxima V');
 					break;
 				case 'Fire':
-					if (pokemon.species.name !== 'flareon') forme = 'Flareon';
-					pokemon.setAbility('Protean Maxima F');
+					if (source.species.name !== 'flareon') forme = 'Flareon';
+					source.setAbility('Protean Maxima F');
 					break;
 				case 'Electric':
-					if (pokemon.species.name !== 'jolteon') forme = 'Jolteon';
-					pokemon.setAbility('Protean Maxima J');
+					if (source.species.name !== 'jolteon') forme = 'Jolteon';
+					source.setAbility('Protean Maxima J');
 					break;
 				case 'Psychic':
-					if (pokemon.species.name !== 'espeon') forme = 'Espeon';
-					pokemon.setAbility('Protean Maxima E');
+					if (source.species.name !== 'espeon') forme = 'Espeon';
+					source.setAbility('Protean Maxima E');
 					break;
 				case 'Dark':
-					if (pokemon.species.name !== 'umbreon') forme = 'Umbreon';
-					pokemon.setAbility('Protean Maxima U');
+					if (source.species.name !== 'umbreon') forme = 'Umbreon';
+					source.setAbility('Protean Maxima U');
 					break;
 				case 'Grass':
-					if (pokemon.species.name !== 'leafeon') forme = 'Leafeon';
-					pokemon.setAbility('Protean Maxima L');
+					if (source.species.name !== 'leafeon') forme = 'Leafeon';
+					source.setAbility('Protean Maxima L');
 					break;
 				case 'Ice':
-					if (pokemon.species.name !== 'glaceon') forme = 'Glaceon';
-					pokemon.setAbility('Protean Maxima G');
+					if (source.species.name !== 'glaceon') forme = 'Glaceon';
+					source.setAbility('Protean Maxima G');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
 		onDamagingHit(damage, target, source, move) {
@@ -3713,45 +3713,45 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximau: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Water':
-					if (pokemon.species.name !== 'vaporeon') forme = 'Vaporeon';
-					pokemon.setAbility('Protean Maxima V');
+					if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
+					source.setAbility('Protean Maxima V');
 					break;
 				case 'Fire':
-					if (pokemon.species.name !== 'flareon') forme = 'Flareon';
-					pokemon.setAbility('Protean Maxima F');
+					if (source.species.name !== 'flareon') forme = 'Flareon';
+					source.setAbility('Protean Maxima F');
 					break;
 				case 'Electric':
-					if (pokemon.species.name !== 'jolteon') forme = 'Jolteon';
-					pokemon.setAbility('Protean Maxima J');
+					if (source.species.name !== 'jolteon') forme = 'Jolteon';
+					source.setAbility('Protean Maxima J');
 					break;
 				case 'Psychic':
-					if (pokemon.species.name !== 'espeon') forme = 'Espeon';
-					pokemon.setAbility('Protean Maxima E');
+					if (source.species.name !== 'espeon') forme = 'Espeon';
+					source.setAbility('Protean Maxima E');
 					break;
 				case 'Grass':
-					if (pokemon.species.name !== 'leafeon') forme = 'Leafeon';
-					pokemon.setAbility('Protean Maxima L');
+					if (source.species.name !== 'leafeon') forme = 'Leafeon';
+					source.setAbility('Protean Maxima L');
 					break;
 				case 'Ice':
-					if (pokemon.species.name !== 'glaceon') forme = 'Glaceon';
-					pokemon.setAbility('Protean Maxima G');
+					if (source.species.name !== 'glaceon') forme = 'Glaceon';
+					source.setAbility('Protean Maxima G');
 					break;
 				case 'Fairy':
-					if (pokemon.species.name !== 'sylveon') forme = 'Sylveon';
-					pokemon.setAbility('Protean Maxima S');
+					if (source.species.name !== 'sylveon') forme = 'Sylveon';
+					source.setAbility('Protean Maxima S');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
 		onAfterSetStatus(status, target, source, effect) {
@@ -3769,45 +3769,45 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	proteanmaximav: {
 		onBeforeMovePriority: 106,
-		onBeforeMove(pokemon, target, move) {
-			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
+		onBeforeMove(source, target, move) {
+			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
 				case 'Fire':
-					if (pokemon.species.name !== 'flareon') forme = 'Flareon';
-					pokemon.setAbility('Protean Maxima F');
+					if (source.species.name !== 'flareon') forme = 'Flareon';
+					source.setAbility('Protean Maxima F');
 					break;
 				case 'Electric':
-					if (pokemon.species.name !== 'jolteon') forme = 'Jolteon';
-					pokemon.setAbility('Protean Maxima J');
+					if (source.species.name !== 'jolteon') forme = 'Jolteon';
+					source.setAbility('Protean Maxima J');
 					break;
 				case 'Psychic':
-					if (pokemon.species.name !== 'espeon') forme = 'Espeon';
-					pokemon.setAbility('Protean Maxima E');
+					if (source.species.name !== 'espeon') forme = 'Espeon';
+					source.setAbility('Protean Maxima E');
 					break;
 				case 'Dark':
-					if (pokemon.species.name !== 'umbreon') forme = 'Umbreon';
-					pokemon.setAbility('Protean Maxima U');
+					if (source.species.name !== 'umbreon') forme = 'Umbreon';
+					source.setAbility('Protean Maxima U');
 					break;
 				case 'Grass':
-					if (pokemon.species.name !== 'leafeon') forme = 'Leafeon';
-					pokemon.setAbility('Protean Maxima L');
+					if (source.species.name !== 'leafeon') forme = 'Leafeon';
+					source.setAbility('Protean Maxima L');
 					break;
 				case 'Ice':
-					if (pokemon.species.name !== 'glaceon') forme = 'Glaceon';
-					pokemon.setAbility('Protean Maxima G');
+					if (source.species.name !== 'glaceon') forme = 'Glaceon';
+					source.setAbility('Protean Maxima G');
 					break;
 				case 'Fairy':
-					if (pokemon.species.name !== 'sylveon') forme = 'Sylveon';
-					pokemon.setAbility('Protean Maxima S');
+					if (source.species.name !== 'sylveon') forme = 'Sylveon';
+					source.setAbility('Protean Maxima S');
 					break;
 				case 'Normal':
-					if (pokemon.species.name !== 'eeveemega') forme = 'Eevee-Mega';
-					pokemon.setAbility('Protean Maxima');
+					if (source.species.name !== 'eeveemega') forme = 'Eevee-Mega';
+					source.setAbility('Protean Maxima');
 					break;
 				}
-			if (pokemon.isActive && forme) {
-				pokemon.formeChange(forme, this.effect, false, '[msg]');
+			if (source.isActive && forme) {
+				source.formeChange(forme, this.effect, false, '[msg]');
 				}
 			},
 		onTryHit(target, source, move) {
