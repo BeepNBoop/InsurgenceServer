@@ -3293,6 +3293,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaxima: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3339,6 +3340,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximae: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3409,6 +3411,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximaf: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3490,6 +3493,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximag: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3547,6 +3551,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximaj: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3601,6 +3606,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximal: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3652,6 +3658,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximas: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3705,6 +3712,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximau: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
@@ -3760,6 +3768,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximav: {
+		onBeforeMovePriority: 9,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Eevee' || pokemon.transformed) return;
 			let forme = null;
