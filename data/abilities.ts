@@ -3293,8 +3293,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaxima: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onAfterMega(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3334,8 +3336,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.isActive && forme) {
 				source.formeChange(forme, this.effect, false, '[msg]');
 				}
-			},
-		onTryHit(source, target, move) {
+		},
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3381,8 +3386,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximae: {
-		onBeforeMovePriority:106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3452,8 +3459,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximaf: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3534,8 +3543,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximag: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3592,8 +3603,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximaj: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3647,8 +3660,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximal: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3699,8 +3714,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximas: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3753,8 +3770,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximau: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
@@ -3809,8 +3828,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 168,
 	},
 	proteanmaximav: {
-		onBeforeMovePriority: 106,
-		onBeforeMove(source, target, move) {
+		onBeforeTurn(source) {
+			const action = this.queue.willMove(source);
+			if (!action) return;
+			const move = this.dex.getActiveMove(action.move.id);
 			if (source.baseSpecies.baseSpecies !== 'Eevee' || source.transformed) return;
 			let forme = null;
 			switch (move.type) {
