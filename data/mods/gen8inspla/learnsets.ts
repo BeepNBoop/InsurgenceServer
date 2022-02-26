@@ -8464,6 +8464,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
 		},
 	},
 	landorus: {
+		inherit: true,
 		learnset: {
 			sandsearstorm: ["8L1"],
 			custommove: ["8L1"], custommovebug: ["8L1"], custommovedark: ["8L1"], custommovedragon: ["8L1"], custommoveelectric: ["8L1"], custommovefairy: ["8L1"], custommovefighting: ["8L1"], custommovefire: ["8L1"], custommoveflying: ["8L1"], custommoveghost: ["8L1"], custommovegrass: ["8L1"], custommoveground: ["8L1"], custommoveice: ["8L1"], custommovepoison: ["8L1"], custommovepsychic: ["8L1"], custommoverock: ["8L1"], custommovesteel: ["8L1"], custommovewater: ["8L1"],
