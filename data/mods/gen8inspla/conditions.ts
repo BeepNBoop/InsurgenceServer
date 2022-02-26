@@ -25,9 +25,6 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 				pokemon.setStatus('');
 			}
 		},
-		onSourceModifyDamage(damage, source, target, move) {
-			return this.chainModify(2);
-		},
 		onHit(target, source, move) {
 			if (move.thawsTarget || move.type === 'Fire' && move.category !== 'Status') {
 				target.cureStatus();
@@ -71,6 +68,9 @@ export const Conditions: {[k: string]: ModdedConditionData} = {
 				return;
 			}
 			return false;
+		},
+		onSourceModifyDamage(damage, source, target, move) {
+			return this.chainModify(1.25);
 		},
 	},
 };
