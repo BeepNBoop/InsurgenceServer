@@ -543,11 +543,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onHit(pokemon) {
-			const atk = pokemon.getStat('atk', false, true);
-			const spa = pokemon.getStat('spa', false, true);
-			const def = pokemon.getStat('def', false, true);
-			const spd = pokemon.getStat('spd', false, true);
+		onHit(source) {
+			const atk = source.getStat('atk', false, true);
+			const spa = source.getStat('spa', false, true);
+			const def = source.getStat('def', false, true);
+			const spd = source.getStat('spd', false, true);
 			const avgatk = Math.floor(Math.floor(atk + spa) / 2);
 			const avgdef = Math.floor(Math.floor(def + spd) / 2);
 			if (avgatk > avgdef || (avgatk === avgdef && this.random(2) === 0)) {
