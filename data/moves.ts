@@ -383,7 +383,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		contestType: "Clever",
 	},
-	barbbarage: {
+	barbbarrage: {
 		num: 840,
 		accuracy: 100,
 		basePower: 60,
