@@ -154,6 +154,20 @@ export const Items: {[itemid: string]: ItemData} = {
 		gen: 3,
 		isNonstandard: "Unobtainable",
 	},
+	ashencrown: {
+		name: "Ashen Crown",
+		spritenum: 236,
+		onTakeItem(item, pokemon, source) {
+			if ((source && source.baseSpecies.num === 244) || pokemon.baseSpecies.num === 244) {
+				return false;
+			}
+			return true;
+		},
+		forcedForme: "Entei-Iberia",
+		itemUser: ["Entei-Iberia"],
+		num: 1103,
+		gen: 8,
+	},
 	airballoon: {
 		name: "Air Balloon",
 		spritenum: 6,
@@ -655,6 +669,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 1121,
 		gen: 8,
 	},
+	bogaleonite: {
+		name: "Bogaleonite",
+		spritenum: 583,
+		megaStone: "Bogaleon-Mega",
+		megaEvolves: "Bogaleon",
+		itemUser: ["Bogaleon"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 661,
+		gen: 6,
+	},
 	bottlecap: {
 		name: "Bottle Cap",
 		spritenum: 696,
@@ -777,6 +804,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		},
 		num: 546,
 		gen: 5,
+	},
+	cervantririte: {
+		name: "Cervantririte",
+		spritenum: 608,
+		megaStone: "Cervantrier-Mega",
+		megaEvolves: "Cervantrier",
+		itemUser: ["Cervantrier"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 678,
+		gen: 6,
 	},
 	charcoal: {
 		name: "Charcoal",
@@ -4235,6 +4275,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		itemUser: ["Palkia"],
 		num: 136,
 		gen: 4,
+	},
+	luxpiravitite: {
+		name: "Luxpiravitite",
+		spritenum: 586,
+		megaStone: "Luxpiravit-Mega",
+		megaEvolves: "Luxpiravit",
+		itemUser: ["Luxpiravit"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 678,
+		gen: 6,
 	},
 	luxuryball: {
 		name: "Luxury Ball",

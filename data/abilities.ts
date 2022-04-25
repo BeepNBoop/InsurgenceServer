@@ -1060,6 +1060,29 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 1,
 		num: 194,
 	},
+	eternalflame:{
+		onStart(source) {
+			this.field.setWeather('desolateland');
+		},
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream', 'desolateland'];
+			if (this.field.getWeather().id === 'desolateland' && !strongWeathers.includes(weather.id)) return false;
+		},
+		onEnd(pokemon) {
+			if (this.field.weatherData.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('desolateland')) {
+					this.field.weatherData.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		name: "Eternal Flame",
+		rating: 4.5,
+		num: 190,
+	},
 	etherealshroud: {
 		onStart(pokemon) {
 			this.add('-start', pokemon, 'typeadd', 'Ghost', '[from] ability: Ethereal Shroud');
@@ -1120,6 +1143,35 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Fairy Aura",
 		rating: 3,
 		num: 187,
+	},
+	fatalclaw: {
+		onModifyMove(move) {
+			if (move.critRatio > 1){
+			move.basePower = 1.2;
+			}
+		},
+		name: "Fatal Claw",
+		rating: 4,
+		num: 111,
+	},
+	figurehead: {
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Flying' || move.type === 'Normal') {
+				this.debug('Figurehead weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Flying' || move.type === 'Normal') {
+				this.debug('Figurehead weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		name: "Figurehead",
+		rating: 3.5,
+		num: 47,
 	},
 	filter: {
 		onSourceModifyDamage(damage, source, target, move) {
@@ -1445,6 +1497,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Galvanize",
 		rating: 4,
 		num: 206,
+	},
+	giantkiller: {
+		onModifyMove(move, target) {
+			const targetWeight = target.getWeight();
+			if (targetWeight >= 100){
+			move.basePower = 1.25;
+			}
+		},
+		name: "Giant Killer",
+		rating: 4,
+		num: 91,
 	},
 	glitch: {
 		onDamagingHit(damage, target, source, move) {
