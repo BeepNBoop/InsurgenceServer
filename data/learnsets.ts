@@ -84753,6 +84753,11 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			wonderroom: ["8L1"],
 			zenheadbutt: ["8L1"],
 			ironhead: ["8L1"],
+			focuspunch: ["8L1"],
+			stoneedge: ["8L1"],
+			hypervoice: ["8L1"],
+			honeclaws: ["8L1"],
+			perishsong: ["8L1"],
 		},
 	},
 	genesect: {
