@@ -23007,6 +23007,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			magicroom: ["8L1"],
 			irondefense: ["8L1"],
 			ironhead: ["8L1"],
+			piercingslash: ["8L1"],
 		},
 	},
 	magby: {
