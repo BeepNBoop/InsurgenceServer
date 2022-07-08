@@ -33,6 +33,7 @@ Ratings and how they work:
 */
 
 import { checkRipgrepAvailability } from "../server/config-loader";
+import { Pokemon } from "../sim";
 
 export const Abilities: {[abilityid: string]: AbilityData} = {
 	noability: {
@@ -1146,7 +1147,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	fatalclaw: {
 		onModifyMove(move) {
-			if (move.critRatio > 1){
+			if (move.critRatio === 2 || move.critRatio === 3 || move.critRatio === 4){
 			move.basePower = 1.2;
 			}
 		},
@@ -1183,6 +1184,34 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Filter",
 		rating: 3,
 		num: 111,
+	},
+	finistempor: {
+		onStart(target) {
+			target.addVolatile('finistempor');
+		},
+		onEnd(target) {
+			delete target.volatiles['finistempor'];
+			this.add('-end', target, 'Finis Tempor', '[silent]');
+		},
+		condition: {
+			duration: 2,
+			onStart(target) {
+				this.add('-start', target, 'ability: Finis Tempor');
+			},
+			onModifyAtkPriority: 5,
+			onModifyAtk(atk, target) {
+				return this.chainModify(0.75);
+			},
+			onModifySpe(spe, target) {
+				return this.chainModify(0.75);
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Finis Tempor');
+			},
+		},
+		name: "Finis Tempor",
+		rating: 3,
+		num: 478,
 	},
 	flamebody: {
 		onDamagingHit(damage, target, source, move) {
@@ -4683,6 +4712,23 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 1.5,
 		num: 81,
 	},
+	snowstorm: {
+		onBasePowerPriority: 21,
+		onBasePower(basePower, attacker, defender, move) {
+			if (this.field.isWeather('hail')) {
+				if (move.type === 'Ice' || move.type === 'Water') {
+					this.debug('Snow Storm boost');
+					return this.chainModify([0x14CD, 0x1000]);
+				}
+			}
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'hail') return false;
+		},
+		name: "Snow Storm",
+		rating: 3,
+		num: 489,
+	},
 	snowwarning: {
 		onImmunity(type, pokemon) {
 			if (type === 'hail' || type === 'sleet') return false;
@@ -5485,6 +5531,22 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Unnerve",
 		rating: 1.5,
 		num: 127,
+	},
+	unstableelement: {
+		onSourceModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod > 0) {
+				this.debug('Unstable Element OHKO');
+				return this.chainModify(200);
+		}
+	},
+		onDamage(damage, target, source, effect) {
+			if (effect && effect.id === 'stealthrock' || effect && effect.id === 'spikes') {
+				return this.chainModify(2);
+			}
+		},
+		name: 'Unstable Element',
+		rating: 1,
+		num: 498
 	},
 	unseenfist: {
 		onModifyMove(move) {

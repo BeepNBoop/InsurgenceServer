@@ -3012,9 +3012,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Illegal",
 	},
 	torterradelta: {
-		randomBattleMoves: ["liquidation", "earthquake", "flipturn", "shoreup", "shoreup", "stelthrock", "aquajet", "raindance"],
+		randomBattleMoves: ["liquidation", "earthquake", "flipturn", "shoreup", "shoreup", "stealthrock", "aquajet", "raindance"],
 		randomBattleLevel: 82,
-		randomDoubleBattleMoves:["RainDance", "Protect", "Liquidation", "AquaJet", "RockSlide", "SeedBomb", "Avalanche", "HeavySlam", "FlipTurn", "Earthquake"],
+		randomDoubleBattleMoves:["raindance", "protect", "liquidation", "aquajet", "rockslide", "seedbomb", "avalanche", "heavyslam", "flipturn", "earthquake"],
 		randomDoubleBattleLevel: 82,
 		doublesTier: "DUU",
 		tier: "UU",

@@ -1684,6 +1684,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 1236,
 		gen: 6,
 	},
+	deltagengarite: {
+		name: "Delta Gengarite",
+		spritenum: 576,
+		megaStone: "Gengar-Delta-Mega",
+		megaEvolves: "Gengar",
+		itemUser: ["Gengar-Delta"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 1236,
+		gen: 6,
+	},
 	deltaglalitite: {
 		name: "Delta Glalitite",
 		spritenum: 576,
@@ -1827,6 +1840,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 1238,
 		gen: 6,
 	},
+	deltaspiritombite: {
+		name: "Delta Spiritombite",
+		spritenum: 576,
+		megaStone: "Spiritomb-Delta-Mega",
+		megaEvolves: "Spiritomb",
+		itemUser: ["Spiritomb-Delta"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 1236,
+		gen: 6,
+	},
 	deltasunflorite: {
 		name: "Delta Sunflorite",
 		spritenum: 576,
@@ -1838,6 +1864,19 @@ export const Items: {[itemid: string]: ItemData} = {
 			return true;
 		},
 		num: 1237,
+		gen: 6,
+	},
+	deltaswampertite: {
+		name: "Delta Swampertite",
+		spritenum: 576,
+		megaStone: "Swampert-Delta-Mega",
+		megaEvolves: "Swampert",
+		itemUser: ["Swampert-Delta"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 1236,
 		gen: 6,
 	},
 	deltatyphlosionite: {

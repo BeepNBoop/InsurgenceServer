@@ -8902,6 +8902,37 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Poison",
 		contestType: "Tough",
 	},
+	gurusteachings: {
+		num: 802,
+		accuracy: 95,
+		basePower: 90,
+		category: "Special",
+		name: "Guru's Teachings",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		onModifyMove(move, pokemon, target) {
+			if (!target) return;
+			const atk = pokemon.getStat('atk', false, true);
+			const spa = pokemon.getStat('spa', false, true);
+			if (atk > spa || (atk === spa && this.random(2) === 0)) {
+				move.category = 'Physical';
+				move.flags.contact = 1;
+				if (move.secondaries = []){
+				move.secondaries.push ({
+					chance: 30,
+					status: 'par' ,
+				});
+			}
+			};
+		},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'confusion',
+		},
+		target: "normal",
+		type: "Psychic",
+	},
 	gust: {
 		num: 16,
 		accuracy: 100,
@@ -8976,6 +9007,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Fighting",
 		contestType: "Tough",
+	},
+	hammerrush: {
+		num: 407,
+		accuracy: 100,
+		basePower: 25,
+		category: "Physical",
+		name: "Hammer Rush",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, punch: 1},
+		multihit: [2, 5],
+		secondary: {
+			chance: 10,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Steel",
+		zMove: {basePower: 180},
+		maxMove: {basePower: 140},
+		contestType: "Clever",
 	},
 	happyhour: {
 		num: 603,
@@ -19019,6 +19070,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Grass",
 		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Beautiful",
+	},
+	squall: {
+		num: 420,
+		accuracy: 100,
+		basePower: 40,
+		category: "Special",
+		name: "Squall",
+		pp: 30,
+		priority: 1,
+		flags: {protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Ice",
 		contestType: "Beautiful",
 	},
 	spotlight: {
