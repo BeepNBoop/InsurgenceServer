@@ -6630,6 +6630,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Power is equal to the greater of (user's Happiness * 2/5), rounded down, or 1.",
 		shortDesc: "Max happiness: 102 power. Can't miss.",
 	},
+	vengefulpulse: {
+		name: "Vengeful Pulse",
+		desc: "Power doubles if user suffers from a non-volatile status condition. Type varies with it. Fire if burnt, Poison if poisoned/badly poisoned, Electric if paralysed, Psychic if asleep, Ice if frozen/frostbitten.",
+		shortDesc: "Power doubles if user suffers from a status condition. Type varies with it.",
+	},
 	venomdrench: {
 		name: "Venom Drench",
 		desc: "Lowers the target's Attack, Special Attack, and Speed by 1 stage if the target is poisoned. Fails if the target is not poisoned.",

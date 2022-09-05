@@ -1,3 +1,5 @@
+import { mergeAlts } from "../server/chat-plugins/trivia";
+
 export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	bulbasaur: {
 		num: 1,

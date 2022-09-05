@@ -1284,6 +1284,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon's attacks with recoil or crash damage have their power multiplied by 1.2. Does not affect Struggle.",
 		shortDesc: "This Pokemon's attacks with recoil or crash damage have 1.2x power; not Struggle.",
 	},
+	reflectivearmor: {
+		name: "Reflective Armor",
+		desc: "This pokemon reflects the secondary effects of moves back onto the user",
+		shortDesc: "This pokemon reflects the secondary effects of moves back onto the user",
+	},
 	refrigerate: {
 		name: "Refrigerate",
 		desc: "This Pokemon's Normal-type moves become Ice-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",

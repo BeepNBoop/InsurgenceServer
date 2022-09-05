@@ -1226,6 +1226,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2,
 		num: 49,
 	},
+	flailingfists: {
+		onModifyMove(move) {
+			if (move.flags['contact']){
+				this.chainModify(0.75);
+				this.randomChance(25, 100)? move.multihit == 2 : (this.randomChance(33, 100)? move.multihit == 3 : (this.randomChance(50,100)? move.multihit == 4: 5));
+			}
+		},
+		num: 172,
+		name: "Flailing Fists",
+		rating: 3,
+	},
 	flareboost: {
 		onBasePowerPriority: 19,
 		onBasePower(basePower, attacker, defender, move) {
@@ -4123,6 +4134,53 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Reckless",
 		rating: 3,
 		num: 120,
+	},
+	reflectivearmor: {
+		name: "Refelctive Armor",
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target === source || move.hasBounced) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			if (!newMove.secondaries) {
+				newMove.secondaries = [];
+			}
+			for (const secondary of newMove.secondaries) {
+				secondary.chance = 100;
+			}
+			newMove.basePower = 0;
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			newMove.flags = {authentic: 1};
+			this.useMove(newMove, target, source);
+			this.add('-activate', target, 'ability: Reflective Armor');
+			return null;
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (target.side === source.side || move.hasBounced) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			if (!newMove.secondaries) {
+				newMove.secondaries = [];
+			}
+			for (const secondary of newMove.secondaries) {
+				secondary.chance = 100;
+			}
+			newMove.basePower = 0;
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			newMove.flags = {authentic: 1};
+			this.useMove(newMove, this.effectData.target, source);
+			this.add('-activate', target, 'ability: Reflective Armor');
+			return null;
+		},
+		condition: {
+			duration: 1,
+		},
+		rating: 4,
+		num: 1047,
 	},
 	refrigerate: {
 		onModifyTypePriority: -1,

@@ -21451,6 +21451,43 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		contestType: "Cute",
 	},
+	vengefulpulse: {
+		num: 805,
+		accuracy: 100,
+		basePower: 50,
+		category: "Special",
+		name: "Vengeful Pulse",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, pulse: 1, bullet: 1},
+		onModifyType(move, pokemon) {
+			if (pokemon.status == 'brn') {
+				move.type = 'Fire';
+			}
+			if (pokemon.status == ('psn' || 'tox')) {
+				move.type = 'Poison';
+			}
+			if (pokemon.status == 'par') {
+				move.type = 'Electric';
+			}
+			if (pokemon.status == 'slp') {
+				move.type = 'Psychic';
+			}
+			if (pokemon.status == 'frz') {
+				move.type = 'Ice';
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.status) {
+				move.basePower *= 2;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
+	},
 	venomdrench: {
 		num: 599,
 		accuracy: 100,
