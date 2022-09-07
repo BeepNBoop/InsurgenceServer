@@ -4772,7 +4772,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Supercell",
 		battleOnly: "Typhlosion-Delta",
-		tier: "OU",
 	},
 	totodile: {
 		num: 158,
