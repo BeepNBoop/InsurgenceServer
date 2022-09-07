@@ -15266,7 +15266,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Red",
 		eggGroups: ["Undiscovered"],
 		battleOnly: "Emolga-Delta",
-		tier: "NU",
 	},
 	karrablast: {
 		num: 588,
