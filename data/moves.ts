@@ -543,7 +543,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onHit(source) {
+		onHit(source, attacker) {
 			const atk = source.getStat('atk', false, true);
 			const spa = source.getStat('spa', false, true);
 			const def = source.getStat('def', false, true);
@@ -551,8 +551,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const avgatk = Math.floor(Math.floor(atk + spa) / 2);
 			const avgdef = Math.floor(Math.floor(def + spd) / 2);
 			if (avgatk > avgdef || (avgatk === avgdef && this.random(2) === 0)) {
-				this.boost({atk: 2, spa: 2});
-			} else this.boost({def: 2, spd: 2});
+				this.boost({atk: 2, spa: 2}, attacker, attacker);
+			} else this.boost({def: 2, spd: 2}, attacker, attacker);
 		},
 		secondary: null,
 		target: "normal",
