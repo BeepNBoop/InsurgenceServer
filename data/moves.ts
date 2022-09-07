@@ -551,8 +551,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const avgatk = Math.floor(Math.floor(atk + spa) / 2);
 			const avgdef = Math.floor(Math.floor(def + spd) / 2);
 			if (avgatk > avgdef || (avgatk === avgdef && this.random(2) === 0)) {
-				this.boost({atk: 2, spa: 2}, attacker, attacker);
-			} else this.boost({def: 2, spd: 2}, attacker, attacker);
+				this.boost({atk: 1, spa: 1}, attacker, attacker);
+			} else this.boost({def: 1, spd: 1}, attacker, attacker);
 		},
 		secondary: null,
 		target: "normal",
