@@ -322,9 +322,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (effect?.effectType !== 'Move') {
 				return;
 			}
-			if (source.species.id === 'greninja' && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
+			if (source.species.id === ('greninja' || 'floatzel-delta') && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
 				this.add('-activate', source, 'ability: Battle Bond');
 				source.formeChange('Greninja-Ash', this.effect, true);
+				source.formeChange('Floatzel-Delta-Black-Belt', this.effect, true);
 			}
 		},
 		onModifyMovePriority: -1,
@@ -851,7 +852,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onDamage(damage, target, source, effect) {
 			if (
 				effect && effect.effectType === 'Move' &&
-				['mimikyu', 'mimikyutotem'].includes(target.species.id) && !target.transformed
+				['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(target.species.id) && !target.transformed
 			) {
 				this.add('-activate', target, 'ability: Disguise');
 				this.effectData.busted = true;
@@ -860,7 +861,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onCriticalHit(target, source, move) {
 			if (!target) return;
-			if (!['mimikyu', 'mimikyutotem'].includes(target.species.id) || target.transformed) {
+			if (!['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(target.species.id) || target.transformed) {
 				return;
 			}
 			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
@@ -871,7 +872,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onEffectiveness(typeMod, target, type, move) {
 			if (!target) return;
-			if (!['mimikyu', 'mimikyutotem'].includes(target.species.id) || target.transformed) {
+			if (!['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(target.species.id) || target.transformed) {
 				return;
 			}
 			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
@@ -881,7 +882,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			return 0;
 		},
 		onUpdate(pokemon) {
-			if (['mimikyu', 'mimikyutotem'].includes(pokemon.species.id) && this.effectData.busted) {
+			if (['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(pokemon.species.id) && this.effectData.busted) {
 				const speciesid = pokemon.species.id === 'mimikyutotem' ? 'Mimikyu-Busted-Totem' : 'Mimikyu-Busted';
 				pokemon.formeChange(speciesid, this.effect, true);
 				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesid));
@@ -1186,7 +1187,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 111,
 	},
 	finistempor: {
-		onStart(target) {
+		onFoeSwitchIn(target) {
 			target.addVolatile('finistempor');
 		},
 		onEnd(target) {
@@ -1195,7 +1196,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		condition: {
 			duration: 2,
-			onStart(target) {
+			onFoeSwitchIn(target) {
 				this.add('-start', target, 'ability: Finis Tempor');
 			},
 			onModifyAtkPriority: 5,
@@ -1224,6 +1225,17 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Flame Body",
 		rating: 2,
 		num: 49,
+	},
+	flailingfists: {
+		onModifyMove(move) {
+			if (move.flags['contact']){
+				this.chainModify(0.75);
+				this.randomChance(25, 100)? move.multihit == 2 : (this.randomChance(33, 100)? move.multihit == 3 : (this.randomChance(50,100)? move.multihit == 4: 5));
+			}
+		},
+		num: 172,
+		name: "Flailing Fists",
+		rating: 3,
 	},
 	flareboost: {
 		onBasePowerPriority: 19,
@@ -4122,6 +4134,53 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Reckless",
 		rating: 3,
 		num: 120,
+	},
+	reflectivearmor: {
+		name: "Refelctive Armor",
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target === source || move.hasBounced) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			if (!newMove.secondaries) {
+				newMove.secondaries = [];
+			}
+			for (const secondary of newMove.secondaries) {
+				secondary.chance = 100;
+			}
+			newMove.basePower = 0;
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			newMove.flags = {authentic: 1};
+			this.useMove(newMove, target, source);
+			this.add('-activate', target, 'ability: Reflective Armor');
+			return null;
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (target.side === source.side || move.hasBounced) {
+				return;
+			}
+			const newMove = this.dex.getActiveMove(move.id);
+			if (!newMove.secondaries) {
+				newMove.secondaries = [];
+			}
+			for (const secondary of newMove.secondaries) {
+				secondary.chance = 100;
+			}
+			newMove.basePower = 0;
+			newMove.hasBounced = true;
+			newMove.pranksterBoosted = false;
+			newMove.flags = {authentic: 1};
+			this.useMove(newMove, this.effectData.target, source);
+			this.add('-activate', target, 'ability: Reflective Armor');
+			return null;
+		},
+		condition: {
+			duration: 1,
+		},
+		rating: 4,
+		num: 1047,
 	},
 	refrigerate: {
 		onModifyTypePriority: -1,

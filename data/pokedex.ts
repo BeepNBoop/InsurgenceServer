@@ -1,3 +1,5 @@
+import { mergeAlts } from "../server/chat-plugins/trivia";
+
 export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	bulbasaur: {
 		num: 1,
@@ -20519,6 +20521,21 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		gender: "N",
 		baseStats: {hp: 61, atk: 131, def: 211, spa: 53, spd: 101, spe: 13},
 		abilities: {0: "Disguise", 1: "Stakeout"},
+		heightm: 5.5,
+		weightkg: 820,
+		color: "Gray",
+		eggGroups: ["Undiscovered"],
+	},
+	stakatakadeltabusted: {
+		num: 805,
+		name: "Stakataka-Delta",
+		types: ["Normal", "Ghost"],
+		baseSpecies: "Stakataka",
+		gender: "N",
+		baseStats: {hp: 61, atk: 131, def: 211, spa: 53, spd: 101, spe: 13},
+		abilities: {0: "Disguise", 1: "Stakeout"},
+		requiredAbility: "Disguise",
+		battleOnly: "Stakataka",
 		heightm: 5.5,
 		weightkg: 820,
 		color: "Gray",

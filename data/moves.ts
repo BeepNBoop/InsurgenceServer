@@ -543,7 +543,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
-		onHit(source) {
+		onHit(source, attacker) {
 			const atk = source.getStat('atk', false, true);
 			const spa = source.getStat('spa', false, true);
 			const def = source.getStat('def', false, true);
@@ -551,8 +551,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const avgatk = Math.floor(Math.floor(atk + spa) / 2);
 			const avgdef = Math.floor(Math.floor(def + spd) / 2);
 			if (avgatk > avgdef || (avgatk === avgdef && this.random(2) === 0)) {
-				this.boost({atk: 2, spa: 2});
-			} else this.boost({def: 2, spd: 2});
+				this.boost({atk: 1, spa: 1}, attacker, attacker);
+			} else this.boost({def: 1, spd: 1}, attacker, attacker);
 		},
 		secondary: null,
 		target: "normal",
@@ -21450,6 +21450,43 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Normal",
 		contestType: "Cute",
+	},
+	vengefulpulse: {
+		num: 805,
+		accuracy: 100,
+		basePower: 50,
+		category: "Special",
+		name: "Vengeful Pulse",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, pulse: 1, bullet: 1},
+		onModifyType(move, pokemon) {
+			if (pokemon.status == 'brn') {
+				move.type = 'Fire';
+			}
+			if (pokemon.status == ('psn' || 'tox')) {
+				move.type = 'Poison';
+			}
+			if (pokemon.status == 'par') {
+				move.type = 'Electric';
+			}
+			if (pokemon.status == 'slp') {
+				move.type = 'Psychic';
+			}
+			if (pokemon.status == 'frz') {
+				move.type = 'Ice';
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.status) {
+				move.basePower *= 2;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
 	},
 	venomdrench: {
 		num: 599,
