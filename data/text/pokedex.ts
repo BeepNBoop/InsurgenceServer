@@ -380,11 +380,20 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	abra: {
 		name: "Abra",
 	},
+	abraiberia: {
+		name: "Abra-Iberia",
+	},
 	kadabra: {
 		name: "Kadabra",
 	},
+	kadabraiberia: {
+		name: "Kadabra-Iberia",
+	},
 	alakazam: {
 		name: "Alakazam",
+	},
+	alakazamiberia: {
+		name: "Alakazam-Iberia",
 	},
 	alakazammega: {
 		name: "Alakazam-Mega",
@@ -496,6 +505,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	farfetchdgalar: {
 		name: "Farfetch\u2019d-Galar",
+	},
+	farfetchdiberia: {
+		name: "Farfetch\u2019d-Iberia",
 	},
 	doduo: {
 		name: "Doduo",
@@ -611,17 +623,29 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	voltorb: {
 		name: "Voltorb",
 	},
+	voltorbiberia: {
+		name: "Voltorb-Iberia",
+	},
 	electrode: {
 		name: "Electrode",
 	},
+	electrodeiberia: {
+		name: "Electrode-Iberia",
+	},
 	exeggcute: {
 		name: "Exeggcute",
+	},
+	exeggcuteiberia: {
+		name: "Exeggcute-Iberia",
 	},
 	exeggutor: {
 		name: "Exeggutor",
 	},
 	exeggutoralola: {
 		name: "Exeggutor-Alola",
+	},
+	exeggutoriberia: {
+		name: "Exeggutor-Iberia",
 	},
 	cubone: {
 		name: "Cubone",
@@ -713,6 +737,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	jynx: {
 		name: "Jynx",
 	},
+	jynxiberia: {
+		name: "Jynx-Iberia",
+	},
 	electabuzz: {
 		name: "Electabuzz",
 	},
@@ -733,6 +760,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	tauros: {
 		name: "Tauros",
+	},
+	taurosiberia: {
+		name: "Tauros-Iberia",
 	},
 	magikarp: {
 		name: "Magikarp",
@@ -1061,11 +1091,17 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	wooperdelta: {
 		name: "Wooper-Delta",
 	},
+	wooperiberia: {
+		name: "Wooper-Iberia",
+	},
 	quagsire: {
 		name: "Quagsire",
 	},
 	quagsiredelta: {
 		name: "Quagsire-Delta",
+	},
+	quagsireiberia: {
+		name: "Quagsire-Iberia",
 	},
 	espeon: {
 		name: "Espeon",
@@ -1250,6 +1286,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	smoochum: {
 		name: "Smoochum",
 	},
+	smoochumiberia: {
+		name: "Smoochum-Iberia",
+	},
 	elekid: {
 		name: "Elekid",
 	},
@@ -1409,17 +1448,26 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	lotaddelta: {
 		name: "Lotad-Delta",
 	},
+	lotadiberia: {
+		name: "Lotad-Iberia",
+	},
 	lombre: {
 		name: "Lombre",
 	},
 	lombredelta: {
 		name: "Lombre-Delta",
 	},
+	lombreiberia: {
+		name: "Lombre-Iberia",
+	},
 	ludicolo: {
 		name: "Ludicolo",
 	},
 	ludicolodelta: {
 		name: "Ludicolo-Delta",
+	},
+	ludicoloiberia: {
+		name: "Ludicolo-Iberia",
 	},
 	seedot: {
 		name: "Seedot",
@@ -1531,6 +1579,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	nosepass: {
 		name: "Nosepass",
+	},
+	nosepassiberia: {
+		name: "Nosepass-Iberia",
 	},
 	skitty: {
 		name: "Skitty",
@@ -2075,17 +2126,26 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	shinx: {
 		name: "Shinx",
 	},
+	shinxiberia: {
+		name: "Shinx-Iberia",
+	},
 	shinxdelta: {
 		name: "Shinx-Delta",
 	},
 	luxio: {
 		name: "Luxio",
 	},
+	luxioiberia: {
+		name: "Luxio-Iberia",
+	},
 	luxiodelta: {
 		name: "Luxio-Delta",
 	},
 	luxray: {
 		name: "Luxray",
+	},
+	luxrayiberia: {
+		name: "Luxray-Iberia",
 	},
 	luxraydelta: {
 		name: "Luxray-Delta",
@@ -2417,6 +2477,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	probopass: {
 		name: "Probopass",
 	},
+	probopassiberia: {
+		name: "Probopass-Iberia",
+	},
 	dusknoir: {
 		name: "Dusknoir",
 	},
@@ -2663,8 +2726,14 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	tranquill: {
 		name: "Tranquill",
 	},
+	tranquilliberia: {
+		name: "Tranquill-Iberia",
+	},
 	unfezant: {
 		name: "Unfezant",
+	},
+	unfezantiberia: {
+		name: "Unfezant-Iberia",
 	},
 	blitzle: {
 		name: "Blitzle",
@@ -2705,11 +2774,20 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	timburr: {
 		name: "Timburr",
 	},
+	timburriberia: {
+		name: "Timburr-Iberia",
+	},
 	gurdurr: {
 		name: "Gurdurr",
 	},
+	gurdurriberia: {
+		name: "Gurdurr-Iberia",
+	},
 	conkeldurr: {
 		name: "Conkeldurr",
+	},
+	conkeldurriberia: {
+		name: "Conkeldurr-Iberia",
 	},
 	tympole: {
 		name: "Tympole",
@@ -3095,8 +3173,14 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	shelmet: {
 		name: "Shelmet",
 	},
+	shelmetiberia: {
+		name: "Shelmet-Iberia",
+	},
 	accelgor: {
 		name: "Accelgor",
+	},
+	accelgoriberia: {
+		name: "Accelgor-Iberia",
 	},
 	stunfisk: {
 		name: "Stunfisk",
@@ -3134,6 +3218,9 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	pawniarddelta: {
 		name: "Pawniard-Delta",
 	},
+	pawniardiberia: {
+		name: "Pawniard-Iberia",
+	},
 	bisharp: {
 		name: "Bisharp",
 	},
@@ -3146,14 +3233,23 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	bisharpdeltamega: {
 		name: "Bisharp-Delta-Mega",
 	},
+	bisharpiberia: {
+		name: "Bisharp-Iberia",
+	},
 	bouffalant: {
 		name: "Bouffalant",
 	},
 	rufflet: {
 		name: "Rufflet",
 	},
+	ruffletiberia: {
+		name: "Rufflet-Iberia",
+	},
 	braviary: {
 		name: "Braviary",
+	},
+	braviaryiberia: {
+		name: "Braviary-Iberia",
 	},
 	vullaby: {
 		name: "Vullaby",
@@ -3383,8 +3479,14 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	skiddo: {
 		name: "Skiddo",
 	},
+	skiddoiberia: {
+		name: "Skiddo-Iberia",
+	},
 	gogoat: {
 		name: "Gogoat",
+	},
+	gogoatiberia: {
+		name: "Gogoat-Iberia",
 	},
 	pancham: {
 		name: "Pancham",
@@ -4642,5 +4744,38 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	pokestarufopropu2: {
 		name: "Pokestar UFO-PropU2",
+	},
+	polekin: {
+		name: "Polekin",
+	},
+	fungorse: {
+		name: "Fungorse",
+	},
+	cervantrier: {
+		name: "Cervantrier",
+	},
+	quisquite: {
+		name: "Quisquite",
+	},
+	gambarrel: {
+		name: "Gambarrel",
+	},
+	bogaleon: {
+		name: "Bogaleon",
+	},
+	lugnis: {
+		name: "Lugnis",
+	},
+	luravit: {
+		name: "Luravit",
+	},
+	luxpiravit: {
+		name: "Luxpiravit",
+	},
+	Urobos: {
+		name: "Urobos",
+	},
+	tapuñalo: {
+		name: "Tapu Ñalo",
 	},
 };

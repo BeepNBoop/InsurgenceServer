@@ -5748,8 +5748,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 20,
 		eggGroups: ["Water 1", "Field"],
 		hasDelta: true,
-		otherFormes: ["Quagsire-Delta"],
-		formeOrder: ["Quagsire", "Quagsire-Delta"],
+		otherFormes: ["Quagsire-Delta", "Quagsire-Iberia"],
+		formeOrder: ["Quagsire", "Quagsire-Delta", "Quagsire-Iberia"],
 	},
 	quagsiredelta: {
 		num: 195,
