@@ -4929,7 +4929,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Supercell",
 		battleOnly: "Typhlosion-Delta",
-		tier: "OU",
 	},
 	totodile: {
 		num: 158,
@@ -15525,7 +15524,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Red",
 		eggGroups: ["Undiscovered"],
 		battleOnly: "Emolga-Delta",
-		tier: "NU",
 	},
 	karrablast: {
 		num: 588,
