@@ -2007,7 +2007,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 5,
 		num: 150,
 	},
-	Incendiar: {
+	incendiar: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
 			const noModifyType = [
@@ -2022,7 +2022,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onBasePower(basePower, pokemon, target, move) {
 			if (move.intoxicateBoosted) return this.chainModify([0x14CD, 0x1000]);
 		},
-		name: "Intoxicate",
+		name: "Incendiar",
 		rating: 4,
 		num: 182,
 	},
