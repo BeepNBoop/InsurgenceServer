@@ -3271,7 +3271,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 1.3,
 		weightkg: 60,
 		color: "Red",
-		prevo: "Krabby",
+		prevo: "Krabby-Delta",
 		evoLevel: 28,
 		eggGroups: ["Water 3"],
 		canGigantamax: "G-Max Foam Burst",
