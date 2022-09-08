@@ -4772,7 +4772,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	luxpiravit: {
 		name: "Luxpiravit",
 	},
-	Urobos: {
+	urobos: {
 		name: "Urobos",
 	},
 	tapuñalo: {

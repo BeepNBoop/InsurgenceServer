@@ -7223,4 +7223,48 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Custom",
 		tier: "Illegal",
 	},
+	polekin: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	fungorse: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	cervantrier: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	quisquite: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	gambarrel: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	bogaleon: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	lugnis: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	luravit: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	luxpiravit: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	urobos: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
+	tapuñalo: {
+		isNonstandard: "Custom",
+		tier: "Illegal",
+	},
 };
