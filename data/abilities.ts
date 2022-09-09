@@ -5617,9 +5617,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return this.chainModify(1000);
 		}
 	},
-		onModifyDamage(damage, target, source, effect) {
+		onDamage(damage, pokemon, source, effect) {
 			if (effect && effect.id === 'stealthrock' || effect && effect.id === 'spikes') {
-				return this.chainModify(2);
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')), -6, 6);
+				return this.damage(2 * pokemon.maxhp * Math.pow(2, typeMod) / 8);
 			}
 		},
 		name: 'Unstable Element',
