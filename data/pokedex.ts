@@ -11361,9 +11361,9 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 1.2,
 		weightkg: 34,
 		color: "Brown",
+		battleOnly: "Floatzel-Delta",
 		eggGroups: ["Undiscovered"],
 		requiredAbility: "Battle Bond",
-		battleOnly: "Floatzel-Delta",
 	},
 	cherubi: {
 		num: 420,
