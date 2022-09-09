@@ -20878,7 +20878,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		baseStats: {hp: 61, atk: 131, def: 211, spa: 53, spd: 101, spe: 13},
 		abilities: {0: "Disguise", 1: "Stakeout"},
 		requiredAbility: "Disguise",
-		battleOnly: "Stakataka",
+		battleOnly: "Stakataka-Delta",
 		heightm: 5.5,
 		weightkg: 820,
 		color: "Gray",
