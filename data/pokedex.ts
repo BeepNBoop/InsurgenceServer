@@ -12918,7 +12918,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	azelfdelta: {
 		num: 482,
 		name: "Azelf-Delta",
-		types: ["Ghost", "Steel"],
+		types: ["Ghost", "Fighting"],
 		baseSpecies: "Azelf",
 		gender: "N",
 		baseStats: {hp: 75, atk: 125, def: 70, spa: 125, spd: 70, spe: 115},

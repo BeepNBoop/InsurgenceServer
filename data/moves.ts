@@ -8904,7 +8904,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	gurusteachings: {
 		num: 802,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 90,
 		category: "Special",
 		name: "Guru's Teachings",
@@ -8922,14 +8922,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 				move.flags.contact = 1;
 				if (move.secondaries = []){
 				move.secondaries.push ({
-					chance: 30,
+					chance: 20,
 					status: 'par' ,
 				});
 			}
 			};
 		},
 		secondary: {
-			chance: 30,
+			chance: 20,
 			volatileStatus: 'confusion',
 		},
 		target: "normal",

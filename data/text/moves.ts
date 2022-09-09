@@ -2574,6 +2574,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "Has a 30% chance to poison the target.",
 		shortDesc: "30% chance to poison the target.",
 	},
+	gurusteachings: {
+		name: "Guru's Teachings",
+		desc: "20% chance to confuse target. If this pokemon's attack stat is higher than its special attack stat, the move will be a physical electric type move with 20% chance to paralyze the target instead.",
+		shortDesc: "20% confusion chance. If attack > sp. attack, physical electric type move, 20% paralysis chance.",
+	},
 	gust: {
 		name: "Gust",
 		desc: "Power doubles if the target is using Bounce, Fly, or Sky Drop, or is under the effect of Sky Drop.",
@@ -2614,6 +2619,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		name: "Hammer Arm",
 		desc: "Lowers the user's Speed by 1 stage.",
 		shortDesc: "Lowers the user's Speed by 1.",
+	},
+	hammerrush: {
+		name: "Hammer Rush",
+		desc: "Hits two to five times. Has a 35% chance to hit two or three times and a 15% chance to hit four or five times. If one of the hits breaks the target's substitute, it will take damage for the remaining hits. If the user has the Skill Link Ability, this move will always hit five times. Each hit has a 10% chance to flinch the target.",
+		shortDesc: "Hits 2-5 times in a row. 10% chance to flinch each hit.",
 	},
 	happyhour: {
 		name: "Happy Hour",
@@ -5772,6 +5782,11 @@ export const MovesText: {[k: string]: MoveText} = {
 
 		start: "#followme",
 		startFromZEffect: "#followme",
+	},
+	squall: {
+		name: "Squall",
+		desc: "This move has an increased priority of +1",
+		shortDesc: "+1 priority move.",
 	},
 	stealthrock: {
 		name: "Stealth Rock",
