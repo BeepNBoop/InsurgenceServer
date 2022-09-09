@@ -8908,6 +8908,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 90,
 		category: "Special",
 		name: "Guru's Teachings",
+		type: "Psychic",
 		pp: 10,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
@@ -8917,6 +8918,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			const spa = pokemon.getStat('spa', false, true);
 			if (atk > spa || (atk === spa && this.random(2) === 0)) {
 				move.category = 'Physical';
+				move.type = 'Electric';
 				move.flags.contact = 1;
 				if (move.secondaries = []){
 				move.secondaries.push ({
@@ -8931,7 +8933,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 			volatileStatus: 'confusion',
 		},
 		target: "normal",
-		type: "Psychic",
 	},
 	gust: {
 		num: 16,
