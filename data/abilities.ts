@@ -5614,11 +5614,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onSourceModifyDamage(damage, source, target, move) {
 			if (target.getMoveHitData(move).typeMod > 0) {
 				this.debug('Unstable Element OHKO');
-				return this.chainModify(200);
+				return this.chainModify(1000);
 		}
 	},
-		onDamage(damage, target, source, effect) {
-			if (effect && effect.id === 'stealthrock' || effect && effect.id === 'spikes') {
+		onDamage(damage, pokemon, source, effect) {
+			if (effect && effect.id === 'stealthrock' || effect && effect.id === 'spikes' || effect && effect.id === 'stealthrockfire') {
 				return this.chainModify(2);
 			}
 		},

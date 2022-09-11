@@ -431,6 +431,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 668,
 		gen: 6,
 	},
+	deltabanettite: {
+		name: "Delta Banettite",
+		spritenum: 576,
+		megaStone: "Banette-Delta-Mega",
+		megaEvolves: "Banette",
+		itemUser: ["Banette-Delta"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 1236,
+		gen: 6,
+	},
 	beastball: {
 		name: "Beast Ball",
 		spritenum: 661,
@@ -4866,6 +4879,19 @@ export const Items: {[itemid: string]: ItemData} = {
 			return true;
 		},
 		num: 761,
+		gen: 6,
+	},
+	mimikite: {
+		name: "Mimikite",
+		spritenum: 582,
+		megaStone: "Mimikyu-Mega" || "Mimikyu-Busted-Mega",
+		megaEvolves: "Mimikyu" || "Mimikyu-Busted",
+		itemUser: ["Mimikyu"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 668,
 		gen: 6,
 	},
 	mimikiumz: {

@@ -407,6 +407,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Filter",
 		shortDesc: "This Pokemon receives 3/4 damage from supereffective attacks.",
 	},
+	finistempor: {
+		name: "Fini's Tempor",
+		desc: "Reduces the attack and speed stat of pokemon switching into this one by 25% for 2 turns.",
+		shortDesc: "Incoming pokemon have their attack and speed reduced by 25% for 2 turns.",
+	},
 	flamebody: {
 		name: "Flame Body",
 		shortDesc: "30% chance a Pokemon making contact with this Pokemon will be burned.",
@@ -641,6 +646,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Imposter",
 		desc: "On switch-in, this Pokemon Transforms into the opposing Pokemon that is facing it. If there is no Pokemon at that position, this Pokemon does not Transform.",
 		shortDesc: "On switch-in, this Pokemon Transforms into the opposing Pokemon that is facing it.",
+	},
+	incendiar: {
+		name: "Incendiar",
+		desc: "This Pokemon's Normal-type moves become Fire-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
+		shortDesc: "This Pokemon's Normal-type moves become Fire type and have 1.2x power.",
 	},
 	infiltrator: {
 		name: "Infiltrator",
@@ -1501,6 +1511,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "If Hail or Sleet are active, this Pokemon's evasiveness is multiplied by 1.25. This Pokemon takes no damage from Hail or Sleet.",
 		shortDesc: "If Hail or Sleet are active, this Pokemon's evasiveness is 1.25x; immunity to Hail and Sleet.",
 	},
+	snowstorm: {
+		name: "Snow Storm",
+		desc: "If Hail is active, this Pokemon's Water-, and Ice-type attacks have their power multiplied by 1.3. This Pokemon takes no damage from Hail.",
+		shortDesc: "This Pokemon's Water/Ice attacks do 1.3x in Hail; immunity to it",
+	},
 	snowwarning: {
 		name: "Snow Warning",
 		shortDesc: "On switch-in, this Pokemon summons Hail. Fails if Sleet is active.",
@@ -1818,6 +1833,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Unseen Fist",
 		desc: "All of this Pokemon's moves that make contact bypass protection.",
 		shortDesc: "All contact moves hit through protection.",
+	},
+	unstableelement: {
+		name: "Unstable Element",
+		desc: "This pokemon faints if hit by any super effective move, even if it were to normally survive. Takes double the damage from entry hazards.",
+		shortDesc: "Gets OHKO'd by super-effective moves. Takes double damage from hazards.",
 	},
 	vampiric: {
 		name: "Vampiric",
