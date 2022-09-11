@@ -325,7 +325,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.species.id === ('greninja') && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
 				this.add('-activate', source, 'ability: Battle Bond');
 				source.formeChange('Greninja-Ash', this.effect, true);
-				source.formeChange('Floatzel-Delta-Black-Belt', this.effect, true);
 			} else if (source.species.id === ('floatzeldelta') && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
 				this.add('-activate', source, 'ability: Battle Bond');
 				source.formeChange('Floatzel-Delta-Black-Belt', this.effect, true);
