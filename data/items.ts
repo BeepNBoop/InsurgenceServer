@@ -8472,6 +8472,23 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 659,
 		gen: 6,
 	},
+	vitalherb: {
+		onUpdate(pokemon) {
+			if (pokemon.volatiles['mustrecharge']) {
+				pokemon.eatItem();
+			}
+		},
+		onEat(pokemon) {
+			pokemon.removeVolatile('mustrecharge');
+		},
+		name: "Vital Herb",
+		spritenum: 358,
+		fling: {
+			basePower: 10,
+		},
+		num: 271,
+		gen: 4,
+	},
 	wacanberry: {
 		name: "Wacan Berry",
 		spritenum: 526,
