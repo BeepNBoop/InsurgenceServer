@@ -852,7 +852,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onDamage(damage, target, source, effect) {
 			if (
 				effect && effect.effectType === 'Move' &&
-				['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(target.species.id) && !target.transformed
+				['mimikyu', 'mimikyutotem', 'stakatakadelta'].includes(target.species.id) && !target.transformed
 			) {
 				this.add('-activate', target, 'ability: Disguise');
 				this.effectData.busted = true;
