@@ -1270,8 +1270,11 @@ export class Pokemon {
 
 		if (this.species.hasDelta === true) {
 			this.formeChange(this.species.name + '-Delta');
+			this.setAbility(pokemon.ability, this, true);
 		}
 		
+		
+
 		return true;
 	}
 

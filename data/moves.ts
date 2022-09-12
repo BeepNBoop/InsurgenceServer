@@ -1032,7 +1032,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, authentic: 1},
 		secondary: null,
-		target: "normal",
+		target: "allAdjacentFoes",
 		type: "Rock"
 	},
 	appleacid: {
@@ -5023,7 +5023,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, mirror: 1, sound: 1, authentic: 1},
 		secondary: null,
-		target: "normal",
+		target: "allAdjacentFoes",
 		type: "Dragon"
 	},
 	dreameater: {
