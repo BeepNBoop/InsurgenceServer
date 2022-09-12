@@ -863,7 +863,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onCriticalHit(target, source, move) {
 			if (!target) return;
-			if (!['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(target.species.id) || target.transformed) {
+			if (!['mimikyu', 'mimikyutotem', 'stakatakadelta'].includes(target.species.id) || target.transformed) {
 				return;
 			}
 			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
@@ -874,7 +874,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onEffectiveness(typeMod, target, type, move) {
 			if (!target) return;
-			if (!['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(target.species.id) || target.transformed) {
+			if (!['mimikyu', 'mimikyutotem', 'stakatakadelta'].includes(target.species.id) || target.transformed) {
 				return;
 			}
 			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
@@ -884,8 +884,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			return 0;
 		},
 		onUpdate(pokemon) {
-			if (['mimikyu', 'mimikyutotem', 'stakataka-delta'].includes(pokemon.species.id) && this.effectData.busted) {
+			if (['mimikyu', 'mimikyutotem'].includes(pokemon.species.id) && this.effectData.busted) {
 				const speciesid = pokemon.species.id === 'mimikyutotem' ? 'Mimikyu-Busted-Totem' : 'Mimikyu-Busted';
+				pokemon.formeChange(speciesid, this.effect, true);
+				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesid));
+			} else if (['stakatakadelta'].includes(pokemon.species.id) && this.effectData.busted) {
+				const speciesid = 'Stakataka-Delta-Busted';
 				pokemon.formeChange(speciesid, this.effect, true);
 				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesid));
 			}
