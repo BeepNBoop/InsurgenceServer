@@ -2429,6 +2429,12 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Venusaurite",
 		desc: "If held by a Venusaur, this item allows it to Mega Evolve in battle.",
 	},
+	vitalherb: {
+		name: "Vital Herb",
+		desc: "Holder's recharge moves don't require a recharge turn. Single use.",
+
+		end: "  [POKEMON] regained its energies due to its Vital Herb!",
+	},
 	wacanberry: {
 		name: "Wacan Berry",
 		desc: "Halves damage taken from a supereffective Electric-type attack. Single use.",
