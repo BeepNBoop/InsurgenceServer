@@ -6579,6 +6579,11 @@ export const MovesText: {[k: string]: MoveText} = {
 			desc: "Hits twice, with the second hit having a 20% chance to poison the target. If the first hit breaks the target's substitute, the move ends.",
 		},
 	},
+	twinjets: {
+		name: "Twin Jets",
+		shortDesc: "Hits twice, switches pokemon out.",
+		desc: "This move hits twice in a row, then switches the pokemon out.",
+	},
 	twinkletackle: {
 		name: "Twinkle Tackle",
 		shortDesc: "Power is equal to the base move's Z-Power.",
