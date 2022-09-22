@@ -1202,8 +1202,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		condition: {
 			duration: 2,
-			onFoeSwitchIn(target) {
-				this.add('-start', target, 'ability: Finis Tempor');
+			onFoeSwitchIn(source) {
+				this.add('-start', source, 'ability: Finis Tempor');
 			},
 			onModifyAtkPriority: 5,
 			onModifyAtk(atk, target) {
@@ -5617,10 +5617,10 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 127,
 	},
 	unstableelement: {
-		onTryHit(source, target, move) {
-			if (target.getMoveHitData(move).typeMod > 0) {
+		onDamagingHit(damage, target, source, move) {
+			if (target.getMoveHitData(move).typeMod > 0) { 
 				this.debug('Unstable Element OHKO');
-				return this.damage(target.baseMaxhp, target);
+				return this.damage(source.baseMaxhp, source, target);
 		}
 	},
 		onDamage(damage, pokemon, source, effect) {
