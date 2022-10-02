@@ -5620,7 +5620,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onDamagingHit(damage, pokemon, source, move) {
 			if (pokemon.getMoveHitData(move).typeMod > 0) { 
 				this.debug('Unstable Element OHKO');
-				return this.damage(source.baseMaxhp, source, pokemon);
+				return this.damage(pokemon.baseMaxhp, pokemon, pokemon);
 		}
 	},
 		onDamage(damage, pokemon, source, effect) {
