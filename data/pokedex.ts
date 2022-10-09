@@ -11346,8 +11346,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 26,
 		eggGroups: ["Water 1", "Field"],
 		otherFormes: ["Floatzel-Delta-Black-Belt"],
-		// non-activated Floatzel-Black-Belt is forme 1, but PS does not currently distinguish it
-		formeOrder: ["Floatzel", "Floatzel-Delta-Black-Belt"],
+		// non-activated Floatzel-Delta-Black-Belt is forme 1, but PS does not currently distinguish it
+		formeOrder: ["Floatzel-Delta", "Floatzel-Delta", "Floatzel-Delta-Black-Belt"],
 	},
 	floatzelblackbelt: {
 		num: 419,
