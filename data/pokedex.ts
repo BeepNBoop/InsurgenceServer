@@ -11312,9 +11312,6 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Brown",
 		evos: ["Floatzel-Delta"],
 		eggGroups: ["Water 1", "Field"],
-		hasDelta: true,
-		otherFormes: ["Buizel-Delta"],
-		formeOrder: ["Buizel", "Buizel-Delta"],
 	},
 	floatzel: {
 		num: 419,
@@ -11347,7 +11344,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Water 1", "Field"],
 		otherFormes: ["Floatzel-Delta-Black-Belt"],
 		// non-activated Floatzel-Delta-Black-Belt is forme 1, but PS does not currently distinguish it
-		formeOrder: ["Floatzel", "Floatzel-Delta", "Floatzel-Delta", "Floatzel-Delta-Black-Belt"],
+		formeOrder: ["Floatzel-Delta", "Floatzel-Delta", "Floatzel-Delta-Black-Belt"],
 	},
 	floatzeldeltablackbelt: {
 		num: 419,
