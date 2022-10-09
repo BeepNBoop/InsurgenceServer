@@ -2216,7 +2216,7 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	floatzeldelta: {
 		name: "Floatzel-Delta",
 	},
-	floatzelblackbelt: {
+	floatzeldeltablackbelt: {
 		name: "Floatzel-Delta-Black-Belt",
 	},
 	cherubi: {
