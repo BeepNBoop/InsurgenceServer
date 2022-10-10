@@ -20331,6 +20331,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 0.7,
 		color: "Yellow",
 		eggGroups: ["Amorphous"],
+		battleOnly: "Mimikyu",
 		requiredItem: "Mimikite",
 	},
 	bruxish: {
