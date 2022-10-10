@@ -5613,6 +5613,10 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
+	mimikyubusted: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+	},
 	mimikyubustedtotem: {
 		isNonstandard: "Past",
 		tier: "Illegal",
