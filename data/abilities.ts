@@ -327,7 +327,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				source.formeChange('Greninja-Ash', this.effect, true);
 			} else if (source.species.id === ('floatzeldelta') && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
 				this.add('-activate', source, 'ability: Battle Bond');
-				source.formeChange('Floatzel-Delta-Black-Belt', this.effect, true);
+				source.formeChange('floatzeldeltablackbelt', this.effect, true);
 			}
 		},
 		onModifyMovePriority: -1,
@@ -889,9 +889,9 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				pokemon.formeChange(speciesid, this.effect, true);
 				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesid));
 			} else if (['stakatakadelta'].includes(pokemon.species.id) && this.effectData.busted) {
-				const speciesid = 'Stakataka-Delta-Busted';
-				pokemon.formeChange(speciesid, this.effect, true);
-				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesid));
+				const speciesstackid = 'Stakataka-Delta-Busted';
+				pokemon.formeChange(speciesstackid, this.effect, true);
+				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesstackid));
 			}
 		},
 		isPermanent: true,
