@@ -4124,8 +4124,8 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	stakatakadelta: {
 		name: "Stakataka-Delta",
 	},
-	stakatakadeltabusted: {
-		name: "Stakataka-Delta-Busted",
+	stakatakadeltarevealed: {
+		name: "Stakataka-Delta-Revealed",
 	},
 	blacephalon: {
 		name: "Blacephalon",
