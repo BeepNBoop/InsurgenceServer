@@ -4581,6 +4581,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				source.formeChange('Floatzel-Delta-Black-Belt', this.effect, true);
 			} 
 		},
+		onModifyMovePriority: -1,
+		onModifyMove(move, attacker) {
+			if (move.id === 'armthrust' && attacker.species.name === 'Floatzel-Delta-Black-Belt') {
+				move.multihit = 3;
+			}
+		},
+		onModifyCritRatio(critRatio, move, attacker) {
+			if (this.activeMove?.id === 'armthrust' && attacker.species.name === 'Floatzel-Delta-Black-Belt') return 1;
+		},
 		isPermanent: true,
 		name: "Sensei",
 		rating: 4,

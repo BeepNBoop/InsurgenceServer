@@ -1110,6 +1110,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		num: 292,
 		accuracy: 100,
 		basePower: 15,
+		basePowerCallback(pokemon, target, move) {
+			if (pokemon.species.name === 'Floatzel-Delta-Black-Belt' && pokemon.hasAbility('sensei')) {
+				return move.basePower + 5;
+			}
+			return move.basePower;
+		},
 		category: "Physical",
 		name: "Arm Thrust",
 		pp: 20,
