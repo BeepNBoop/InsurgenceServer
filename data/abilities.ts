@@ -325,10 +325,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (source.species.id === ('greninja') && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
 				this.add('-activate', source, 'ability: Battle Bond');
 				source.formeChange('Greninja-Ash', this.effect, true);
-			} else if (source.species.id === ('floatzeldelta') && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
-				this.add('-activate', source, 'ability: Battle Bond');
-				source.formeChange('floatzeldeltablackbelt', this.effect, true);
-			}
+			} 
 		},
 		onModifyMovePriority: -1,
 		onModifyMove(move, attacker) {
@@ -623,6 +620,52 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 14,
 	},
+	concealed: {
+		onDamagePriority: 1,
+		onDamage(damage, target, source, effect) {
+			if (
+				effect && effect.effectType === 'Move' &&
+				['stakatakadelta'].includes(target.species.id) && !target.transformed
+			) {
+				this.add('-activate', target, 'ability: Concealed');
+				this.effectData.busted = true;
+				return 0;
+			}
+		},
+		onCriticalHit(target, source, move) {
+			if (!target) return;
+			if (!['stakatakadelta'].includes(target.species.id) || target.transformed) {
+				return;
+			}
+			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
+			if (hitSub) return;
+
+			if (!target.runImmunity(move.type)) return;
+			return false;
+		},
+		onEffectiveness(typeMod, target, type, move) {
+			if (!target) return;
+			if (!['stakatakadelta'].includes(target.species.id) || target.transformed) {
+				return;
+			}
+			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
+			if (hitSub) return;
+
+			if (!target.runImmunity(move.type)) return;
+			return 0;
+		},
+		onUpdate(pokemon) {
+			if (['stakatakadelta'].includes(pokemon.species.id) && this.effectData.busted) {
+				const speciesid = 'Stakataka-Delta-Revealed';
+				pokemon.formeChange(speciesid, this.effect, true);
+				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesid));
+			}
+		},
+		isPermanent: true,
+		name: "Concealed",
+		rating: 3.5,
+		num: 209,
+	},
 	contrary: {
 		onBoost(boost, target, source, effect) {
 			if (effect && effect.id === 'zpower') return;
@@ -854,7 +897,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onDamage(damage, target, source, effect) {
 			if (
 				effect && effect.effectType === 'Move' &&
-				['mimikyu', 'mimikyutotem', 'stakatakadelta'].includes(target.species.id) && !target.transformed
+				['mimikyu', 'mimikyutotem'].includes(target.species.id) && !target.transformed
 			) {
 				this.add('-activate', target, 'ability: Disguise');
 				this.effectData.busted = true;
@@ -863,7 +906,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onCriticalHit(target, source, move) {
 			if (!target) return;
-			if (!['mimikyu', 'mimikyutotem', 'stakatakadelta'].includes(target.species.id) || target.transformed) {
+			if (!['mimikyu', 'mimikyutotem'].includes(target.species.id) || target.transformed) {
 				return;
 			}
 			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
@@ -874,7 +917,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onEffectiveness(typeMod, target, type, move) {
 			if (!target) return;
-			if (!['mimikyu', 'mimikyutotem', 'stakatakadelta'].includes(target.species.id) || target.transformed) {
+			if (!['mimikyu', 'mimikyutotem'].includes(target.species.id) || target.transformed) {
 				return;
 			}
 			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
@@ -888,10 +931,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				const speciesid = pokemon.species.id === 'mimikyutotem' ? 'Mimikyu-Busted-Totem' : 'Mimikyu-Busted';
 				pokemon.formeChange(speciesid, this.effect, true);
 				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesid));
-			} else if (['stakatakadelta'].includes(pokemon.species.id) && this.effectData.busted) {
-				const speciesstackid = 'Stakataka-Delta-Busted';
-				pokemon.formeChange(speciesstackid, this.effect, true);
-				this.damage(pokemon.baseMaxhp / 8, pokemon, pokemon, this.dex.getSpecies(speciesstackid));
 			}
 		},
 		isPermanent: true,
@@ -4531,6 +4570,21 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Serene Grace",
 		rating: 3.5,
 		num: 32,
+	},
+	sensei: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect?.effectType !== 'Move') {
+				return;
+			}
+			if (source.species.id === ('floatzeldelta') && source.hp && !source.transformed && source.side.foe.pokemonLeft) {
+				this.add('-activate', source, 'ability: Sensei');
+				source.formeChange('Floatzel-Delta-Black-Belt', this.effect, true);
+			} 
+		},
+		isPermanent: true,
+		name: "Sensei",
+		rating: 4,
+		num: 210,
 	},
 	shadowcall: {
 		onModifyAtkPriority: 5,

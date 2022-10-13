@@ -3144,6 +3144,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		isNonstandard: "Past",
 		tier: "Illegal",
 	},
+	floatzeldelta: {
+		tier: "UU"
+	},
+	floatzeldeltablackbelt: {
+		tier: "Illegal"
+	},
 	cherubi: {
 		tier: "NFE",
 	},
@@ -5839,6 +5845,12 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomDoubleBattleLevel: 82,
 		tier: "RU",
 		doublesTier: "DOU",
+	},
+	stakatakadelta: {
+		tier: "OU"
+	},
+	stakatakadeltarevealed: {
+		tier: "Illegal"
 	},
 	blacephalon: {
 		randomBattleMoves: ["calmmind", "fireblast", "psyshock", "shadowball", "trick"],

@@ -137,6 +137,14 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		activate: "  [POKEMON] became fully charged due to its bond with its Trainer!",
 		transform: "[POKEMON] became Ash-Greninja!",
 	},
+	sensei: {
+		name: "Sensei",
+		desc: "If this Pokemon is a Floatzel-Delta, it transforms into Floatzel-Delta-Black-Belt after knocking out a Pokemon.",
+		shortDesc: "After KOing a Pokemon: becomes Floatzel-Delta-Black-Belt.",
+
+		activate: "  [POKEMON] became fully charged due to its bond with its Trainer!",
+		transform: "[POKEMON] became Floatzel-Delta-Black-Belt!",
+	},
 	beastboost: {
 		name: "Beast Boost",
 		desc: "This Pokemon's highest stat is raised by 1 stage if it attacks and knocks out another Pokemon.",
@@ -334,6 +342,18 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 
 		block: "  Its disguise served it as a decoy!",
 		transform: "[POKEMON]'s disguise was busted!",
+	},
+	concealed: {
+		name: "Concealed",
+		desc: "If this Pokemon is a Stakataka-Delta, the first hit it takes in battle deals 0 neutral damage. It's revealed, it changes to Revealed Form, and it loses 1/8 of its max HP. Confusion damage also breaks the concealement.",
+		shortDesc: "(Stakataka-Delta only) The first hit it takes is blocked, and it takes 1/8 HP damage instead.",
+		gen7: {
+			desc: "If this Pokemon is a Stakataka-Delta, the first hit it takes in battle deals 0 neutral damage. It's revealed is then broken and it changes to Revealed Form. Confusion damage also breaks the concealment.",
+			shortDesc: "(Stakataka-Delta only) First hit deals 0 damage, breaks concealment.",
+		},
+
+		block: "  It used the wall to conceal itself!!",
+		transform: "[POKEMON] has been revealed!",
 	},
 	download: {
 		name: "Download",
