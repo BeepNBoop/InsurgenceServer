@@ -7264,7 +7264,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 	marshtompdelta: {
 		num: 259,
 		name: "Marshtomp-Delta",
-		types: ["Poison", "Dark"],
+		types: ["Dark"],
 		genderRatio: {M: 0.875, F: 0.125},
 		baseStats: {hp: 70, atk: 85, def: 70, spa: 60, spd: 70, spe: 50},
 		abilities: {0: "Poison Touch", H: "Adaptability"},

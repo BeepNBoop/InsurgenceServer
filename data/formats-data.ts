@@ -2091,6 +2091,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	marshtomp: {
 		tier: "NFE",
 	},
+	marshtompdelta: {
+		tier: "NFE",
+	},
 	swampert: {
 		randomBattleMoves: ["earthquake", "icebeam", "protect", "scald", "stealthrock", "toxic"],
 		randomBattleLevel: 80,
@@ -2102,6 +2105,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	swampertmega: {
 		isNonstandard: "Past",
 		tier: "Illegal",
+	},
+	swampertdelta: {
+		tier: "OU",
 	},
 	poochyena: {
 		isNonstandard: "Past",
