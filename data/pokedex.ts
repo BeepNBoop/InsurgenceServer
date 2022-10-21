@@ -2054,6 +2054,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Brown",
 		evos: ["Kadabra"],
 		eggGroups: ["Human-Like"],
+		otherFormes: ["Abra-Iberia"],
+		formeOrder: ["Abra", "Abra-Iberia"],
 	},
 	abraiberia: {
 		num: 63,
@@ -2084,6 +2086,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 16,
 		evos: ["Alakazam"],
 		eggGroups: ["Human-Like"],
+		otherFormes: ["Kadabra-Iberia"],
+		formeOrder: ["Kadabra", "Kadabra-Iberia"],
 	},
 	kadabraiberia: {
 		num: 64,
@@ -2114,8 +2118,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Kadabra",
 		evoType: "trade",
 		eggGroups: ["Human-Like"],
-		otherFormes: ["Alakazam-Mega"],
-		formeOrder: ["Alakazam", "Alakazam-Mega"],
+		otherFormes: ["Alakazam-Mega", "Alakazam-Iberia", "Alakazam-Iberia-Mega"],
+		formeOrder: ["Alakazam", "Alakazam-Mega", "Alakazam-Iberia", "Alakazam-Iberia-Mega"],
 	},
 	alakazamiberia: {
 		num: 65,
@@ -2162,7 +2166,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 48,
 		color: "Brown",
 		eggGroups: ["Human-Like"],
-		requiredItem: "Alakazite",
+		requiredItem: "Iberian Alakazite",
 		tier: "Uber",
 	},
 	machop: {
@@ -2688,8 +2692,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 15,
 		color: "Brown",
 		eggGroups: ["Flying", "Field"],
-		otherFormes: ["Farfetch\u2019d-Galar"],
-		formeOrder: ["Farfetch\u2019d", "Farfetch\u2019d-Galar"],
+		otherFormes: ["Farfetch\u2019d-Galar", "Farfetch\u2019d-Iberia"],
+		formeOrder: ["Farfetch\u2019d", "Farfetch\u2019d-Galar", "Farfetch\u2019d-Iberia"],
 	},
 	farfetchdgalar: {
 		num: 83,
@@ -3288,8 +3292,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Red",
 		evos: ["Electrode"],
 		eggGroups: ["Mineral"],
-		otherFormes: ["Voltorb-Hisui"],
-		formeOrder: ["Voltorb", "Voltorb-Hisui"],
+		otherFormes: ["Voltorb-Hisui", "Voltorb-Iberia"],
+		formeOrder: ["Voltorb", "Voltorb-Hisui", "Voltorb-Iberia"],
 	},
 	voltorbhisui: {
 		num: 100,
@@ -3334,8 +3338,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Voltorb",
 		evoLevel: 30,
 		eggGroups: ["Mineral"],
-		otherFormes: ["Electrode-Hisui"],
-		formeOrder: ["Electrode", "Electrode-Hisui"],
+		otherFormes: ["Electrode-Hisui", "Electrode-Iberia"],
+		formeOrder: ["Electrode", "Electrode-Hisui", "Electrode-Iberia"],
 	},
 	electrodehisui: {
 		num: 101,
@@ -3381,10 +3385,12 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Pink",
 		evos: ["Exeggutor", "Exeggutor-Alola"],
 		eggGroups: ["Grass"],
+		otherFormes: ["Exeggcute-Iberia"],
+		formeOrder: ["Exeggcute", "Exeggcute-Iberia"],
 	},
 	exeggcuteiberia: {
 		num: 102,
-		name: "Exeggcute",
+		name: "Exeggcute-Iberia",
 		baseSpecies: "Exeggcute",
 		forme: "Iberia",
 		types: ["Grass", "Fairy"],
@@ -3409,8 +3415,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoType: "useItem",
 		evoItem: "Leaf Stone",
 		eggGroups: ["Grass"],
-		otherFormes: ["Exeggutor-Alola"],
-		formeOrder: ["Exeggutor", "Exeggutor-Alola"],
+		otherFormes: ["Exeggutor-Alola", "Exeggutor-Iberia"],
+		formeOrder: ["Exeggutor", "Exeggutor-Alola", "Exeggutor-Iberia"],
 	},
 	exeggutoralola: {
 		num: 103,
@@ -3896,6 +3902,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Smoochum",
 		evoLevel: 30,
 		eggGroups: ["Human-Like"],
+		otherFormes: ["Jynx-Iberia"],
+		formeOrder: ["Jynx", "Jynx-Iberia"],
 	},
 	jynxiberia: {
 		num: 124,
@@ -6690,6 +6698,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Jynx"],
 		eggGroups: ["Undiscovered"],
 		canHatch: true,
+		otherFormes: ["Smoochum-Iberia"],
+		formeOrder: ["Smoochum", "Smoochum-Iberia"],
 	},
 	smoochumiberia: {
 		num: 238,
@@ -6842,6 +6852,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		weightkg: 198,
 		color: "Brown",
 		eggGroups: ["Undiscovered"],
+		otherFormes: ["Entei-Iberia"],
+		formeOrder: ["Entei", "Entei-Iberia"],
 	},
 	enteiiberia: {
 		num: 244,
@@ -7504,8 +7516,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Lombre"],
 		eggGroups: ["Water 1", "Grass"],
 		hasDelta: true,
-		otherFormes: ["Lotad-Delta"],
-		formeOrder: ["Lotad", "Lotad-Delta"],
+		otherFormes: ["Lotad-Delta", "Lotad-Iberia"],
+		formeOrder: ["Lotad", "Lotad-Delta", "Lotad-Iberia"],
 	},
 	lotaddelta: {
 		num: 270,
@@ -7551,8 +7563,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Ludicolo"],
 		eggGroups: ["Water 1", "Grass"],
 		hasDelta: true,
-		otherFormes: ["Lombre-Delta"],
-		formeOrder: ["Lombre", "Lombre-Delta"],
+		otherFormes: ["Lombre-Delta", "Lombre-Iberia"],
+		formeOrder: ["Lombre", "Lombre-Delta", "Lombre-Iberia"],
 	},
 	lombredelta: {
 		num: 271,
@@ -7604,8 +7616,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoItem: "Water Stone",
 		eggGroups: ["Water 1", "Grass"],
 		hasDelta: true,
-		otherFormes: ["Ludicolo-Delta"],
-		formeOrder: ["Ludicolo", "Ludicolo-Delta"],
+		otherFormes: ["Ludicolo-Delta", "Ludicolo-Iberia"],
+		formeOrder: ["Ludicolo", "Ludicolo-Delta", "Ludicolo-Iberia"],
 	},
 	ludicolodelta: {
 		num: 272,
@@ -8206,6 +8218,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Gray",
 		evos: ["Probopass"],
 		eggGroups: ["Mineral"],
+		otherFormes: ["Nosepass-Iberia"],
+		formeOrder: ["Nosepass", "Nosepass-Iberia"],
 	},
 	nosepassiberia: {
 		num: 299,
@@ -10881,8 +10895,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Luxio"],
 		eggGroups: ["Field"],
 		hasDelta: true,
-		otherFormes: ["Shinx-Delta"],
-		formeOrder: ["Shinx", "Shinx-Delta"],
+		otherFormes: ["Shinx-Delta", "Shinx-Iberia"],
+		formeOrder: ["Shinx", "Shinx-Delta", "Shinx-Iberia"],
 	},
 	shinxdelta: {
 		num: 403,
@@ -10928,8 +10942,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Luxray"],
 		eggGroups: ["Field"],
 		hasDelta: true,
-		otherFormes: ["Luxio-Delta"],
-		formeOrder: ["Luxio", "Luxio-Delta"],
+		otherFormes: ["Luxio-Delta", "Luxio-Iberia"],
+		formeOrder: ["Luxio", "Luxio-Delta", "Luxio-Iberia"],
 	},
 	luxiodelta: {
 		num: 404,
@@ -10948,7 +10962,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		eggGroups: ["Undiscovered"],
 		tier: "NFE",
 	},
-	luxiodiberia: {
+	luxioiberia: {
 		num: 404,
 		name: "Luxio-Iberia",
 		baseSpecies: "Luxio",
@@ -10978,8 +10992,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 30,
 		eggGroups: ["Field"],
 		hasDelta: true,
-		otherFormes: ["Luxray-Delta"],
-		formeOrder: ["Luxray", "Luxray-Delta"],
+		otherFormes: ["Luxray-Delta", "Luxray-Iberia"],
+		formeOrder: ["Luxray", "Luxray-Delta", "Luxray-Iberia"],
 	},
 	luxraydelta: {
 		num: 405,
@@ -12658,6 +12672,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoType: "levelExtra",
 		evoCondition: "near a special magnetic field",
 		eggGroups: ["Mineral"],
+		otherFormes: ["Probopass-Iberia"],
+		formeOrder: ["Probopass", "Probopass-Iberia"],
 	},
 	probopassiberia: {
 		num: 476,
@@ -13914,6 +13930,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Tranquill",
 		evoLevel: 32,
 		eggGroups: ["Flying"],
+		otherFormes: ["Unfezant-Iberia"],
+		formeOrder: ["Unfezant", "Unfezant-Iberia"],
 	},
 	unfezantiberia: {
 		num: 521,
@@ -14099,7 +14117,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		heightm: 0.6,
 		weightkg: 12.5,
 		color: "Gray",
-		evos: ["Gurdurr"],
+		evos: ["Gurdurr", "Gurdurr-Iberia"],
 		eggGroups: ["Human-Like"],
 	},
 	gurdurr: {
@@ -14116,6 +14134,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 25,
 		evos: ["Conkeldurr"],
 		eggGroups: ["Human-Like"],
+		otherFormes: ["Gurdurr-Iberia"],
+		formeOrder: ["Gurdurr", "Gurdurr-Iberia"],
 	},
 	gurdurriberia: {
 		num: 533,
@@ -14147,6 +14167,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Gurdurr",
 		evoType: "trade",
 		eggGroups: ["Human-Like"],
+		otherFormes: ["Conkeldurr-Iberia"],
+		formeOrder: ["Conkeldurr", "Conkeldurr-Iberia"],
 	},
 	conkeldurriberia: {
 		num: 534,
@@ -16115,6 +16137,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Red",
 		evos: ["Accelgor"],
 		eggGroups: ["Bug"],
+		otherFormes: ["Shelmet-Iberia"],
+		formeOrder: ["Shelmet", "Shelmet-Iberia"],
 	},
 	shelmetiberia: {
 		num: 616,
@@ -16143,6 +16167,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoType: "trade",
 		evoCondition: "with a Karrablast",
 		eggGroups: ["Bug"],
+		otherFormes: ["Accelgor-Iberia"],
+		formeOrder: ["Accelgor", "Accelgor-Iberia"],
 	},
 	accelgoriberia: {
 		num: 617,
@@ -16314,8 +16340,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evos: ["Bisharp"],
 		eggGroups: ["Human-Like"],
 		hasDelta: true,
-		otherFormes: ["Pawniard-Delta"],
-		formeOrder: ["Pawniard", "Pawniard-Delta"],
+		otherFormes: ["Pawniard-Delta", "Pawniard-Iberia"],
+		formeOrder: ["Pawniard", "Pawniard-Delta", "Pawniard-Iberia"],
 	},
 	pawniarddelta: {
 		num: 624,
@@ -16360,8 +16386,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		evoLevel: 52,
 		eggGroups: ["Human-Like"],
 		hasDelta: true,
-		otherFormes: ["Bisharp-Mega", "Bisharp-Delta", "Bisharp-Delta-Mega"],
-		formeOrder: ["Bisharp", "Bisharp-Mega", "Bisharp-Delta", "Bisharp-Delta-Mega"]
+		otherFormes: ["Bisharp-Mega", "Bisharp-Delta", "Bisharp-Delta-Mega", "Bisharp-Iberia"],
+		formeOrder: ["Bisharp", "Bisharp-Mega", "Bisharp-Delta", "Bisharp-Delta-Mega", "Bisharp-Iberia"]
 	},
 	bisharpmega: {
 		num: 625,
@@ -16451,6 +16477,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "White",
 		evos: ["Braviary", "Braviary-Hisui"],
 		eggGroups: ["Flying"],
+		otherFormes: ["Rufflet-Iberia"],
+		formeOrder: ["Rufflet", "Rufflet-Iberia"],
 	},
 	ruffletiberia: {
 		num: 627,
@@ -16480,8 +16508,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Rufflet",
 		evoLevel: 54,
 		eggGroups: ["Flying"],
-		otherFormes: ["Braviary-Hisui"],
-		formeOrder: ["Braviary", "Braviary-Hisui"],
+		otherFormes: ["Braviary-Hisui", "Braviary-Iberia"],
+		formeOrder: ["Braviary", "Braviary-Hisui", "Braviary-Iberia"],
 	},
 	braviaryhisui: {
 		num: 628,
@@ -17741,6 +17769,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		color: "Brown",
 		evos: ["Gogoat"],
 		eggGroups: ["Field"],
+		otherFormes: ["Skiddo-Iberia"],
+		formeOrder: ["Skiddo", "Skiddo-Iberia"],
 	},
 	skiddoiberia: {
 		num: 672,
@@ -17768,6 +17798,8 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		prevo: "Skiddo",
 		evoLevel: 32,
 		eggGroups: ["Field"],
+		otherFormes: ["Gogoat-Iberia"],
+		formeOrder: ["Gogoat", "Gogoat-Iberia"],
 	},
 	gogoatiberia: {
 		num: 673,
