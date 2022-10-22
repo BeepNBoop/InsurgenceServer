@@ -287,7 +287,11 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				if (!target || !target.hp) continue;
 				if (target.status === 'slp' || target.hasAbility('comatose') && (['newmoon'].includes(pokemon.effectiveWeather()))) {
 					this.damage(target.baseMaxhp / 4, target, pokemon);
-				} else this.damage(target.baseMaxhp / 8, target, pokemon);
+				} 
+				else if (target.status === 'slp' || target.hasAbility('comatose')) {
+						this.damage(target.baseMaxhp / 8, target, pokemon);
+					}
+				else return;
 			}
 		},
 		name: "Bad Dreams",
