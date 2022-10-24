@@ -1241,12 +1241,12 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onEnd(target) {
 			delete target.volatiles['finistempor'];
-			this.add('-end', target, 'Finis Tempor', '[silent]');
+			this.add('-end', target, 'tag 1', '[silent]');
 		},
 		condition: {
 			duration: 2,
 			onFoeSwitchIn(source) {
-				this.add('-start', source, 'ability: Finis Tempor');
+				this.add('-start', source, 'ability: tag 2');
 			},
 			onModifyAtkPriority: 5,
 			onModifyAtk(atk, target) {
@@ -1256,7 +1256,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return this.chainModify(0.75);
 			},
 			onEnd(target) {
-				this.add('-end', target, 'Finis Tempor');
+				this.add('-end', target, 'tag 3');
 			},
 		},
 		name: "Finis Tempor",
