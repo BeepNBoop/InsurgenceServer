@@ -211,6 +211,19 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 679,
 		gen: 6,
 	},
+	iberianalakazite: {
+		name: "Iberian Alakazite",
+		spritenum: 579,
+		megaStone: "Alakazam-Iberia-Mega",
+		megaEvolves: "Alakazam-Iberia",
+		itemUser: ["Alakazam-Iberia"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 679,
+		gen: 6,
+	},
 	aloraichiumz: {
 		name: "Aloraichium Z",
 		spritenum: 655,
