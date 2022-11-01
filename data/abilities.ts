@@ -3519,34 +3519,90 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			case 'Water':
 				if (source.species.name !== 'vaporeon') forme = 'Vaporeon';
 				source.setAbility('Protean Maxima V');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			case 'Fire':
 				if (source.species.name !== 'flareon') forme = 'Flareon';
 				source.setAbility('Protean Maxima F');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			case 'Electric':
 				if (source.species.name !== 'jolteon') forme = 'Jolteon';
 				source.setAbility('Protean Maxima J');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			case 'Psychic':
 				if (source.species.name !== 'espeon') forme = 'Espeon';
 				source.setAbility('Protean Maxima E');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			case 'Dark':
 				if (source.species.name !== 'umbreon') forme = 'Umbreon';
 				source.setAbility('Protean Maxima U');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			case 'Grass':
 				if (source.species.name !== 'leafeon') forme = 'Leafeon';
 				source.setAbility('Protean Maxima L');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			case 'Ice':
 				if (source.species.name !== 'glaceon') forme = 'Glaceon';
 				source.setAbility('Protean Maxima G');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			case 'Fairy':
 				if (source.species.name !== 'sylveon') forme = 'Sylveon';
 				source.setAbility('Protean Maxima S');
+					source.baseMaxhp = Math.floor(Math.floor(
+						2 * source.species.baseStats['hp'] + source.set.ivs['hp'] + Math.floor(source.set.evs['hp'] / 4) + 100
+					) * source.level / 100 + 10);
+					const newMaxHP = source.volatiles['dynamax'] ? (2 * source.baseMaxhp) : source.baseMaxhp;
+					source.hp = newMaxHP - (source.maxhp - source.hp);
+					source.maxhp = newMaxHP;
+					this.add('-heal', source, source.getHealth, '[silent]');
 				break;
 			}
 			if (source.isActive && forme) {
