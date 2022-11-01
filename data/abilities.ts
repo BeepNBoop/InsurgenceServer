@@ -1246,7 +1246,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		condition: {
 			duration: 2,
 			onStart(source) {
-				this.add('-start', source, 'ability: tag 2');
+				this.add('-start', source, 'Finis Tempor');
 			},
 			onModifyAtkPriority: 5,
 			onModifyAtk(atk, target) {
